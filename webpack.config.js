@@ -93,6 +93,16 @@ module.exports = (env) => {
             from: path.resolve(__dirname, `src/style/templates/${env['TEMPLATE']}/LICENSE`),
             to: path.resolve(__dirname, `dist/${env['TEMPLATE']}/LICENSE`),
             toType: 'file'
+          },
+          {
+            from: path.resolve(__dirname, `.npmignore`),
+            to: path.resolve(__dirname, `dist/${env['TEMPLATE']}/.npmignore`),
+            toType: 'file'
+          },
+          {
+            from: path.resolve(__dirname, `.npmrc`),
+            to: path.resolve(__dirname, `dist/${env['TEMPLATE']}/.npmrc`),
+            toType: 'file'
           }
         ]
       })
