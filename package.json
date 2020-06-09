@@ -1,0 +1,47 @@
+{
+  "name": "@lunaeme/medea",
+  "version": "4.0.0",
+  "description": "Medea template system.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:webpack": "func() { webpack --env.TEMPLATE=$1; }; func",
+    "clear": "rimraf $1",
+    "build": "sh ./src/build.sh $1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nulpas/medea.git"
+  },
+  "keywords": [
+    "template",
+    "css",
+    "style"
+  ],
+  "author": "Nul Pàs <manu@lunaeme.com> (https://github.com/nulpas)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nulpas/medea/issues"
+  },
+  "homepage": "https://github.com/nulpas/medea#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.2",
+    "@babel/plugin-proposal-object-rest-spread": "^7.10.1",
+    "@babel/preset-env": "^7.10.2",
+    "@types/node": "^14.0.11",
+    "babel-loader": "^8.1.0",
+    "copy-webpack-plugin": "^6.0.2",
+    "css-loader": "^3.5.3",
+    "file-loader": "^6.0.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.14.1",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.7.0",
+    "resolve-url-loader": "^3.1.1",
+    "rimraf": "^3.0.2",
+    "sass-loader": "^8.0.2",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  }
+}

@@ -1,0 +1,29 @@
+@import './button';
+@import './checkbox';
+@import './dropdown';
+@import './input';
+@import './label';
+@import './notifications';
+@import './radio';
+@import './report';
+@import './select';
+@import './spinner';
+@import './switch';
+@import './tag';
+@import './textarea';
+
+%mda-components {
+  @extend %mda-button;
+  @extend %mda-checkbox;
+  @extend %mda-dropdown;
+  @extend %mda-input;
+  @extend %mda-label;
+  @extend %mda-notifications;
+  @extend %mda-radio;
+  @extend %mda-report;
+  @extend %mda-select;
+  @extend %mda-spinner;
+  @extend %mda-switch;
+  @extend %mda-tag;
+  @extend %mda-textarea;
+}

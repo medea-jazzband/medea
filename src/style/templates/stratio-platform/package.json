@@ -1,0 +1,15 @@
+{
+  "name": "@medea/stratio-platform",
+  "version": "3.1.19",
+  "description": "Medea :: Stratio Platform Template",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nulpas/circe.git"
+  },
+  "author": "Nul Pàs <manu@lunaeme.com> (https://github.com/nulpas)",
+  "license": "proprietary",
+  "bugs": {
+    "url": "https://github.com/nulpas/circe/issues"
+  },
+  "homepage": "https://github.com/nulpas/circe/tree/master/projects/core#readme"
+}
