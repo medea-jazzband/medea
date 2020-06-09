@@ -1,7 +1,7 @@
 {
-  "name": "@medea/stratio-web",
+  "name": "@medea/ey",
   "version": "4.0.0",
-  "description": "Medea :: Stratio Web Template",
+  "description": "Medea :: Stratio EY Playbook Template",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/medea-template-system/medea.git"
@@ -11,5 +11,5 @@
   "bugs": {
     "url": "https://github.com/medea-template-system/medea/issues"
   },
-  "homepage": "https://github.com/medea-template-system/medea/tree/master/src/style/templates/stratio-web#readme"
+  "homepage": "https://github.com/medea-template-system/medea/tree/master/src/style/templates/ey#readme"
 }

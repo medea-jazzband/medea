@@ -1,17 +1,17 @@
 {
   "name": "@lunaeme/medea",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Medea template system.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "sh ./src/build.sh $1",
     "build:webpack": "func() { webpack --env.TEMPLATE=$1; }; func",
     "clear": "rimraf $1",
-    "build": "sh ./src/build.sh $1"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nulpas/medea.git"
+    "url": "git+https://github.com/medea-template-system/medea.git"
   },
   "keywords": [
     "template",
@@ -21,9 +21,9 @@
   "author": "Nul Pàs <manu@lunaeme.com> (https://github.com/nulpas)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nulpas/medea/issues"
+    "url": "https://github.com/medea-template-system/medea/issues"
   },
-  "homepage": "https://github.com/nulpas/medea#readme",
+  "homepage": "https://github.com/medea-template-system/medea#readme",
   "devDependencies": {
     "@babel/cli": "^7.10.1",
     "@babel/core": "^7.10.2",
@@ -42,6 +42,7 @@
     "rimraf": "^3.0.2",
     "sass-loader": "^8.0.2",
     "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.11",
+    "yarn": "^1.22.4"
   }
 }
