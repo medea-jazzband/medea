@@ -21,6 +21,7 @@ HTML {
 
     @extend %mda-hk-grotesk-typography-definition;
     .mda-serif {
+      font-family: Lora, serif;
       @extend %mda-lora-typography-definition;
     }
 

@@ -119,18 +119,18 @@ $indeterminateDisabled: 'data:image/svg+xml; utf8, <svg width="16" height="16" v
         }
       }
       &.mda-button--secondary, &.mda-button--bob {
-        --mda-button-color: var(--mda-color-space-70);
-        --mda-button-border-color: var(--mda-color-space-40);
-        --mda-button-background-color: var(--mda-color-neutral-full);
-        --mda-button-hover-color: var(--mda-color-space-80);
-        --mda-button-hover-border-color: var(--mda-color-space-80);
-        --mda-button-hover-background-color: var(--mda-color-action-10);
-        --mda-button-active-color: var(--mda-color-space);
-        --mda-button-active-border-color: var(--mda-color-space-80);
-        --mda-button-active-background-color: var(--mda-color-action-20);
-        --mda-button-disabled-color: var(--mda-color-space-30);
-        --mda-button-disabled-border-color: var(--mda-color-space-20);
-        --mda-button-disabled-background-color: var(--mda-color-neutral-full);
+        --mda-button-color: var(--mda-color-box-5);
+        --mda-button-border-color: var(--mda-color-box-5);
+        --mda-button-background-color: var(--mda-color-box-1);
+        --mda-button-hover-color: var(--mda-color-box-3);
+        --mda-button-hover-border-color: var(--mda-color-box-6);
+        --mda-button-hover-background-color: var(--mda-color-box-6);
+        --mda-button-active-color: white;
+        --mda-button-active-border-color: var(--mda-color-box-6);
+        --mda-button-active-background-color: var(--mda-color-box-6);
+        --mda-button-disabled-color: var(--mda-color-box-4);
+        --mda-button-disabled-border-color: var(--mda-color-box-3);
+        --mda-button-disabled-background-color: var(--mda-color-box-3);
       }
       &.mda-button--borderless {
         --mda-button-color: var(--mda-color-space-70);
