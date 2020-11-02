@@ -1,0 +1,51 @@
+@import '../../global/mixins';
+@import '../../global/fonts/Hk-Grotesk';
+@import '../../global/fonts/Lora';
+@import '../../global/components/components';
+
+@import './backroom/variables/common';
+@import './backroom/components';
+@import './backroom/font-sizes';
+@import './backroom/colors';
+
+HTML {
+  &#mda-stratio-tpl, &.mda-stratio-tpl {
+    font-size: $fontSizeRoot + px;
+    line-height: $fontLineHeightFactor;
+
+    * {
+      font-family: 'HK Grotesk', sans-serif;
+      color: var(--mda-color-box-6);
+      outline: none;
+    }
+
+    @extend %mda-hk-grotesk-typography-definition;
+    .mda-serif {
+      @extend %mda-lora-typography-definition;
+    }
+
+    @include createFontDefinition($fontSizesText, $fontSizeRoot, $fontLineHeightFactor) {
+      // ###### HEADERS
+      @include createHeadersDefinition($fontSizesHeaders, $fontSizeRoot, $fontLineHeightFactor);
+
+      // ###### DEFAULT WEIGHT AND STYLE
+      .mda--bold {
+        font-weight: bold;
+      }
+      .mda--italic {
+        font-style: italic;
+      }
+
+      // ###### DEFAULT SIZE
+      .mda-font--default {
+        font-size: 1rem;
+        line-height: $fontLineHeightFactor;
+      }
+    }
+
+    @include createColorsDefinition($colorsAvailable);
+    @extend %mda-global-vars;
+    @extend %mda-components;
+    @extend %mda-components-template;
+  }
+}

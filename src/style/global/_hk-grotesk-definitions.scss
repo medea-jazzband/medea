@@ -1,0 +1,74 @@
+$fontName: 'HK Grotesk';
+$typesToGenerate: (eot, otf, ttf, woff, woff2);
+$fontWeightsAvailable: (
+  light: (
+    weight: 300,
+    style: normal,
+    path: '../../../fonts/hk-grotesk/HKGrotesk-Light',
+    local1: 'HK Grotesk Light',
+    local2: HkGrotesk-Light
+  ),
+  light-italic: (
+    weight: 300,
+    style: italic,
+    path: '../../../fonts/hk-grotesk/HKGrotesk-LightItalic',
+    local1: 'HK Grotesk Light Italic',
+    local2: HkGrotesk-LightItalic
+  ),
+  regular: (
+    weight: normal,
+    style: normal,
+    path: '../../../fonts/hk-grotesk/HKGrotesk-Regular',
+    local1: 'HK Grotesk Regular',
+    local2: HkGrotesk-Regular
+  ),
+  regular-italic: (
+    weight: normal,
+    style: italic,
+    path: '../../../fonts/hk-grotesk/HKGrotesk-Italic',
+    local1: 'HK Grotesk Italic',
+    local2: HkGrotesk-Italic
+  ),
+  medium: (
+    weight: 500,
+    style: normal,
+    path: '../../../fonts/hk-grotesk/HKGrotesk-Medium',
+    local1: 'HK Grotesk Medium',
+    local2: HkGrotesk-Medium
+  ),
+  medium-italic: (
+    weight: 500,
+    style: italic,
+    path: '../../../fonts/hk-grotesk/HKGrotesk-MediumItalic',
+    local1: 'HK Grotesk Medium Italic',
+    local2: HkGrotesk-MediumItalic
+  ),
+  semi-bold: (
+    weight: 600,
+    style: normal,
+    path: '../../../fonts/hk-grotesk/HKGrotesk-SemiBold',
+    local1: 'HK Grotesk SemiBold',
+    local2: HkGrotesk-SemiBold
+  ),
+  semi-bold-italic: (
+    weight: 600,
+    style: italic,
+    path: '../../../fonts/hk-grotesk/HKGrotesk-SemiBoldItalic',
+    local1: 'HK Grotesk SemiBold Italic',
+    local2: HkGrotesk-SemiBoldItalic
+  ),
+  bold: (
+    weight: bold,
+    style: normal,
+    path: '../../../fonts/hk-grotesk/HKGrotesk-Bold',
+    local1: 'HK Grotesk Bold',
+    local2: HkGrotesk-Bold
+  ),
+  bold-italic: (
+    weight: bold,
+    style: italic,
+    path: '../../../fonts/hk-grotesk/HKGrotesk-BoldItalic',
+    local1: 'HK Grotesk Bold Italic',
+    local2: HkGrotesk-BoldItalic
+  )
+);

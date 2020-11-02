@@ -1,0 +1,21 @@
+%mda-tab {
+  .mda-tab {
+    --mda-tab-default-width: var(--mda-tab-width);
+    --mda-tab-default-border: var(--mda-tab-border);
+    --mda-tab-default-border-color: var(--mda-tab-border-color);
+
+    --mda-tab-default-height: var(--mda-tab-height);
+
+    --mda-tab-default-cell-padding: var(--mda-tab-cell-padding);
+    --mda-tab-default-cell-margin-bottom: var(--mda-tab-cell-margin-bottom);
+    --mda-tab-default-cell-color: var(--mda-tab-cell-color);
+    --mda-tab-default-cell-hover-color: var(--mda-tab-cell-hover-color);
+    --mda-tab-default-cell-cursor: var(--mda-tab-cell-cursor);
+
+    --mda-tab-default-cell-active-padding-bottom: var(--mda-tab-cell-active-padding-bottom);
+    --mda-tab-default-cell-active-color: var(--mda-tab-cell-active-color);
+    --mda-tab-default-cell-active-border: var(--mda-tab-cell-active-border);
+    --mda-tab-default-cell-active-border-color: var(--mda-tab-cell-active-border-color);
+    --mda-tab-default-cell-active-cursor: var(--mda-tab-cell-active-cursor);
+  }
+}

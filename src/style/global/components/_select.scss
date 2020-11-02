@@ -6,7 +6,6 @@
     @include textInputElement() {
       @extend %mda-default-disabled-component;
     }
-
     -webkit-appearance: none;
     -moz-appearance: none;
     text-overflow: unset;
@@ -24,8 +23,8 @@
       font-family: var(--mda-icon-font-family);
       content: var(--mda-icon-arrow-bottom);
       position: absolute;
-      font-size: inherit;
-      line-height: inherit;
+      font-size: 1.1em;
+      line-height: var(--mda-component-height);
       pointer-events: none;
       color: var(--mda-component-icon-color);
       top: var(--mda-component-padding-vertical);
@@ -58,6 +57,7 @@
         @extend %mda-select--wrapper;
         &:after {
           right: 0;
+          top: -1px;
         }
         & > SELECT.mda-select {
           border: none;

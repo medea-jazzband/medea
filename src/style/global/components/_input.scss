@@ -20,11 +20,10 @@
     }
     &:after {
       font-family: var(--mda-icon-font-family);
-      font-size: inherit;
-      line-height: inherit;
+      font-size: 1.1em;
+      line-height: var(--mda-component-height);
       position: absolute;
       color: var(--mda-component-icon-color);
-      top: calc(var(--mda-component-padding-vertical) + 1px);
       right: .6em;
     }
     &.action:after {

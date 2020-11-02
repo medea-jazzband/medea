@@ -1,0 +1,23 @@
+%mda-toggle-button {
+  .mda-toggle-button {
+    --mda-toggle-button-default-border: var(--mda-toggle-button-border);
+    --mda-toggle-button-default-margin-left: var(--mda-toggle-button-margin-left);
+    --mda-toggle-button-default-border-color: var(--mda-toggle-button-border-color);
+    --mda-toggle-button-default-border-radius: var(--mda-toggle-button-border-radius);
+
+    .mda-toggle-button__button {
+      &:disabled, &.disabled {
+        border-color: var(--mda-toggle-button-disabled-border-color);
+      }
+      &--active, &--active:hover {
+        color: var(--mda-toggle-button-active-color);
+        background-color: var(--mda-toggle-button-active-background-color);
+        &:disabled, &.disabled {
+          color: var(--mda-toggle-button-active-disabled-color);
+          border-color: var(--mda-toggle-button-active-disabled-border-color);
+          background-color: var(--mda-toggle-button-active-disabled-background-color);
+        }
+      }
+    }
+  }
+}

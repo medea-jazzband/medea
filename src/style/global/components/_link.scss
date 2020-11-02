@@ -1,0 +1,25 @@
+%mda-link {
+  A.mda-link {
+    color: var(--mda-link-color);
+    cursor: pointer;
+    text-decoration: none;
+    &:hover {
+      color: var(--mda-link-hover-color);
+      text-decoration: none;
+    }
+
+    &.mda-link-hover-underline {
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &.mda-link-hover-underline-inverse {
+      text-decoration: underline;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}

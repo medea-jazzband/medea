@@ -3,6 +3,7 @@ const fs = require('fs');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const postcssPresetEnv = require('postcss-preset-env');
 const CopyPlugin = require('copy-webpack-plugin');
+const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
 
 module.exports = (env) => {
   // ###### CHECK INTERNAL IMPORTS:
@@ -14,7 +15,12 @@ module.exports = (env) => {
   }
 
   return {
-    mode: 'development',
+    mode: 'production',
+    performance: {
+      hints: false,
+      maxEntrypointSize: 600000,
+      maxAssetSize: 600000
+    },
     entry: {
       [env['TEMPLATE']]: path.resolve(__dirname, `src/style/templates/${env['TEMPLATE']}/${env['TEMPLATE']}.scss`)
     },
@@ -27,7 +33,10 @@ module.exports = (env) => {
           test: /\.scss$/,
           use: [
             {
-              loader: MiniCssExtractPlugin.loader
+              loader: MiniCssExtractPlugin.loader,
+              options: {
+                publicPath: ''
+              }
             },
             {
               loader: 'css-loader',
@@ -39,14 +48,16 @@ module.exports = (env) => {
               loader: 'resolve-url-loader'
             },
             {
-              loader: 'postcss-loader', options: {
-                ident: 'postcss',
-                plugins: () => [
-                  postcssPresetEnv({
-                    stage: 0,
-                    browsers: 'last 2 versions'
-                  })
-                ]
+              loader: 'postcss-loader',
+              options: {
+                postcssOptions: {
+                  plugins: () => [
+                    postcssPresetEnv({
+                      stage: 0,
+                      browsers: 'last 2 versions'
+                    })
+                  ]
+                }
               }
             },
             {
@@ -59,15 +70,15 @@ module.exports = (env) => {
         },
         {
           test: /\.(eot|otf|svg|ttf|woff|woff2)$/i,
-          loader: 'file-loader?name=fonts/[name].[ext]'
-        },
-        // {
-        //   test: /\.(jpe?g|png|gif|svg)$/i,
-        //   loader: 'file-loader?name=assets/img/[name].[ext]'
-        // }
+          loader: 'file-loader',
+          options: {
+            name: 'fonts/[name].[ext]'
+          }
+        }
       ]
     },
     plugins: [
+      new FixStyleOnlyEntriesPlugin(),
       new MiniCssExtractPlugin({
         filename: '[name].css'
       }),

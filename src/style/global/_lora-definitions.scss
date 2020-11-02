@@ -1,0 +1,60 @@
+$fontName: 'Lora';
+$typesToGenerate: (ttf);
+$fontWeightsAvailable: (
+  regular: (
+    weight: normal,
+    style: normal,
+    path: '../../../fonts/lora/Lora-Regular',
+    local1: 'Lora Regular',
+    local2: Lora-Regular
+  ),
+  regular-italic: (
+    weight: normal,
+    style: italic,
+    path: '../../../fonts/lora/Lora-Italic',
+    local1: 'Lora Italic',
+    local2: Lora-Italic
+  ),
+  medium: (
+    weight: 500,
+    style: normal,
+    path: '../../../fonts/lora/Lora-Medium',
+    local1: 'Lora Medium',
+    local2: Lora-Medium
+  ),
+  medium-italic: (
+    weight: 500,
+    style: italic,
+    path: '../../../fonts/lora/Lora-MediumItalic',
+    local1: 'Lora Medium Italic',
+    local2: Lora-MediumItalic
+  ),
+  semi-bold: (
+    weight: 600,
+    style: normal,
+    path: '../../../fonts/lora/Lora-SemiBold',
+    local1: 'Lora SemiBold',
+    local2: Lora-SemiBold
+  ),
+  semi-bold-italic: (
+    weight: 600,
+    style: italic,
+    path: '../../../fonts/lora/Lora-SemiBoldItalic',
+    local1: 'Lora SemiBold Italic',
+    local2: Lora-SemiBoldItalic
+  ),
+  bold: (
+    weight: bold,
+    style: normal,
+    path: '../../../fonts/lora/Lora-Bold',
+    local1: 'Lora Bold',
+    local2: Lora-Bold
+  ),
+  bold-italic: (
+    weight: bold,
+    style: italic,
+    path: '../../../fonts/lora/Lora-BoldItalic',
+    local1: 'Lora Bold Italic',
+    local2: Lora-BoldItalic
+  )
+);

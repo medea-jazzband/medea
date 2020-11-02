@@ -1,0 +1,44 @@
+%mda-notification {
+  .mda-notification {
+    --mda-notification-default-position: var(--mda-notification-position);
+    --mda-notification-default-padding: var(--mda-notification-padding);
+    --mda-notification-default-width: var(--mda-notification-width);
+    --mda-notification-default-min-width: var(--mda-notification-min-width);
+    --mda-notification-default-max-width: var(--mda-notification-max-width);
+    --mda-notification-default-top: var(--mda-notification-top);
+    --mda-notification-default-left: var(--mda-notification-left);
+    --mda-notification-default-z-index: var(--mda-notification-z-index);
+
+    --mda-notification-default-border: var(--mda-notification-border);
+    --mda-notification-default-border-radius: var(--mda-notification-border-radius);
+    --mda-notification-default-box-shadow: var(--mda-notification-box-shadow);
+
+    --mda-notification-default-text-color: var(--mda-notification-text-color);
+    --mda-notification-default-border-color: var(--mda-notification-border-color);
+    --mda-notification-default-background-color: var(--mda-notification-background-color);
+
+    --mda-notification-default-icon-separation: var(--mda-notification-icon-separation);
+    --mda-notification-default-close-control-separation: var(--mda-notification-close-control-separation);
+    .mda-notification--message SPAN {
+      * {
+        color: inherit;
+      }
+      A {
+        text-decoration: underline;
+        cursor: pointer;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+    &.mda-notification--info {
+      .mda-notification--message SPAN A {
+        text-decoration: none;
+        color: var(mda-notification-inside-link-color);
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

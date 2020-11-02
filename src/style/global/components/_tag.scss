@@ -1,28 +1,56 @@
 @import '../exportable/app.mixins';
 
 %mda-tag {
+  %mda-tag-icon {
+    position: absolute;
+    line-height: var(--mda-tag-height);
+    color: inherit;
+    top: -1px;
+  }
+
   SPAN, DIV {
     &.mda-tag {
-      @include createFlexBox(row, center, normal, nowrap);
+      // @include createFlexBox(row, center, normal, nowrap);
+      display: table-cell;
+      position: relative;
       width: fit-content;
       min-width: fit-content;
+      height: var(--mda-tag-height);
+      min-height: var(--mda-tag-height);
       box-sizing: border-box;
       color: var(--mda-tag-text-color);
       border: var(--mda-component-border);
       border-color: var(--mda-tag-border-color);
       border-radius: var(--mda-component-border-radius);
       background-color: var(--mda-tag-background-color);
-      padding: var(--mda-tag-padding-vertical) var(--mda-tag-padding-horizontal);
-      I.mda-icon {
-        display: inline-flex;
-        align-items: center;
-        color: inherit;
-        margin-left: 8px;
-        cursor: pointer;
+      padding: var(--mda-component-padding-vertical) var(--mda-component-padding-horizontal);
+      &.mda-tag--icon-left {
+        padding-left: calc(var(--mda-component-padding-horizontal) + 1.1em + var(--mda-component-icon-left-spacer));
+        I.mda-icon {
+          @extend %mda-tag-icon;
+          &.mda-icon--left {
+            left: var(--mda-component-padding-horizontal);
+          }
+        }
+      }
+      &.mda-tag--icon-right {
+        padding-right: calc(var(--mda-component-padding-horizontal) + 1.1em + var(--mda-component-icon-right-spacer));
+        I.mda-icon {
+          @extend %mda-tag-icon;
+          &.mda-icon--right {
+            right: var(--mda-component-padding-horizontal);
+          }
+          &.action {
+            cursor: pointer;
+          }
+        }
       }
 
       &.mda-tag--interactive {
         cursor: pointer;
+        &.mda-tag--selectable {
+          cursor: default;
+        }
         &:hover {
           color: var(--mda-tag-hover-text-color);
           border-color: var(--mda-tag-hover-border-color);

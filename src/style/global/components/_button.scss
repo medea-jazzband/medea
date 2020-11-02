@@ -1,9 +1,17 @@
 %mda-button {
+  %mda-button-icon {
+    position: absolute;
+    line-height: var(--mda-component-height);
+    color: inherit;
+    top: -2px;
+  }
+
   BUTTON.mda-button {
     position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    display: table-cell;
+    width: fit-content;
+    height: var(--mda-component-height);
+    min-height: var(--mda-component-height);
     box-sizing: border-box;
     cursor: pointer;
     padding: var(--mda-component-padding-vertical) var(--mda-component-padding-horizontal);
@@ -22,6 +30,9 @@
       & > I.mda-icon {
         color: inherit;
       }
+    }
+    &:focus, &.focus {
+      box-shadow: var(--mda-component-focus-box-shadow);
     }
     &:active, &.pressed {
       color: var(--mda-button-active-color);
@@ -42,25 +53,42 @@
       }
     }
 
+    &.mda-button--icon-left {
+      padding-left: calc(var(--mda-component-padding-horizontal) + 1.1em + var(--mda-component-icon-left-spacer));
+      I.mda-icon {
+        @extend %mda-button-icon;
+        &.mda-icon--left {
+          left: var(--mda-component-padding-horizontal);
+        }
+      }
+    }
+    &.mda-button--icon-right {
+      padding-right: calc(var(--mda-component-padding-horizontal) + 1.1em + var(--mda-component-icon-right-spacer));
+      I.mda-icon {
+        @extend %mda-button-icon;
+        &.mda-icon--right {
+          right: var(--mda-component-padding-horizontal);
+        }
+      }
+    }
+    &.mda-button--icon-only {
+      padding: 0;
+      width: var(--mda-component-height);
+      min-width: var(--mda-component-height);
+      I.mda-icon {
+        @extend %mda-button-icon;
+        left: 0;
+        top: calc(var(--mda-button-border-correction) * -1);
+        width: calc(var(--mda-component-height) - var(--mda-button-border-correction));
+      }
+    }
+
     &.no-events {
       cursor: wait;
       &:hover {
         color: var(--mda-button-color);
         border-color: var(--mda-button-border-color);
         background-color: var(--mda-button-background-color);
-      }
-    }
-
-    I.mda-icon {
-      font-size: var(--mda-button-icon-size);
-      margin: 0 var(--mda-button-icon-spacer);
-      height: var(--mda-button-icon-size);
-      min-height: var(--mda-button-icon-size);
-      &.mda-button--icon-left {
-        margin-left: 0;
-      }
-      &.mda-button--icon-right {
-        margin-right: 0;
       }
     }
   }

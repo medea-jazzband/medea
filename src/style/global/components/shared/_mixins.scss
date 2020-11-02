@@ -1,37 +1,42 @@
 //## Mixin for generate selection element basic structure.
-//## PARAMETERS: border-radius, position-correction-factor
-@mixin selectionElement($borderRadius, $correctionFactor) {
+//## PARAMETERS: selection-element, selection-element-checked
+@mixin selectionElement($selectionElement, $selectionElementChecked) {
   display: none;
   & + LABEL {
     position: relative;
     display: inline-flex;
+    align-items: center;
+    box-sizing: border-box;
     margin-right: var(--mda-selection-option-spacer);
-    padding: var(--mda-selection-icon-spacer) 0;
-    color: var(--mda-label-color);
+    padding: var(--mda-selection-icon-spacer-vertical) 0 var(--mda-selection-icon-spacer-vertical) calc(var(--mda-selection-icon-size) + var(--mda-selection-icon-spacer));
     cursor: pointer;
     width: fit-content;
-    min-width: fit-content;
-    height: var(--mda-selection-icon-size);
-    min-height: var(--mda-selection-icon-size);
-    line-height: unset;
+    white-space: nowrap;
     &:before {
-      position: relative;
+      position: absolute;
       display: inline-block;
-      box-sizing: border-box;
       content: '';
-      left: 0;
-      top: $correctionFactor;
+      box-sizing: border-box;
+      z-index: var(--mda-selection-z-index-before);
       width: var(--mda-selection-icon-size);
+      min-width: var(--mda-selection-icon-size);
       max-width: var(--mda-selection-icon-size);
       height: var(--mda-selection-icon-size);
+      min-height: var(--mda-selection-icon-size);
       max-height: var(--mda-selection-icon-size);
+      left: 0;
       border: var(--mda-component-border);
       border-color: var(--mda-component-border-color);
+      @if $selectionElement == 'checkbox' {
+        border-radius: var(--mda-checkbox-border-radius);
+      }
+      @if $selectionElement == 'radio' {
+        border-radius: var(--mda-radio-border-radius);
+      }
       background-color: var(--mda-component-background-color);
-      border-radius: $borderRadius;
-      margin-right: var(--mda-selection-icon-spacer);
     }
   }
+
   &:hover {
     & + LABEL {
       &:before {
@@ -40,6 +45,7 @@
       }
     }
   }
+
   &:disabled, &.disabled {
     & + LABEL {
       color: var(--mda-selection-disabled-tex-color);
@@ -54,11 +60,9 @@
         border-color: var(--mda-selection-checked-disabled-border-color);
         background-color: var(--mda-selection-checked-disabled-background-color);
       }
-      &:after {
-        background-color: var(--mda-selection-internal-checked-disabled-color);
-      }
     }
   }
+
   &:checked + LABEL {
     &:before {
       border-color: var(--mda-component-checked-border-color);
@@ -67,20 +71,26 @@
     &:after {
       position: absolute;
       display: inline-block;
-      box-sizing: border-box;
+      left: 0;
       content: '';
-      @content;
+      z-index: var(--mda-selection-z-index-after);
+      width: var(--mda-selection-icon-size);
+      min-width: var(--mda-selection-icon-size);
+      max-width: var(--mda-selection-icon-size);
+      height: var(--mda-selection-icon-size);
+      min-height: var(--mda-selection-icon-size);
+      max-height: var(--mda-selection-icon-size);
+      background-image: url($selectionElementChecked);
+      background-size: var(--mda-selection-icon-size) var(--mda-selection-icon-size);
     }
   }
   &.mda-selection--no-label + LABEL {
     font-size: 0;
-    line-height: 0;
   }
-  &.mda-selection--vertical {
-    & + LABEL {
-      display: flex;
-    }
+  &.mda-selection--vertical + LABEL {
+    display: flex;
   }
+  @content;
 }
 
 //## Mixin for generate input text element basic structure.
@@ -88,6 +98,8 @@
 @mixin textInputElement() {
   width: var(--mda-component-width);
   min-width: var(--mda-component-width);
+  height: var(--mda-component-height);
+  min-height: var(--mda-component-height);
   box-sizing: border-box;
   padding: var(--mda-component-padding-vertical) var(--mda-component-padding-horizontal);
   border: var(--mda-component-border);

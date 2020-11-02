@@ -9,7 +9,6 @@
 
     resize: var(--mda-textarea-resize);
     vertical-align: top;
-    height: var(--mda-textarea-height);
-    min-height: var(--mda-textarea-height);
+    padding-top: unset;
   }
 }

@@ -1,0 +1,49 @@
+%mda-alert {
+  .mda-alert {
+    --mda-alert-default-position: var(--mda-alert-position);
+    --mda-alert-default-padding-vertical: var(--mda-alert-padding-vertical);
+    --mda-alert-default-padding-horizontal: var(--mda-alert-padding-horizontal);
+    --mda-alert-default-width: var(--mda-alert-width);
+    --mda-alert-default-min-width: var(--mda-alert-min-width);
+    --mda-alert-default-max-width: var(--mda-alert-max-width);
+    --mda-alert-default-top: var(--mda-alert-top);
+    --mda-alert-default-left: var(--mda-alert-left);
+    --mda-alert-default-z-index: var(--mda-alert-z-index);
+
+    --mda-alert-default-border: var(--mda-alert-border);
+    --mda-alert-default-border-radius: var(--mda-alert-border-radius);
+    --mda-alert-default-box-shadow: var(--mda-alert-box-shadow);
+
+    --mda-alert-default-close-control-color: var(--mda-alert-close-control-color);
+    --mda-alert-default-close-control-top: var(--mda-alert-close-control-top);
+    --mda-alert-default-close-control-right: var(--mda-alert-close-control-right);
+
+    --mda-alert-default-header-separation: var(--mda-alert-header-separation);
+    --mda-alert-default-title-icon-separation: var(--mda-alert-title-icon-separation);
+
+    --mda-alert-default-title-text-color: var(--mda-alert-title-text-color);
+    --mda-alert-default-title-icon-color: var(--mda-alert-title-icon-color);
+    --mda-alert-default-title-icon-spacer: var(--mda-alert-title-icon-spacer);
+    --mda-alert-default-body-text-color: var(--mda-alert-body-text-color);
+    --mda-alert-default-border-color: var(--mda-alert-border-color);
+    --mda-alert-default-background-color: var(--mda-alert-background-color);
+
+    --mda-alert-default-actions-height: var(--mda-alert-actions-height);
+    --mda-alert-default-actions-background-color: var(--mda-alert-actions-background-color);
+    --mda-alert-default-actions-separation: var(--mda-alert-actions-separation);
+
+    &__header {
+      I.mda-alert__icon {
+        top: 0.1em;
+      }
+      .mda-alert__title {
+        font-weight: bold;
+        flex: 1;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+      }
+    }
+  }
+}

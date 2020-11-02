@@ -15,14 +15,24 @@
     --mda-dropdown-default-padding: var(--mda-dropdown-padding);
     --mda-dropdown-default-margin: var(--mda-dropdown-margin);
 
-    --mda-dropdown-option-default-padding: var(--mda-dropdown-option-padding);
+    --mda-dropdown-option-default-group-min-height: var(--mda-dropdown-option-group-min-height);
+    --mda-dropdown-option-default-group-color: var(--mda-dropdown-option-group-color);
+
+    --mda-dropdown-option-default-min-height: var(--mda-dropdown-option-min-height);
+    --mda-dropdown-option-default-padding-vertical: var(--mda-dropdown-option-padding-vertical);
+    --mda-dropdown-option-default-padding-horizontal: var(--mda-dropdown-option-padding-horizontal);
     --mda-dropdown-option-default-icon-size: var(--mda-dropdown-option-icon-size);
     --mda-dropdown-option-default-icon-spacer: var(--mda-dropdown-option-icon-spacer);
+    --mda-dropdown-option-default-label-correction: var(--mda-dropdown-option-label-correction);
+    --mda-dropdown-option-default-hover-color: var(--mda-dropdown-option-hover-color);
+    --mda-dropdown-option-default-border-radius: var(--mda-dropdown-option-border-radius);
 
-    --mda-dropdown-option-default-selected-text-color: var(--mda-dropdown-option-selected-text-color);
+    --mda-dropdown-option-default-hover-background-color: var(--mda-dropdown-option-hover-background-color);
+
     --mda-dropdown-option-default-selected-background-color: var(--mda-dropdown-option-selected-background-color);
 
     --mda-dropdown-option-default-icon-right-size: var(--mda-dropdown-option-icon-right-size);
+    --mda-dropdown-option-default-icon-right-spacer: var(--mda-dropdown-option-icon-right-spacer);
 
     --mda-dropdown-separator-default-border: var(--mda-dropdown-separator-border);
     --mda-dropdown-separator-default-border-color: var(--mda-dropdown-separator-border-color);
