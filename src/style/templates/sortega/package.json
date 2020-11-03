@@ -1,6 +1,6 @@
 {
   "name": "@medea/sortega",
-  "version": "5.0.2",
+  "version": "5.0.3",
   "description": "Medea Template System",
   "main": "index.js",
   "types": "index.d.ts",
