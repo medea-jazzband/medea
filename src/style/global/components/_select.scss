@@ -2,72 +2,43 @@
 @import './shared/mixins';
 
 %mda-select {
-  SELECT.mda-select {
-    @include textInputElement() {
-      @extend %mda-default-disabled-component;
-    }
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    text-overflow: unset;
-    cursor: pointer;
-    &::-ms-expand {
-      display: none;
+  LABEL.mda-label {
+    & + SELECT.mda-select, & + INPUT.mda-select {
+      @include textInputElement() {
+        @extend %mda-default-disabled-component;
+      }
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      text-overflow: unset;
+      cursor: pointer;
+      &::-ms-expand {
+        display: none;
+      }
+
+      position: relative;
+      padding-right: calc((var(--mda-component-padding-horizontal) * 2) + var(--mda-select-chevron-width));
+      background: transparent var(--mda-select-chevron) no-repeat right var(--mda-component-padding-horizontal) center;
+      background-size: var(--mda-select-chevron-width);
+      &:disabled, &.disabled {
+        background-image: var(--mda-select-chevron-disabled);
+      }
+      &:focus, &.focus {
+        background-image: var(--mda-select-chevron-focus);
+      }
+      &.error, &:focus.error, &.focus.error {
+        background-image: var(--mda-select-chevron-error);
+        &:disabled, &.disabled {
+          background-image: var(--mda-select-chevron-disabled);
+        }
+      }
     }
   }
 
-  %mda-select--wrapper {
-    position: relative;
-    display: inline-block;
-    box-sizing: border-box;
-    &:after {
-      font-family: var(--mda-icon-font-family);
-      content: var(--mda-icon-arrow-bottom);
-      position: absolute;
-      font-size: 1.1em;
-      line-height: var(--mda-component-height);
-      pointer-events: none;
-      color: var(--mda-component-icon-color);
-      top: var(--mda-component-padding-vertical);
-      right: .6em;
-    }
-    & > SELECT.mda-select {
-      font-size: inherit;
-      line-height: inherit;
-      padding-right: 2em;
-    }
-    &:disabled, &.disabled {
-      cursor: var(--mda-component-disabled-cursor);
-      &:after {
-        color: var(--mda-component-icon-disabled-color);
-      }
-    }
-    &:focus:after, &.focus:after {
-      color: var(--mda-focus-color);
-    }
-    &.error:after, &:focus.error:after, &.focus.error:after {
-      color: var(--mda-error-color);
-    }
-  }
-
-  SPAN, DIV {
-    &.mda-select {
-      @extend %mda-select--wrapper;
-
-      &.mda-select--filter {
-        @extend %mda-select--wrapper;
-        &:after {
-          right: 0;
-          top: -1px;
-        }
-        & > SELECT.mda-select {
-          border: none;
-          border-radius: 0;
-          background-color: transparent;
-          padding-left: 0;
-          padding-right: calc(1em + 10px);
-          box-shadow: none;
-        }
-      }
+  .mda-select__custom {
+    width: var(--mda-component-width);
+    min-width: var(--mda-component-width);
+    LABEL.mda-label {
+      padding-bottom: 0;
     }
   }
 }

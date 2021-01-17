@@ -2,7 +2,7 @@
 @import './shared/mixins';
 
 %mda-input {
-  INPUT.mda-input {
+  .mda-input:not(.mda-wrapper) {
     @include textInputElement() {
       @extend %mda-default-disabled-component;
     }

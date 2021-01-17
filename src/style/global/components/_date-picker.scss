@@ -1,0 +1,25 @@
+%mda-date-picker {
+  .mda-calendar {
+    --mda-calendar-header-default-padding-vertical: var(--mda-calendar-header-padding-vertical);
+    --mda-calendar-header-default-padding-horizontal: var(--mda-calendar-header-padding-horizontal);
+    --mda-calendar-body-default-padding-vertical: var(--mda-calendar-body-padding-vertical);
+    --mda-calendar-body-default-padding-horizontal: var(--mda-calendar-body-padding-horizontal);
+    --mda-calendar-weekdays-default-spacing: var(--mda-calendar-weekdays-spacing);
+    --mda-calendar-item-default-width: var(--mda-calendar-item-width);
+    --mda-calendar-item-default-correction: var(--mda-calendar-item-correction);
+
+    --mda-calendar-default-position: var(--mda-calendar-position);
+    --mda-calendar-default-width: var(--mda-calendar-width);
+    --mda-calendar-default-border-radius: var(--mda-component-border-radius);
+    --mda-calendar-default-z-index: var(--mda-calendar-z-index);
+
+    --mda-calendar-default-background-color: var(--mda-calendar-background-color);
+    --mda-calendar-default-border: var(--mda-component-border);
+    --mda-calendar-default-border-color: var(--mda-calendar-border-color);
+
+    --mda-calendar-default-box-shadow: var(--mda-component-box-shadow);
+
+    --mda-calendar-default-color: var(--mda-calendar-color);
+    --mda-calendar-default-hover-color: var(--mda-calendar-hover-color);
+  }
+}

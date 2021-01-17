@@ -1,6 +1,6 @@
 //## Mixin for generate selection element basic structure.
-//## PARAMETERS: selection-element, selection-element-checked
-@mixin selectionElement($selectionElement, $selectionElementChecked) {
+//## PARAMETERS: selection-element
+@mixin selectionElement($selectionElement) {
   display: none;
   & + LABEL {
     position: relative;
@@ -35,6 +35,12 @@
       }
       background-color: var(--mda-component-background-color);
     }
+
+    &:focus, &.focus {
+      &:before {
+        box-shadow: var(--mda-component-focus-box-shadow);
+      }
+    }
   }
 
   &:hover {
@@ -57,8 +63,12 @@
     }
     &:checked + LABEL {
       &:before {
-        border-color: var(--mda-selection-checked-disabled-border-color);
+        --mda-component-border: none;
         background-color: var(--mda-selection-checked-disabled-background-color);
+      }
+      &:after {
+        --mda-checkbox-checked: var(--mda-checkbox-checked-disabled);
+        --mda-radio-checked: var(--mda-radio-checked-disabled);
       }
     }
   }
@@ -80,7 +90,12 @@
       height: var(--mda-selection-icon-size);
       min-height: var(--mda-selection-icon-size);
       max-height: var(--mda-selection-icon-size);
-      background-image: url($selectionElementChecked);
+      @if $selectionElement == 'checkbox' {
+        background-image: var(--mda-checkbox-checked);
+      }
+      @if $selectionElement == 'radio' {
+        background-image: var(--mda-radio-checked);
+      }
       background-size: var(--mda-selection-icon-size) var(--mda-selection-icon-size);
     }
   }
@@ -103,31 +118,52 @@
   box-sizing: border-box;
   padding: var(--mda-component-padding-vertical) var(--mda-component-padding-horizontal);
   border: var(--mda-component-border);
+  color: var(--mda-component-color, inherit);
   border-color: var(--mda-component-border-color);
   border-radius: var(--mda-component-border-radius);
   background: var(--mda-component-background-color);
-  color: inherit;
+
   &:hover {
+    color: var(--mda-component-hover-color);
     border-color: var(--mda-component-hover-border-color);
     background-color: var(--mda-component-hover-background-color);
   }
   &:disabled, &.disabled {
     @content;
-    &::placeholder {
+    &::placeholder, &.placeholder {
       color: var(--mda-component-placeholder-disabled-color);
     }
   }
   &:focus, &.focus {
+    color: var(--mda-component-focus-color);
     border-color: var(--mda-component-focus-border-color);
-    box-shadow: 0 0 4px 0 rgba(var(--mda-component-focus-border-color-rgb), 0.2);
+    box-shadow: var(--mda-component-focus-box-shadow);
     background-color: var(--mda-component-focus-background-color);
+    &::placeholder, &.placeholder {
+      color: var(--mda-component-placeholder-color);
+    }
   }
-  &.error, &:focus.error, &.focus.error {
+  &:focus.error, &.focus.error {
+    color: var(--mda-component-focus-error-color);
     border-color: var(--mda-component-error-border-color);
     background-color: var(--mda-component-error-background-color);
-    box-shadow: none;
+    box-shadow: var(--mda-component-focus-error-box-shadow);
+    &::placeholder, &.placeholder {
+      color: var(--mda-component-placeholder-color);
+    }
   }
-  &::placeholder {
+  &.error {
+    color: var(--mda-component-error-color);
+    border-color: var(--mda-component-error-border-color);
+    background-color: var(--mda-component-error-background-color);
+    &:disabled, &.disabled {
+      @content;
+      &::placeholder, &.placeholder {
+        color: var(--mda-component-placeholder-disabled-color);
+      }
+    }
+  }
+  &::placeholder, &.placeholder {
     color: var(--mda-component-placeholder-color);
   }
 }

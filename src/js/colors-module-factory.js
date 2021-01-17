@@ -23,7 +23,7 @@ const colors = {};
 let group = '';
 let colorIdsForInterface = '';
 let colorIdsForObject = '';
-const groupInterface = 'Array<SdsColor>';
+const groupInterface = 'Array<MdaColor>';
 let groupNames = '';
 
 lineReader.on('line', (line) => {
@@ -45,11 +45,11 @@ lineReader.on('line', (line) => {
 
 lineReader.on('close', () => {
   const file = fs.createWriteStream(path.resolve(__dirname, 'ts', 'colors.ts'));
-  file.write('export interface SdsColor { name: string; label: string; color: string; }');
-  file.write(`export interface SdsColorScheme { ${groupNames} }`);
-  file.write(`export interface SdsColorNames { ${colorIdsForInterface} }`);
-  file.write(`export const sdsColorNames: SdsColorNames = { ${colorIdsForObject} };`);
-  file.write('export const sdsColors: SdsColorScheme = ' + JSON.stringify(colors) + ';');
+  file.write('export interface MdaColor { name: string; label: string; color: string; }');
+  file.write(`export interface MdaColorScheme { ${groupNames} }`);
+  file.write(`export interface MdaColorNames { ${colorIdsForInterface} }`);
+  file.write(`export const mdaColorNames: MdaColorNames = { ${colorIdsForObject} };`);
+  file.write('export const mdaColors: MdaColorScheme = ' + JSON.stringify(colors) + ';');
   file.end();
 
   console.log('Build done. (Module Colors)');

@@ -1,26 +1,26 @@
-import { SdsColor, sdsColorNames, SdsColorNames, sdsColors, SdsColorScheme } from './colors';
+import { MdaColor, mdaColorNames, MdaColorNames, mdaColors, MdaColorScheme } from './colors';
 
-export class SdsTemplate {
-  public colors: SdsColorScheme;
+export class MdaTemplate {
+  public colors: MdaColorScheme;
 
-  private readonly _colorFlatArray: Array<SdsColor> = [];
-  private readonly _colorNames: SdsColorNames;
+  private readonly _colorFlatArray: Array<MdaColor> = [];
+  private readonly _colorNames: MdaColorNames;
   private readonly _colorNamesArray: Array<string>;
 
   constructor() {
-    this.colors = sdsColors;
+    this.colors = mdaColors;
 
     for (const group of Object.keys(this.colors)) {
       this._colorFlatArray = [...this._colorFlatArray, ...this.colors[group]];
     }
-    this._colorNames = sdsColorNames;
+    this._colorNames = mdaColorNames;
     this._colorNamesArray = Object.keys(this._colorNames);
   }
 
-  public getColorByName(colorName: string): SdsColor {
+  public getColorByName(colorName: string): MdaColor {
     return this._colorNamesArray.includes(colorName) ?
-      this._colorFlatArray.find((e: SdsColor) => e.name === colorName) : null;
+      this._colorFlatArray.find((e: MdaColor) => e.name === colorName) : null;
   }
 }
 
-export const sdsTemplate = new SdsTemplate();
+export const mdaTemplate = new MdaTemplate();

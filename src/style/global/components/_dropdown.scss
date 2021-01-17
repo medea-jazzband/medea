@@ -5,15 +5,17 @@
     --mda-dropdown-default-min-width: var(--mda-dropdown-min-width);
     --mda-dropdown-default-left: var(--mda-dropdown-left);
     --mda-dropdown-default-top: var(--mda-dropdown-top);
+    --mda-dropdown-default-z-index: var(--mda-dropdown-z-index);
 
     --mda-dropdown-default-border: var(--mda-dropdown-border);
-    --mda-dropdown-default-border-color: var(--mda-dropdown-border-color);
     --mda-dropdown-default-border-radius: var(--mda-dropdown-border-radius);
-
-    --mda-dropdown-default-box-shadow: var(--mda-dropdown-box-shadow);
-
     --mda-dropdown-default-padding: var(--mda-dropdown-padding);
     --mda-dropdown-default-margin: var(--mda-dropdown-margin);
+    --mda-dropdown-default-box-shadow: var(--mda-dropdown-box-shadow);
+
+    --mda-dropdown-default-text-color: var(--mda-dropdown-text-color);
+    --mda-dropdown-default-border-color: var(--mda-dropdown-border-color);
+    --mda-dropdown-default-background-color: var(--mda-dropdown-background-color);
 
     --mda-dropdown-option-default-group-min-height: var(--mda-dropdown-option-group-min-height);
     --mda-dropdown-option-default-group-color: var(--mda-dropdown-option-group-color);
@@ -24,9 +26,9 @@
     --mda-dropdown-option-default-icon-size: var(--mda-dropdown-option-icon-size);
     --mda-dropdown-option-default-icon-spacer: var(--mda-dropdown-option-icon-spacer);
     --mda-dropdown-option-default-label-correction: var(--mda-dropdown-option-label-correction);
-    --mda-dropdown-option-default-hover-color: var(--mda-dropdown-option-hover-color);
     --mda-dropdown-option-default-border-radius: var(--mda-dropdown-option-border-radius);
 
+    --mda-dropdown-option-default-hover-color: var(--mda-dropdown-option-hover-color);
     --mda-dropdown-option-default-hover-background-color: var(--mda-dropdown-option-hover-background-color);
 
     --mda-dropdown-option-default-selected-background-color: var(--mda-dropdown-option-selected-background-color);

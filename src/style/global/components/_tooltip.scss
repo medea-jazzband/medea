@@ -1,0 +1,51 @@
+%mda-tooltip {
+  .mda-tooltip {
+    .mda-tooltip__box {
+      position: var(--mda-tooltip-position);
+      display: flex;
+      align-items: center;
+      width: fit-content;
+      max-width: 250px;
+      min-height: var(--mda-tooltip-height);
+      z-index: var(--mda-tooltip-z-index);
+      background-color: var(--mda-tooltip-background-color);
+      color: var(--mda-tooltip-color);
+      border: 1px solid var(--mda-tooltip-border-color);
+      border-radius: var(--mda-component-border-radius);
+      box-shadow: var(--mda-component-box-shadow);
+      padding: var(--mda-tooltip-padding);
+      box-sizing: border-box;
+      .mda-tooltip__text {
+        font-size: inherit;
+        color: inherit;
+      }
+    }
+
+    .mda-tooltip__arrow {
+      position: var(--mda-tooltip-arrow-position);
+      width: 0;
+      height: 0;
+      z-index: var(--mda-tooltip-z-index);
+      border: 6px solid transparent;
+      pointer-events: none;
+      &--top {
+        border-top-color: var(--mda-tooltip-border-color);
+      }
+      &--bottom {
+        border-bottom-color: var(--mda-tooltip-border-color);
+      }
+      &--left {
+        border-left-color: var(--mda-tooltip-border-color);
+      }
+      &--right {
+        border-right-color: var(--mda-tooltip-border-color);
+      }
+    }
+
+    .mda-tooltip--no-limit {
+      .mda-tooltip__box {
+        max-width: unset;
+      }
+    }
+  }
+}

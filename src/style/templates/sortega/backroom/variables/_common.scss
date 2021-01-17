@@ -61,7 +61,7 @@
   --mda-component-icon-right-spacer: 8px;
 
   // ###### ICONS
-  --mda-icon-font-family: '#{$defaultIconFontFamilySds}', '#{$defaultIconFontFamilyEgeo}', Symbol, sans-serif;
+  --mda-icon-font-family: '#{$defaultIconFontFamilyMda}', '#{$defaultIconFontFamilyEgeo}', Symbol, sans-serif;
   --mda-icon-search: '#{$searchIcon}';
   --mda-icon-email: '#{$emailIcon}';
   --mda-icon-user: '#{$userIcon}';
@@ -270,8 +270,8 @@
   --mda-alert-actions-separation: 2px;
 
   // ###### TAB
-  $sdsTabAuxCellPaddingBottom: 4px;
-  $sdsTabAuxCellActiveBorderWidth: 2px;
+  $mdaTabAuxCellPaddingBottom: 4px;
+  $mdaTabAuxCellActiveBorderWidth: 2px;
 
   --mda-tab-width: 100%;
   --mda-tab-border: var(--mda-component-border);
@@ -279,22 +279,22 @@
 
   --mda-tab-height: var(--mda-component-height);
 
-  --mda-tab-cell-padding: 0 24px #{$sdsTabAuxCellPaddingBottom} 24px;
+  --mda-tab-cell-padding: 0 24px #{$mdaTabAuxCellPaddingBottom} 24px;
   --mda-tab-cell-margin-bottom: -1px;
   --mda-tab-cell-color: var(--mda-color-action);
   --mda-tab-cell-hover-color: var(--mda-color-action-120);
   --mda-tab-cell-cursor: pointer;
 
-  --mda-tab-cell-active-padding-bottom: calc(#{$sdsTabAuxCellPaddingBottom} - #{$sdsTabAuxCellActiveBorderWidth});
+  --mda-tab-cell-active-padding-bottom: calc(#{$mdaTabAuxCellPaddingBottom} - #{$mdaTabAuxCellActiveBorderWidth});
   --mda-tab-cell-active-color: var(--mda-color-space-110);
-  --mda-tab-cell-active-border: #{$sdsTabAuxCellActiveBorderWidth} solid;
+  --mda-tab-cell-active-border: #{$mdaTabAuxCellActiveBorderWidth} solid;
   --mda-tab-cell-active-border-color: var(--mda-color-space-110);
   --mda-tab-cell-active-cursor: default;
 
   // ###### TOGGLE BUTTON
-  $sdsToggleButtonBorderWidth: 1px;
-  --mda-toggle-button-border: #{$sdsToggleButtonBorderWidth} solid;
-  --mda-toggle-button-margin-left: calc(#{$sdsToggleButtonBorderWidth} * (-1));
+  $mdaToggleButtonBorderWidth: 1px;
+  --mda-toggle-button-border: #{$mdaToggleButtonBorderWidth} solid;
+  --mda-toggle-button-margin-left: calc(#{$mdaToggleButtonBorderWidth} * (-1));
   --mda-toggle-button-border-color: var(--mda-color-space-40);
   --mda-toggle-button-border-radius: var(--mda-component-border-radius);
 

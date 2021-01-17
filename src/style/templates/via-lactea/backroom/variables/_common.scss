@@ -1,0 +1,442 @@
+@import '../../../../global/mixins';
+@import '../../../../global/components/shared/common';
+@import '../font-sizes';
+@import '../colors';
+@import '../template-base';
+@import './sass';
+@import '../spacing';
+
+%mda-global-vars {
+  // ###### Spacing Definition
+  @each $value in $spacings {
+    --mda-spacing-#{$value}: #{$value}px;
+    --mda-spacing-relative-#{$value}: #{getRemRelativeSize($value, $fontSizeRoot)};
+  }
+
+  // ###### Color Scheme Definition
+  @each $key, $value in $colorsAvailable {
+    $symbol: if($key==-white or $key==-black,'','-');
+    --mda-color#{$symbol}#{$key}: #{$value};
+    --mda-color#{$symbol}#{$key}-rgb: #{red($value), green($value), blue($value)};
+  }
+  @each $key, $value in $templateBaseBackgroundColor {
+    --mda-color-#{$key}: #{$value};
+    --mda-color-#{$key}-rgb: #{red($value), green($value), blue($value)};
+  }
+  @each $key, $value in $templateBaseBorderColor {
+    --mda-color-#{$key}: #{$value};
+    --mda-color-#{$key}-rgb: #{red($value), green($value), blue($value)};
+  }
+  @each $key, $value in $templateBaseTextColor {
+    --mda-color-#{$key}: #{$value};
+    --mda-color-#{$key}-rgb: #{red($value), green($value), blue($value)};
+  }
+
+  // ###### Generic Colors (HEX)
+  --mda-focus-color: var(--mda-color-action-6);
+  --mda-error-color: var(--mda-color-coral-6);
+  --mda-warning-color: var(--mda-color-orange-5);
+  --mda-success-color: var(--mda-color-green-6);
+
+  // ###### Component Colors (HEX)
+  --mda-component-color: var(--mda-color-space-17);
+  --mda-component-border-color: var(--mda-color-space-5);
+  --mda-component-background-color: var(--mda-color-white);
+
+  --mda-component-hover-color: var(--mda-color-space-17);
+  --mda-component-hover-border-color: var(--mda-color-space-7);
+  --mda-component-hover-background-color: var(--mda-color-white);
+
+  --mda-component-focus-color: var(--mda-color-space-17);
+  --mda-component-focus-error-color: var(--mda-color-space-17);
+  --mda-component-focus-border-color: var(--mda-color-action-6);
+  --mda-component-focus-background-color: var(--mda-color-white);
+  --mda-component-focus-box-shadow-color: var(--mda-color-action-2);
+  --mda-component-focus-error-box-shadow-color: var(--mda-color-coral-2);
+
+  --mda-component-error-color: var(--mda-color-space-17);
+  --mda-component-error-border-color: var(--mda-error-color);
+  --mda-component-error-background-color: var(--mda-color-white);
+
+  --mda-component-checked-border-color: var(--mda-color-action-6);
+  --mda-component-checked-background-color: var(--mda-color-action-6);
+
+  --mda-component-placeholder-color: var(--mda-color-space-6);
+  --mda-component-placeholder-disabled-color: var(--mda-color-space-6);
+
+  --mda-component-disabled-color: var(--mda-color-space-6);
+  --mda-component-disabled-border-color: var(--mda-color-space-4);
+  --mda-component-disabled-background-color: var(--mda-color-space-1);
+
+  // ###### Component ICON (icons inside components like .mda-input--search)
+  --mda-component-icon-color: var(--mda-color-space-7);
+  --mda-component-icon-disabled-color: var(--mda-color-space-6);
+
+  // ###### Generic SELECTION elements (like radio or checkbox)
+  --mda-selection-option-spacer: 24px;
+  --mda-selection-icon-spacer: 8px;
+  --mda-selection-icon-spacer-vertical: 4px;
+  --mda-selection-icon-size: 16px;
+  --mda-selection-z-index-before: auto;
+  --mda-selection-z-index-after: auto;
+
+  --mda-selection-disabled-tex-color: var(--mda-color-space-6);
+  --mda-selection-checked-disabled-border-color: 0 0 0 1px var(--mda-color-action-4);
+  --mda-selection-checked-disabled-background-color: var(--mda-color-action-4);
+
+  // ###### Component Commons
+  --mda-component-width: fit-content;
+  --mda-component-height: 36px;
+  --mda-component-vertical-spacer: 2px;
+
+  --mda-component-padding-vertical: 0;
+  --mda-component-padding-horizontal: 12px;
+
+  --mda-component-box-shadow: 0 3px 9px 0 rgba(var(--mda-color-neutral-12-rgb), 0.25);
+  --mda-component-focus-box-shadow: 0 0 0 2px var(--mda-component-focus-box-shadow-color);
+  --mda-component-focus-error-box-shadow: 0 0 0 2px var(--mda-component-focus-error-box-shadow-color);
+
+  --mda-component-border: 1px solid;
+  --mda-component-border-radius: 4px;
+
+  --mda-component-icon-left-spacer: 4px;
+  --mda-component-icon-right-spacer: 8px;
+
+  --mda-component-disabled-cursor: not-allowed;
+
+  // ###### ICONS
+  --mda-icon-font-family: '#{$defaultIconFontFamilyMda}', '#{$defaultIconFontFamilyEgeo}', Symbol, sans-serif;
+  --mda-icon-search: '#{$searchIcon}';
+  --mda-icon-email: '#{$emailIcon}';
+  --mda-icon-user: '#{$userIcon}';
+  --mda-icon-password: '#{$passwordIcon}';
+  --mda-icon-action-clear: '#{$actionClearIcon}';
+  --mda-icon-arrow-bottom: '#{$arrowDownIcon}';
+  --mda-icon-checkbox-checked: '#{$checkboxCheckedIcon}';
+
+  // ################################################################################################
+  // ###### COMPONENTS ##############################################################################
+  // ################################################################################################
+
+  // ###### ALERT
+  --mda-alert-position: fixed;
+  --mda-alert-padding-vertical: 32px;
+  --mda-alert-padding-horizontal: var(--mda-alert-padding-vertical);
+  --mda-alert-width: 350px;
+  --mda-alert-min-width: var(--mda-alert-width);
+  --mda-alert-max-width: var(--mda-alert-width);
+  --mda-alert-top: 0;
+  --mda-alert-left: 0;
+  --mda-alert-z-index: 1;
+
+  --mda-alert-border: var(--mda-component-border);
+  --mda-alert-border-radius: var(--mda-component-border-radius);
+  --mda-alert-box-shadow: 0 3px 9px 0 rgba(var(--mda-color-neutral-12-rgb), 0.25);
+
+  --mda-alert-close-control-color: var(--mda-color-space-8);
+  --mda-alert-close-control-top: -15px;
+  --mda-alert-close-control-right: -15px;
+
+  --mda-alert-header-separation: 12px;
+  --mda-alert-title-icon-separation: 12px;
+
+  --mda-alert-title-text-color: var(--mda-color-space-17);
+  --mda-alert-title-icon-color: var(--mda-color-action-6);
+  --mda-alert-title-icon-spacer: 8px;
+  --mda-alert-body-text-color: var(--mda-color-space-8);
+  --mda-alert-border-color: var(--mda-color-space-3);
+  --mda-alert-background-color: white;
+
+  --mda-alert-actions-height: 40px;
+  --mda-alert-actions-background-color: var(--mda-color-space-1);
+  --mda-alert-actions-separation: 2px;
+
+  // ###### BADGE
+  --mda-badge-position: absolute;
+  --mda-badge-min-width: 20px;
+  --mda-badge-min-height: 20px;
+  --mda-badge-padding: 4px 3px;
+
+  --mda-badge-color: white;
+  --mda-badge-background-color: var(--mda-color-space-6);
+  --mda-badge-border-color: var(--mda-color-space-6);
+  --mda-badge-border-radius: 20px;
+
+  --mda-badge-text-top: 0.5px;
+
+  // ###### BREADCRUMB
+  --mda-breadcrum-item-spacing: 8px;
+
+  --mda-breadcrumb-link-color: var(--mda-color-space-8);
+  --mda-breadcrumb-link-hover-color: var(--mda-color-action-6);
+  --mda-breadcrumb-link-active-color: var(--mda-color-space-17);
+
+  --mda-breadcrum-separator-color: var(--mda-color-space-8);
+  --mda-breadcrum-dropdown-trigger-color: var(--mda-color-space-8);
+
+  // ###### BUTTON
+  --mda-button-color: white;
+  --mda-button-border-color: var(--mda-color-action-6);
+  --mda-button-background-color: var(--mda-color-action-6);
+  --mda-button-hover-color: white;
+  --mda-button-hover-border-color: var(--mda-color-action-7);
+  --mda-button-hover-background-color: var(--mda-color-action-7);
+  --mda-button-active-color: white;
+  --mda-button-active-border-color: var(--mda-color-action-8);
+  --mda-button-active-background-color: var(--mda-color-action-8);
+  --mda-button-disabled-color: var(--mda-color-space-4);
+  --mda-button-disabled-border-color: var(--mda-color-space-1);
+  --mda-button-disabled-background-color: var(--mda-color-space-1);
+  --mda-button-disabled-icon-color: var(--mda-color-space-4);
+
+  --mda-button-icon-spacer: 8px;
+  --mda-button-border-correction: 2px;
+
+  // ###### CHECKBOX
+  $checkboxChecked: 'data:image/svg+xml; utf8, <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.6738 4.57069C11.4568 4.41504 11.2446 4.26814 11.0639 4.14187C11.0029 4.09874 10.9443 4.06685 10.8832 4.04373C10.5768 3.92871 10.2704 4.04373 10.0673 4.3519C9.48284 5.24204 8.89778 6.13469 8.31333 7.0242L6.99938 9.02827C6.59262 8.60758 6.18889 8.19002 5.78274 7.76995C5.60988 7.59117 5.43461 7.50178 5.24785 7.50178H5.24483C5.06109 7.50178 4.88279 7.59117 4.71296 7.76682C4.56247 7.92247 4.41499 8.075 4.26752 8.23065L4.25664 8.2419C3.91395 8.59883 3.91395 8.99077 4.25966 9.3477C4.99219 10.1053 5.72411 10.8623 6.45664 11.6199C6.4929 11.6574 6.53158 11.695 6.57328 11.7325C6.77394 11.9081 6.99092 12 7.2079 12C7.24416 12 7.28042 11.9969 7.31669 11.9912C7.56449 11.9569 7.78449 11.8012 7.95432 11.5449C9.22113 9.61274 10.4716 7.70619 11.8581 5.5896C12.1005 5.22392 12.0279 4.82323 11.6744 4.57006L11.6738 4.57069Z" fill="white"/></svg>';
+  $checkboxIndeterminate: 'data:image/svg+xml; utf8, <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="7" width="10" height="2" fill="white"/></svg>';
+  --mda-checkbox-checked: url('#{$checkboxChecked}');
+  --mda-checkbox-indeterminate: url('#{$checkboxIndeterminate}');
+  --mda-checkbox-border-radius: 2px;
+  --mda-checkbox-checked-disabled: var(--mda-checkbox-checked);
+  --mda-checkbox-indeterminate-border-color: var(--mda-color-action-6);
+  --mda-checkbox-indeterminate-background-color: var(--mda-color-white);
+  --mda-checkbox-indeterminate-disabled-border-color: var(--mda-color-action-4);
+  --mda-checkbox-indeterminate-disabled-background-color: var(--mda-color-white);
+
+  // ###### DATE PICKER
+  --mda-calendar-header-padding-vertical: 12px;
+  --mda-calendar-header-padding-horizontal: 12px;
+  --mda-calendar-body-padding-vertical: 16px;
+  --mda-calendar-body-padding-horizontal: 24px;
+  --mda-calendar-weekdays-spacing: 12px;
+  --mda-calendar-item-width: 36px;
+  --mda-calendar-item-correction: 0;
+
+  --mda-calendar-position: absolute;
+  --mda-calendar-width: calc((var(--mda-calendar-item-width) * 7) + (var(--mda-calendar-body-padding-horizontal) * 2));
+  --mda-calendar-z-index: 2;
+
+  --mda-calendar-background-color: var(--mda-color-white);
+  --mda-calendar-border-color: var(--mda-color-space-2);
+
+  --mda-calendar-color: var(--mda-color-space-8);
+  --mda-calendar-hover-color: var(--mda-color-space-8);
+
+  // ###### DROPDOWN
+  --mda-dropdown-position: absolute;
+  --mda-dropdown-width: fit-content;
+  --mda-dropdown-min-width: 150px;
+  --mda-dropdown-top: 0;
+  --mda-dropdown-left: 0;
+  --mda-dropdown-z-index: 2;
+
+  --mda-dropdown-border: none;
+  --mda-dropdown-border-radius: var(--mda-component-border-radius);
+  --mda-dropdown-padding: 4px 0;
+  --mda-dropdown-margin: 0;
+  --mda-dropdown-box-shadow: var(--mda-component-box-shadow);
+
+  --mda-dropdown-text-color: var(--mda-color-space-17);
+  --mda-dropdown-border-color: unset;
+  --mda-dropdown-background-color: var(--mda-color-white);
+
+  --mda-dropdown-option-group-min-height: 30px;
+  --mda-dropdown-option-group-color: var(--mda-color-space-6);
+
+  --mda-dropdown-option-min-height: 40px;
+  --mda-dropdown-option-padding-vertical: 8px;
+  --mda-dropdown-option-padding-horizontal: 16px;
+  --mda-dropdown-option-icon-size: 16px;
+  --mda-dropdown-option-icon-spacer: 8px;
+  --mda-dropdown-option-label-correction: 1px;
+  --mda-dropdown-option-border-radius: 0;
+
+  --mda-dropdown-option-hover-color: var(--mda-color-text-option-hover);
+  --mda-dropdown-option-hover-background-color: var(--mda-color-background-option-hover);
+
+  --mda-dropdown-option-selected-background-color: var(--mda-color-space-2);
+
+  --mda-dropdown-option-icon-right-size: 14px;
+  --mda-dropdown-option-icon-right-spacer: 40px;
+
+  --mda-dropdown-separator-border: var(--mda-component-border);
+  --mda-dropdown-separator-border-color: var(--mda-color-space-3);
+  --mda-dropdown-separator-margin: 4px 0;
+
+  // ###### LABEL
+  --mda-label-display: table-cell;
+  --mda-label-color: var(--mda-color-space-8);
+  --mda-label-focus-color: var(--mda-color-space-17);
+  --mda-label-error-color: var(--mda-color-space-8);
+  --mda-label-disabled-color: var(--mda-color-space-8);
+
+  // ###### LINK
+  --mda-link-color: var(--mda-color-action-6);
+  --mda-link-hover-color: var(--mda-color-action-7);
+
+  // ###### MODAL
+  --mda-modal-overlay-position: fixed;
+  --mda-modal-overlay-width: 100vw;
+  --mda-modal-overlay-height: 100vh;
+  --mda-modal-overlay-background-color: rgba(var(--mda-color-neutral-12-rgb), .7);
+
+  --mda-modal-z-indez: 1;
+  --mda-modal-border: none;
+  --mda-modal-border-radius: 0;
+
+  --mda-modal-border-color: unset;
+  --mda-modal-background-color: var(--mda-color-white);
+  --mda-modal-padding: 24px;
+  --mda-modal-spacing: 12px;
+  --mda-modal-spacing-vertical: 20px;
+
+  --mda-modal-close-control-color: var(--mda-color-space-17);
+
+  --mda-modal-header-separator-color: var(--mda-color-space-3);
+  --mda-modal-header-color: var(--mda-color-space-17);
+
+  // ###### NOTIFICATION
+  --mda-notification-position: fixed;
+  --mda-notification-padding: 7px 15px;
+  --mda-notification-width: fit-content;
+  --mda-notification-min-width: unset;
+  --mda-notification-max-width: 50vw;
+  --mda-notification-top: 0;
+  --mda-notification-left: 0;
+  --mda-notification-z-index: 1;
+
+  --mda-notification-border: var(--mda-component-border);
+  --mda-notification-border-radius: var(--mda-component-border-radius);
+  --mda-notification-box-shadow: 0 3px 9px 0 rgba(var(--mda-color-neutral-12-rgb), 0.25);
+
+  --mda-notification-text-color: var(--mda-color-space-8);
+  --mda-notification-border-color: var(--mda-color-white);
+  --mda-notification-background-color: var(--mda-color-white);
+
+  --mda-notification-icon-separation: 10px;
+  --mda-notification-close-control-separation: 50px;
+
+  --mda-notification-inside-link-color: var(--mda-color-action-6);
+
+  // ###### RADIO Button
+  $radioChecked: 'data:image/svg+xml; utf8, <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="3" fill="white"/></svg>';
+  --mda-radio-checked: url('#{$radioChecked}');
+  --mda-radio-border-radius: 100%;
+  --mda-radio-checked-disabled: var(--mda-radio-checked);
+
+  // ###### REPORT
+  --mda-report-color: var(--mda-color-space-8);
+
+  // ###### SELECT
+  $selectChevron: 'data:image/svg+xml; utf8, <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.209209 0.209209C0.488155 -0.0697365 0.940416 -0.0697365 1.21936 0.209209L5 3.98985L8.78064 0.209209C9.05958 -0.0697365 9.51184 -0.0697365 9.79079 0.209209C10.0697 0.488155 10.0697 0.940416 9.79079 1.21936L5.50508 5.50508C5.22613 5.78402 4.77387 5.78402 4.49492 5.50508L0.209209 1.21936C-0.0697365 0.940416 -0.0697365 0.488155 0.209209 0.209209Z" fill="rgb(108, 123, 139)"/></svg>';
+  $selectChevronFocus: 'data:image/svg+xml; utf8, <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.209209 0.209209C0.488155 -0.0697365 0.940416 -0.0697365 1.21936 0.209209L5 3.98985L8.78064 0.209209C9.05958 -0.0697365 9.51184 -0.0697365 9.79079 0.209209C10.0697 0.488155 10.0697 0.940416 9.79079 1.21936L5.50508 5.50508C5.22613 5.78402 4.77387 5.78402 4.49492 5.50508L0.209209 1.21936C-0.0697365 0.940416 -0.0697365 0.488155 0.209209 0.209209Z" fill="rgb(7, 118, 223)"/></svg>';
+  $selectChevronError: 'data:image/svg+xml; utf8, <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.209209 0.209209C0.488155 -0.0697365 0.940416 -0.0697365 1.21936 0.209209L5 3.98985L8.78064 0.209209C9.05958 -0.0697365 9.51184 -0.0697365 9.79079 0.209209C10.0697 0.488155 10.0697 0.940416 9.79079 1.21936L5.50508 5.50508C5.22613 5.78402 4.77387 5.78402 4.49492 5.50508L0.209209 1.21936C-0.0697365 0.940416 -0.0697365 0.488155 0.209209 0.209209Z" fill="rgb(239, 64, 52)"/></svg>';
+  $selectChevronDisabled: 'data:image/svg+xml; utf8, <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.209209 0.209209C0.488155 -0.0697365 0.940416 -0.0697365 1.21936 0.209209L5 3.98985L8.78064 0.209209C9.05958 -0.0697365 9.51184 -0.0697365 9.79079 0.209209C10.0697 0.488155 10.0697 0.940416 9.79079 1.21936L5.50508 5.50508C5.22613 5.78402 4.77387 5.78402 4.49492 5.50508L0.209209 1.21936C-0.0697365 0.940416 -0.0697365 0.488155 0.209209 0.209209Z" fill="rgb(136, 152, 167)"/></svg>';
+  --mda-select-chevron-width: 10px;
+  --mda-select-filter-padding-right: 12px;
+  --mda-select-chevron: url('#{$selectChevron}');
+  --mda-select-chevron-focus: url('#{$selectChevronFocus}');
+  --mda-select-chevron-error: url('#{$selectChevronError}');
+  --mda-select-chevron-disabled: url('#{$selectChevronDisabled}');
+
+  // ###### SPINNER
+  --mda-spinner-display: block;
+  --mda-spinner-size: 60px;
+  --mda-spinner-line-width: 3px;
+  --mda-spinner-color: var(--mda-color-action-6);
+
+  // ###### SWITCH
+  --mda-switch-background-color: var(--mda-color-space-4);
+  --mda-switch-color: var(--mda-color-white);
+  --mda-switch-shadow-color: var(--mda-color-neutral-12);
+  --mda-switch-shadow-color-rgb: var(--mda-color-neutral-12-rgb);
+  --mda-switch-checked-background-color: var(--mda-color-action-6);
+  --mda-switch-disabled-background-color: var(--mda-color-space-2);
+  --mda-switch-disabled-checked-background-color: var(--mda-color-action-4);
+
+  --mda-switch-height: 22px;
+  --mda-switch-border-radio: 25px;
+
+  // ###### TAB
+  $mdaTabAuxCellPaddingBottom: 4px;
+  $mdaTabAuxCellActiveBorderWidth: 2px;
+
+  --mda-tab-width: 100%;
+  --mda-tab-border: var(--mda-component-border);
+  --mda-tab-border-color: var(--mda-color-space-3);
+
+  --mda-tab-height: var(--mda-component-height);
+
+  --mda-tab-cell-padding: 0 24px #{$mdaTabAuxCellPaddingBottom} 24px;
+  --mda-tab-cell-margin-bottom: -1px;
+  --mda-tab-cell-color: var(--mda-color-action-6);
+  --mda-tab-cell-hover-color: var(--mda-color-action-7);
+  --mda-tab-cell-hover-border-color: var(--mda-color-space-4);
+  --mda-tab-cell-cursor: pointer;
+
+  --mda-tab-cell-active-padding-bottom: calc(#{$mdaTabAuxCellPaddingBottom} - #{$mdaTabAuxCellActiveBorderWidth});
+  --mda-tab-cell-active-color: var(--mda-color-space-17);
+  --mda-tab-cell-active-border: #{$mdaTabAuxCellActiveBorderWidth} solid;
+  --mda-tab-cell-active-border-color: var(--mda-color-space-17);
+  --mda-tab-cell-active-cursor: default;
+
+  // ###### TAG
+  --mda-tag-text-color: var(--mda-color-space-17);
+  --mda-tag-border-color: var(--mda-color-space-2);
+  --mda-tag-background-color: var(--mda-color-space-2);
+  --mda-tag-neutral-text-color: var(--mda-color-space-17);
+  --mda-tag-neutral-border-color: var(--mda-color-space-3);
+  --mda-tag-neutral-background-color: var(--mda-color-space-3);
+  --mda-tag-critical-text-color: var(--mda-color-coral-8);
+  --mda-tag-critical-border-color: var(--mda-color-coral-1);
+  --mda-tag-critical-background-color: var(--mda-color-coral-1);
+  --mda-tag-warning-text-color: var(--mda-warning-color);
+  --mda-tag-warning-border-color: var(--mda-color-orange-1);
+  --mda-tag-warning-background-color: var(--mda-color-orange-1);
+  --mda-tag-success-text-color: var(--mda-success-color);
+  --mda-tag-success-border-color: var(--mda-color-green-1);
+  --mda-tag-success-background-color: var(--mda-color-green-1);
+
+  --mda-tag-hover-text-color: var(--mda-color-action-6);
+  --mda-tag-hover-border-color: var(--mda-color-action-1);
+  --mda-tag-hover-background-color: var(--mda-color-action-1);
+  --mda-tag-active-text-color: white;
+  --mda-tag-active-border-color: var(--mda-color-action-6);
+  --mda-tag-active-background-color: var(--mda-color-action-6);
+  --mda-tag-disabled-text-color: var(--mda-color-space-6);
+  --mda-tag-disabled-border-color: var(--mda-color-space-2);
+  --mda-tag-disabled-background-color: var(--mda-color-space-2);
+
+  --mda-tag-height: 30px;
+
+  // ###### TEXTAREA
+  --mda-textarea-resize: vertical;
+
+  // ###### TOGGLE BUTTON
+  $mdaToggleButtonBorderWidth: 1px;
+  --mda-toggle-button-border: #{$mdaToggleButtonBorderWidth} solid;
+  --mda-toggle-button-margin-left: calc(#{$mdaToggleButtonBorderWidth} * (-1));
+  --mda-toggle-button-border-color: var(--mda-color-space-5);
+  --mda-toggle-button-border-radius: var(--mda-component-border-radius);
+
+  --mda-toggle-button-disabled-border-color: var(--mda-color-space-3);
+
+  --mda-toggle-button-active-color: var(--mda-color-space-13);
+  --mda-toggle-button-active-background-color: var(--mda-color-space-2);
+
+  --mda-toggle-button-active-disabled-color: var(--mda-color-space-4);
+  --mda-toggle-button-active-disabled-border-color: var(--mda-color-space-3);
+  --mda-toggle-button-active-disabled-background-color: var(--mda-color-space-1);
+
+  // ###### TOOLTIP
+  --mda-tooltip-position: fixed;
+  --mda-tooltip-height: 30px;
+  --mda-tooltip-z-index: 2;
+  --mda-tooltip-color: var(--mda-color-white);
+  --mda-tooltip-background-color: var(--mda-color-space-13);
+  --mda-tooltip-border-color: var(--mda-color-space-13);
+  --mda-tooltip-padding: 0 8px;
+
+  --mda-tooltip-arrow-position: fixed;
+}

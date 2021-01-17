@@ -34,7 +34,7 @@
     &.mda-notification--info {
       .mda-notification--message SPAN A {
         text-decoration: none;
-        color: var(mda-notification-inside-link-color);
+        color: var(--mda-notification-inside-link-color);
         &:hover {
           text-decoration: underline;
         }

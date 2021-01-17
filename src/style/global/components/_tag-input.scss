@@ -1,0 +1,17 @@
+%mda-tag-input {
+  .mda-tag-input {
+    &.mda-input {
+      height: fit-content;
+    }
+    .mda-tag {
+      margin: 2px;
+      &.hide {
+        opacity: 0;
+      }
+      & ~ .hide {
+        position: absolute;
+        z-index: -1;
+      }
+    }
+  }
+}

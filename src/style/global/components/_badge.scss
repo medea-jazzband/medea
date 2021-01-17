@@ -1,0 +1,29 @@
+%mda-badge {
+  .mda-badge {
+    .mda-badge__box {
+      position: var(--mda-badge-position);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: fit-content;
+      height: fit-content;
+      min-height: var(--mda-badge-min-height);
+      min-width: var(--mda-badge-min-width);
+      color: var(--mda-badge-color);
+      background-color: var(--mda-badge-background-color);
+      border: 1px solid var(--mda-badge-border-color);
+      border-radius: var(--mda-badge-border-radius);
+      padding: var(--mda-badge-padding);
+      box-sizing: border-box;
+      z-index: 2;
+
+      .mda-badge__text {
+        font-size: inherit;
+        color: inherit;
+        line-height: 1;
+        position: relative;
+        top: var(--mda-badge-text-top);
+      }
+    }
+  }
+}

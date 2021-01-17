@@ -1,0 +1,17 @@
+{
+  "name": "@medea/via-lactea",
+  "version": "5.1.0",
+  "description": "Medea Templates :: Via Lactea Template",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/medea-template-system/medea.git"
+  },
+  "author": "Nul Pàs <manu@lunaeme.com> (https://github.com/nulpas)",
+  "license": "proprietary",
+  "bugs": {
+    "url": "https://github.com/medea-template-system/issues"
+  },
+  "homepage": "https://github.com/medea-template-system/tree/master/src/style/templates/via-lacta#readme"
+}

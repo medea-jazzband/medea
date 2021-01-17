@@ -1,10 +1,14 @@
 @import './alert';
+@import './badge';
+@import './breadcrumb';
 @import './button';
 @import './checkbox';
+@import './date-picker';
 @import './dropdown';
 @import './input';
 @import './label';
 @import './link';
+@import './modal';
 @import './notification';
 @import './radio';
 @import './report';
@@ -13,17 +17,23 @@
 @import './switch';
 @import './tab';
 @import './tag';
+@import './tag-input';
 @import './textarea';
 @import './toggle-button';
+@import './tooltip';
 
 %mda-components {
   @extend %mda-alert;
+  @extend %mda-badge;
+  @extend %mda-breadcrumb;
   @extend %mda-button;
   @extend %mda-checkbox;
+  @extend %mda-date-picker;
   @extend %mda-dropdown;
   @extend %mda-input;
   @extend %mda-label;
   @extend %mda-link;
+  @extend %mda-modal;
   @extend %mda-notification;
   @extend %mda-radio;
   @extend %mda-report;
@@ -32,6 +42,8 @@
   @extend %mda-switch;
   @extend %mda-tab;
   @extend %mda-tag;
+  @extend %mda-tag-input;
   @extend %mda-textarea;
   @extend %mda-toggle-button;
+  @extend %mda-tooltip;
 }
