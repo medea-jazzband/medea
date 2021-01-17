@@ -1,5 +1,5 @@
 @import '../../global/mixins';
-@import '../../global/fonts/Nunito';
+@import '../../global/fonts/Inter';
 @import '../../global/fonts/Stratio-Icon';
 @import '../../global/components/components';
 
@@ -13,12 +13,12 @@ HTML {
     line-height: $fontLineHeightFactor;
 
     * {
-      font-family: 'Nunito Sans', sans-serif;
+      font-family: Inter, sans-serif;
       color: var(--mda-color-text-default);
       outline: none;
     }
 
-    @extend %mda-nunito-sans-typography-definition;
+    @extend %mda-inter-typography-definition;
 
     @include createFontDefinition($fontSizesText, $fontSizeRoot, $fontLineHeightFactor) {
       // ###### HEADERS

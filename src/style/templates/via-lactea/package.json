@@ -1,6 +1,6 @@
 {
   "name": "@medea/via-lactea",
-  "version": "5.1.1",
+  "version": "5.1.2",
   "description": "Medea Templates :: Via Lactea Template",
   "main": "index.js",
   "types": "index.d.ts",
