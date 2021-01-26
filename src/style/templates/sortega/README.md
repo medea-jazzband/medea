@@ -1,5 +1,5 @@
 # Medea
-Medea Template System.
+Sergio Ortega Website Template.
 
 ## Installation
 ```

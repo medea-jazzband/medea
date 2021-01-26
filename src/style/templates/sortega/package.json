@@ -1,7 +1,7 @@
 {
   "name": "@medea/sortega",
   "version": "5.0.4",
-  "description": "Medea Template System",
+  "description": "Medea Template System :: Sergio Ortega Web Site.",
   "main": "index.js",
   "types": "index.d.ts",
   "repository": {

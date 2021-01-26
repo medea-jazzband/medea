@@ -1,0 +1,574 @@
+@import '../../../global/mixins';
+@import './font-sizes';
+
+%mda-components-template {
+  // ###### ALERT ####################################################################
+  .mda-alert {
+    .mda-alert__header {
+      .mda-alert__title {
+        @include defineFontSizeElement(16, $fontSizeRoot, $fontLineHeightFactor);
+      }
+    }
+    &:not(.mda-alert--connection-lost) {
+      border-left: 4px solid var(--mda-color-action-6);
+    }
+    &.mda-alert--success {
+      border-left: 4px solid var(--mda-success-color);
+      --mda-alert-title-icon-color: var(--mda-success-color);
+    }
+    &.mda-alert--warning {
+      border-left: 4px solid var(--mda-warning-color);
+      --mda-alert-title-icon-color: var(--mda-warning-color);
+    }
+    &.mda-alert--critical {
+      border-left: 4px solid var(--mda-error-color);
+      --mda-alert-title-icon-color: var(--mda-error-color);
+    }
+    &.mda-alert--connection-lost{
+      --mda-alert-background-color: var(--mda-color-space-7);
+      --mda-alert-border-color: var(--mda-color-space-7);
+      --mda-alert-body-text-color: var(--mda-color-white);
+      --mda-alert-title-icon-color: var(--mda-color-white);
+      --mda-alert-title-text-color: var(--mda-color-white);
+    }
+  }
+
+  // ###### BADGE ####################################################################
+  .mda-badge {
+    .mda-badge__box {
+      @include defineFontSizeElement(10, $fontSizeRoot, $fontLineHeightFactor);
+    }
+
+    &.mda-badge--alone {
+      --mda-badge-position: relative;
+    }
+
+    &.mda-badge--large {
+      .mda-badge__box {
+        @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
+        --mda-badge-min-width: 24px;
+        --mda-badge-min-height: 24px;
+        --mda-badge-padding: 6px 5px;
+        --mda-badge-text-top: 0;
+      }
+    }
+    &.mda-badge--small {
+      .mda-badge__box {
+        @include defineFontSizeElement(8, $fontSizeRoot, $fontLineHeightFactor);
+        --mda-badge-min-width: 16px;
+        --mda-badge-min-height: 16px;
+        --mda-badge-padding: 3px 2px;
+        --mda-badge-text-top: 1px;
+      }
+    }
+    &.mda-badge--x-small {
+      .mda-badge__box {
+        font-size: 0;
+        --mda-badge-min-width: 6px;
+        --mda-badge-min-height: 6px;
+        --mda-badge-padding: 0;
+        --mda-badge-text-top: 1px;
+      }
+    }
+
+    &.mda-badge--info {
+      --mda-badge-background-color: var(--mda-color-action-6);
+      --mda-badge-border-color: var(--mda-color-action-6);
+    }
+    &.mda-badge--success {
+      --mda-badge-background-color: var(--mda-success-color);
+      --mda-badge-border-color: var(--mda-success-color);
+    }
+    &.mda-badge--warning {
+      --mda-badge-background-color: var(--mda-warning-color);
+      --mda-badge-border-color: var(--mda-warning-color);
+    }
+    &.mda-badge--critical {
+      --mda-badge-background-color: var(--mda-error-color);
+      --mda-badge-border-color: var(--mda-error-color);
+    }
+  }
+
+  // ###### BREADCRUMB ###############################################################
+  .mda-breadcrumb {
+    .mda-breadcrumb__link {
+      @include defineFontSizeElement(14, $fontSizeRoot, $fontLineHeightFactor);
+    }
+    .mda-breadcrumb__separator {
+      @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
+    }
+    .mda-breadcrumb__dropdown-trigger {
+      @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
+    }
+
+    &.mda-breadcrumb--small {
+      --mda-component-height: 30px;
+      .mda-breadcrumb__link {
+        @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
+      }
+      .mda-breadcrumb__dropdown-trigger {
+        @include defineFontSizeElement(10, $fontSizeRoot, $fontLineHeightFactor);
+        top: 0;
+      }
+    }
+  }
+
+  // ###### BUTTON ###################################################################
+  BUTTON {
+    &.mda-button {
+      --mda-component-padding-horizontal: 20px;
+      --mda-component-icon-left-spacer: 8px;
+      padding-top: 2px;
+      @include defineFontSizeElement(14, $fontSizeRoot, $fontLineHeightFactor);
+      line-height: 1;
+      &.mda-button--small {
+        --mda-component-height: 30px;
+        @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
+        line-height: 1;
+        I.mda-icon {
+          --mda-button-icon-spacer: 4px;
+        }
+      }
+      &.mda-button--icon-left, &.mda-button--icon-right, &.mda-button--icon-only {
+        I.mda-icon {
+          top: -1px;
+        }
+      }
+      &.mda-button--secondary, &.mda-button--bob {
+        --mda-button-color: var(--mda-color-space-7);
+        --mda-button-border-color: var(--mda-color-space-5);
+        --mda-button-background-color: var(--mda-color-white);
+        --mda-button-hover-color: var(--mda-color-space-8);
+        --mda-button-hover-border-color: var(--mda-color-space-8);
+        --mda-button-hover-background-color: var(--mda-color-action-1);
+        --mda-button-active-color: var(--mda-color-space-13);
+        --mda-button-active-border-color: var(--mda-color-space-8);
+        --mda-button-active-background-color: var(--mda-color-action-2);
+        --mda-button-disabled-color: var(--mda-color-space-3);
+        --mda-button-disabled-border-color: var(--mda-color-space-2);
+        --mda-button-disabled-background-color: var(--mda-color-white);
+      }
+      &.mda-button--borderless {
+        --mda-button-color: var(--mda-color-space-7);
+        --mda-button-border-color: var(--mda-color-white);
+        --mda-button-background-color: var(--mda-color-white);
+        --mda-button-hover-color: var(--mda-color-space-8);
+        --mda-button-hover-border-color: var(--mda-color-action-1);
+        --mda-button-hover-background-color: var(--mda-color-action-1);
+        --mda-button-active-color: var(--mda-color-space-13);
+        --mda-button-active-border-color: var(--mda-color-action-2);
+        --mda-button-active-background-color: var(--mda-color-action-2);
+      }
+      &.mda-button--critical {
+        --mda-button-color: var(--mda-color-white);
+        --mda-button-border-color: var(--mda-error-color);
+        --mda-button-background-color: var(--mda-error-color);
+        --mda-button-hover-color: var(--mda-color-white);
+        --mda-button-hover-border-color: var(--mda-color-coral-7);
+        --mda-button-hover-background-color: var(--mda-color-coral-7);
+        --mda-button-active-color: var(--mda-color-white);
+        --mda-button-active-border-color: var(--mda-color-coral-8);
+        --mda-button-active-background-color: var(--mda-color-coral-8);
+      }
+    }
+  }
+
+  // ###### CHECKBOX #################################################################
+  $checkboxIndeterminate: 'data:image/svg+xml; utf8, <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="7" width="10" height="2" fill="rgb(7, 118, 223)"/></svg>';
+  $checkboxIndeterminateDisabled: 'data:image/svg+xml; utf8, <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="7" width="10" height="2" fill="rgb(156, 200, 242)"/></svg>';
+  INPUT[type=checkbox] {
+    & + LABEL {
+      @include defineFontSizeElement(14, $fontSizeRoot, $fontLineHeightFactor);
+      line-height: calc(var(--mda-selection-icon-size) + 1px);
+    }
+    &:not(.mda-switch) {
+      &:disabled, &.disabled {
+        &.mda-checkbox--indeterminate {
+          &:checked + LABEL {
+            &:after {
+              --mda-checkbox-indeterminate: url('#{$checkboxIndeterminateDisabled}');
+            }
+          }
+        }
+      }
+
+      &.mda-checkbox--indeterminate {
+        &:checked + LABEL {
+          &:after {
+            --mda-checkbox-indeterminate: url('#{$checkboxIndeterminate}');
+          }
+        }
+      }
+    }
+  }
+
+  // ###### DATEPICKER ###############################################################
+  .mda-calendar {
+    .mda-calendar__nav {
+      DIV {
+        @include defineFontSizeElement(14, $fontSizeRoot, $fontLineHeightFactor);
+        I {
+          @include defineFontSizeElement(10, $fontSizeRoot, $fontLineHeightFactor);
+        }
+      }
+    }
+    .mda-calendar__container {
+      .mda-calendar__body {
+        .mda-calendar__date {
+          @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
+          --mda-button-disabled-color: var(--mda-color-space-4);
+          --mda-button-disabled-background-color: transparent;
+          --mda-button-disabled-border-color: transparent;
+          --mda-component-focus-box-shadow: none;
+          --mda-component-border-radius: 40px;
+          &.mda-calendar__date--selected {
+            .mda-button {
+              --mda-button-color: var(--mda-color-space-13);
+              --mda-button-background-color: var(--mda-color-action-2);
+              --mda-button-hover-color: var(--mda-color-space-13);
+              --mda-button-hover-background-color: var(--mda-color-action-2);
+            }
+          }
+          &.mda-calendar__date--success {
+            .mda-button {
+              font-weight: bold;
+              --mda-button-color: var(--mda-color-space-17);
+              --mda-button-hover-color: var(--mda-color-space-17);
+            }
+          }
+          &.mda-calendar__date--current-day:not(.mda-calendar__date--selected) {
+            .mda-button {
+              --mda-button-color: var(--mda-color-white);
+              --mda-button-background-color: var(--mda-color-action-6);
+              --mda-button-hover-color: var(--mda-color-white);
+              --mda-button-hover-background-color: var(--mda-color-action-6);
+            }
+          }
+          &.mda-calendar__date--critical:not(.mda-calendar__date--selected):not(.mda-calendar__date--current-day) {
+            .mda-button {
+              font-weight: bold;
+              --mda-button-color: var(--mda-error-color);
+              --mda-button-background-color: var(--mda-color-coral-1);
+              --mda-button-hover-color: var(--mda-error-color);
+              --mda-button-hover-background-color: var(--mda-color-coral-2);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // ###### INPUT ####################################################################
+  INPUT, SPAN, DIV {
+    &.mda-input {
+      @include defineFontSizeElement(14, $fontSizeRoot, $fontLineHeightFactor);
+      &.mda-input--small {
+        --mda-component-height: 30px;
+        --mda-component-padding-horizontal: 8px;
+        @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
+      }
+      &.mda-input--placeholder-color {
+        color: var(--mda-component-placeholder-color);
+      }
+    }
+  }
+
+  // ###### LABEL ####################################################################
+  LABEL {
+    &.mda-label, &.mda-label.mda-label--small {
+      @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
+    }
+  }
+
+  // ###### LINK #####################################################################
+  A.mda-link {
+    &.mda-link-small {
+      @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
+    }
+  }
+
+  // ###### MODAL ####################################################################
+  .mda-modal {
+    .mda-modal__box {
+      .mda-modal__header {
+        @include defineFontSizeElement(18, $fontSizeRoot, $fontLineHeightFactor);
+        font-weight: bold;
+        .mda-modal__status-icon, .mda-modal__close-control {
+          @include defineFontSizeElement(15, $fontSizeRoot, $fontLineHeightFactor);
+        }
+        .mda-modal__full-window-icon {
+          @include defineFontSizeElement(20, $fontSizeRoot, $fontLineHeightFactor);
+        }
+      }
+    }
+  }
+
+  // ###### NOTIFICATION #############################################################
+  .mda-notification {
+    &.mda-notification--success {
+      --mda-notification-text-color: var(--mda-color-white);
+      --mda-notification-border-color: var(--mda-success-color);
+      --mda-notification-background-color: var(--mda-success-color);
+    }
+    &.mda-notification--warning {
+      --mda-notification-text-color: var(--mda-color-white);
+      --mda-notification-border-color: var(--mda-warning-color);
+      --mda-notification-background-color: var(--mda-warning-color);
+    }
+    &.mda-notification--critical {
+      --mda-notification-text-color: var(--mda-color-white);
+      --mda-notification-border-color: var(--mda-error-color);
+      --mda-notification-background-color: var(--mda-error-color);
+    }
+  }
+
+  // ###### RADIO Button #############################################################
+  INPUT[type=radio] {
+    & + LABEL {
+      @include defineFontSizeElement(14, $fontSizeRoot, $fontLineHeightFactor);
+      line-height: calc(var(--mda-selection-icon-size) + 1px);
+    }
+  }
+
+  // ###### REPORT ###################################################################
+  SPAN, DIV {
+    &.mda-report {
+      @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
+    }
+  }
+
+  // ###### SELECT ###################################################################
+  LABEL.mda-label {
+    & + SELECT, & + INPUT {
+      &.mda-select {
+        @include defineFontSizeElement(14, $fontSizeRoot, $fontLineHeightFactor);
+        &.mda-select--small {
+          --mda-component-height: 30px;
+          --mda-component-padding-horizontal: 8px;
+          --mda-select-filter-padding-right: 8px;
+          @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
+        }
+        &.mda-select--filter {
+          --mda-component-height: fit-content;
+          --mda-component-width: fit-content;
+          --mda-component-padding-horizontal: 0;
+          padding-right: calc(var(--mda-select-filter-padding-right) + var(--mda-select-chevron-width));
+          border: none;
+          border-radius: 0;
+          background-color: transparent;
+          box-shadow: none;
+          &:focus, &:focus.error, &.focus, &.focus.error {
+            background-color: transparent;
+            box-shadow: none;
+          }
+          &:disabled, &.disabled {
+            background-color: transparent;
+            box-shadow: none;
+          }
+        }
+      }
+    }
+  }
+
+  // ###### SPINNER ##################################################################
+  .mda-spinner {
+    &.mda-spinner--inline {
+      --mda-spinner-display: inline-flex;
+    }
+    &.mda-spinner--inherit {
+      --mda-spinner-display: inherit;
+    }
+    &.mda-spinner--12 {
+      --mda-spinner-size: 12px;
+      --mda-spinner-line-width: 7px;
+    }
+    &.mda-spinner--16 {
+      --mda-spinner-size: 16px;
+      --mda-spinner-line-width: 6px;
+    }
+    &.mda-spinner--20 {
+      --mda-spinner-size: 20px;
+      --mda-spinner-line-width: 5px;
+    }
+    &.mda-spinner--80 {
+      --mda-spinner-size: 80px;
+      --mda-spinner-line-width: 3px;
+    }
+    &.mda-spinner--inverse {
+      --mda-spinner-color: var(--mda-color-white);
+    }
+  }
+
+  // ###### TAB ######################################################################
+  .mda-tab {
+    @include defineFontSizeElement(14, $fontSizeRoot, $fontLineHeightFactor);
+    &.mda-tab--small {
+      @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
+      --mda-tab-height: 30px;
+    }
+  }
+
+  // ###### TAG ######################################################################
+  SPAN, DIV {
+    &.mda-tag {
+      --mda-component-padding-horizontal: 8px;
+      font-size: getRemRelativeSize(14, $fontSizeRoot);
+      line-height: calc(var(--mda-tag-height) - 2px);
+      &.mda-tag--medium {
+        --mda-component-icon-spacer: 4px;
+        --mda-tag-height: 24px;
+        font-size: getRemRelativeSize(12, $fontSizeRoot);
+      }
+      &.mda-tag--small {
+        --mda-component-icon-spacer: 4px;
+        --mda-tag-height: 18px;
+        font-size: getRemRelativeSize(12, $fontSizeRoot);
+      }
+      &.mda-tag--neutral {
+        color: var(--mda-tag-neutral-text-color);
+        border-color: var(--mda-tag-neutral-border-color);
+        background-color: var(--mda-tag-neutral-background-color);
+      }
+      &.mda-tag--critical {
+        color: var(--mda-tag-critical-text-color);
+        border-color: var(--mda-tag-critical-border-color);
+        background-color: var(--mda-tag-critical-background-color);
+      }
+      &.mda-tag--warning {
+        color: var(--mda-tag-warning-text-color);
+        border-color: var(--mda-tag-warning-border-color);
+        background-color: var(--mda-tag-warning-background-color);
+      }
+      &.mda-tag--success {
+        color: var(--mda-tag-success-text-color);
+        border-color: var(--mda-tag-success-border-color);
+        background-color: var(--mda-tag-success-background-color);
+      }
+    }
+  }
+
+  // ###### TAG INPUT ################################################################
+  .mda-tag-input {
+    &.mda-input, &.mda-input.mda-input--small {
+      --mda-component-padding-vertical: 0;
+      --mda-component-padding-horizontal: 0;
+    }
+    INPUT {
+      @include defineFontSizeElement(14, $fontSizeRoot, $fontLineHeightFactor);
+    }
+    &.mda-input--small {
+      INPUT {
+        @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
+      }
+    }
+
+    &.disabled {
+      .mda-tag-input__input {
+        cursor: not-allowed;
+      }
+    }
+
+    .mda-tag {
+      &.critical {
+        --mda-tag-text-color: var(--mda-error-color);
+        INPUT {
+          color: var(--mda-error-color);
+        }
+      }
+    }
+  }
+
+  // ###### TEXTAREA #################################################################
+  TEXTAREA.mda-textarea {
+    padding-top: calc((var(--mda-component-height) - (14px * #{$fontLineHeightFactor})) / 2);
+    @include defineFontSizeElement(14, $fontSizeRoot, $fontLineHeightFactor);
+    &.mda-textarea--small {
+      --mda-component-height: 30px;
+      --mda-component-padding-horizontal: 8px;
+      padding-top: calc((var(--mda-component-height) - (12px * #{$fontLineHeightFactor})) / 2);
+      @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
+    }
+  }
+
+  // ###### TOOLTIP ##################################################################
+  .mda-tooltip {
+    .mda-tooltip__box {
+      @include defineFontSizeElement(14, $fontSizeRoot, $fontLineHeightFactor);
+    }
+    &.mda-tooltip--light {
+      --mda-tooltip-color: var(--mda-color-space-7);
+      --mda-tooltip-background-color: white;
+      --mda-tooltip-border-color: var(--mda-color-space-4);
+      .mda-tooltip__arrow:after {
+        content: '';
+        position: absolute;
+        top: -6.2px;
+        left: -7px;
+        width: 0;
+        height: 0;
+        border: 7px solid transparent;
+      }
+      .mda-tooltip__arrow--top {
+        &:after {
+          border-top-color: var(--mda-tooltip-background-color);
+          top: -8.2px;
+        }
+      }
+      .mda-tooltip__arrow--bottom {
+        &:after {
+          border-bottom-color: var(--mda-tooltip-background-color);
+        }
+      }
+      .mda-tooltip__arrow--left {
+        &:after {
+          border-left-color: var(--mda-tooltip-background-color);
+          top: -7px;
+          left: -8px;
+        }
+      }
+      .mda-tooltip__arrow--right {
+        &:after {
+          border-right-color: var(--mda-tooltip-background-color);
+          top: -7px;
+          left: -6px;
+        }
+      }
+    }
+    &.mda-tooltip--small {
+      .mda-tooltip__box {
+        @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
+        --mda-tooltip-default-height: 24px;
+        .mda-tooltip__text {
+          position: relative;
+          top: 1px;
+        }
+      }
+      .mda-tooltip__arrow:after {
+        content: '';
+        position: absolute;
+        top: -8.2px;
+        left: -7px;
+        width: 0;
+        height: 0;
+      }
+      .mda-tooltip__arrow--bottom {
+        &:after {
+          top: -6px;
+          left: -7px;
+        }
+      }
+      .mda-tooltip__arrow--left {
+        &:after {
+          top: -7px;
+          left: -8px;
+        }
+      }
+      .mda-tooltip__arrow--right {
+        &:after {
+          top: -7px;
+          left: -6px;
+        }
+      }
+    }
+  }
+}
