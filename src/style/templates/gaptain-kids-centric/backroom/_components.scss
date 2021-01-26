@@ -118,7 +118,6 @@
     &.mda-button {
       --mda-component-padding-horizontal: 20px;
       --mda-component-icon-left-spacer: 8px;
-      padding-top: 2px;
       @include defineFontSizeElement(14, $fontSizeRoot, $fontLineHeightFactor);
       line-height: 1;
       &.mda-button--small {
