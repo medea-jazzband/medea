@@ -1,0 +1,22 @@
+@import 'exportable/app.base';
+
+$templateBaseBackgroundColor: (
+  background: $colorBackground,
+  background-alternative: $colorBackgroundAlternative,
+  background-misc-1: $colorBackgroundMisc1,
+  background-misc-2: $colorBackgroundMisc2,
+  background-misc-3: $colorBackgroundMisc3
+);
+
+$templateBaseBorderColor: (
+  border-divider: $colorBorderDivider,
+  border-divider-alternative: $colorBorderDividerAlternative
+);
+
+$templateBaseTextColor: (
+  text: $colorText,
+  text-alternative: $colorTextAlternative,
+  text-title: $colorTextTitle,
+  text-title-alternative: $colorTextTitleAlternative,
+  text-link: $colorTextLink
+);

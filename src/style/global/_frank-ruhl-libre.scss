@@ -1,0 +1,39 @@
+$fontName: 'Frank Ruhl Libre';
+$typesToGenerate: (ttf);
+$fontWeightsAvailable: (
+  light: (
+    weight: 300,
+    style: normal,
+    path: '../../../fonts/frank-ruhl-libre/FrankRuhlLibre-Light',
+    local1: 'Frank Ruhl Libre Light',
+    local2: FrankRuhlLibre-Light
+  ),
+  regular: (
+    weight: normal,
+    style: normal,
+    path: '../../../fonts/frank-ruhl-libre/FrankRuhlLibre-Regular',
+    local1: 'Frank Ruhl Libre Regular',
+    local2: FrankRuhlLibre-Regular
+  ),
+  medium: (
+    weight: 500,
+    style: normal,
+    path: '../../../fonts/frank-ruhl-libre/FrankRuhlLibre-Medium',
+    local1: 'Frank Ruhl Libre Medium',
+    local2: FrankRuhlLibre-Medium
+  ),
+  bold: (
+    weight: bold,
+    style: normal,
+    path: '../../../fonts/frank-ruhl-libre/FrankRuhlLibre-Bold',
+    local1: 'Frank Ruhl Libre Bold',
+    local2: FrankRuhlLibre-Bold
+  ),
+  black: (
+    weight: 900,
+    style: normal,
+    path: '../../../fonts/frank-ruhl-libre/FrankRuhlLibre-Black',
+    local1: 'Frank Ruhl Libre Black',
+    local2: FrankRuhlLibre-Black
+  )
+);

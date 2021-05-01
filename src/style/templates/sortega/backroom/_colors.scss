@@ -2,12 +2,17 @@
 
 $colorsAvailable: (
   action: $colorAction,
+  -white: $colorWhite,
+  -black: $colorBlack,
   box-1: $colorBox1,
   box-2: $colorBox2,
   box-3: $colorBox3,
   box-4: $colorBox4,
   box-5: $colorBox5,
   box-6: $colorBox6,
+  box-7: $colorBox7,
+  box-8: $colorBox8,
+  box-9: $colorBox9,
   neutral-1: $colorNeutral1,
   neutral-2: $colorNeutral2,
   neutral-3: $colorNeutral3,
@@ -19,5 +24,7 @@ $colorsAvailable: (
   neutral-9: $colorNeutral9,
   neutral-10: $colorNeutral10,
   neutral-11: $colorNeutral11,
-  neutral-12: $colorNeutral12
+  neutral-12: $colorNeutral12,
+  miscellaneous-1: $colorMiscellaneous1,
+  miscellaneous-2: $colorMiscellaneous2
 );

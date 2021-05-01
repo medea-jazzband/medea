@@ -1,12 +1,11 @@
 @import '../../global/mixins';
 @import '../../global/fonts/Hk-Grotesk';
-@import '../../global/fonts/Lora';
+@import '../../global/fonts/Frank-Ruhl-Libre';
 @import '../../global/components/components';
 
 @import './backroom/variables/common';
 @import './backroom/components';
 @import './backroom/font-sizes';
-@import './backroom/colors';
 
 HTML {
   &#mda-sortega-tpl, &.mda-sortega-tpl {
@@ -21,8 +20,8 @@ HTML {
 
     @extend %mda-hk-grotesk-typography-definition;
     .mda-serif {
-      font-family: Lora, serif;
-      @extend %mda-lora-typography-definition;
+      font-family: 'Frank Ruhl Libre', serif;
+      @extend %mda-frank-ruhl-libre-typography-definition;
     }
 
     @include createFontDefinition($fontSizesText, $fontSizeRoot, $fontLineHeightFactor) {
@@ -45,6 +44,9 @@ HTML {
     }
 
     @include createColorsDefinition($colorsAvailable);
+    @include createColorsDefinition($templateBaseBackgroundColor, 'bg');
+    @include createColorsDefinition($templateBaseBorderColor, 'border');
+    @include createColorsDefinition($templateBaseTextColor);
     @extend %mda-global-vars;
     @extend %mda-components;
     @extend %mda-components-template;
