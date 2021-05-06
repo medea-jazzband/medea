@@ -1,22 +1,22 @@
-%mda-tab {
-  .mda-tab {
-    --mda-tab-default-width: var(--mda-tab-width);
-    --mda-tab-default-border: var(--mda-tab-border);
-    --mda-tab-default-border-color: var(--mda-tab-border-color);
+%npa-tab {
+  .npa-tab {
+    --npa-tab-default-width: var(--npa-tab-width);
+    --npa-tab-default-border: var(--npa-tab-border);
+    --npa-tab-default-border-color: var(--npa-tab-border-color);
 
-    --mda-tab-default-height: var(--mda-tab-height);
+    --npa-tab-default-height: var(--npa-tab-height);
 
-    --mda-tab-default-cell-padding: var(--mda-tab-cell-padding);
-    --mda-tab-default-cell-margin-bottom: var(--mda-tab-cell-margin-bottom);
-    --mda-tab-default-cell-color: var(--mda-tab-cell-color);
-    --mda-tab-default-cell-hover-color: var(--mda-tab-cell-hover-color);
-    --mda-tab-default-cell-hover-border-color: var(--mda-tab-cell-hover-border-color);
-    --mda-tab-default-cell-cursor: var(--mda-tab-cell-cursor);
+    --npa-tab-default-cell-padding: var(--npa-tab-cell-padding);
+    --npa-tab-default-cell-margin-bottom: var(--npa-tab-cell-margin-bottom);
+    --npa-tab-default-cell-color: var(--npa-tab-cell-color);
+    --npa-tab-default-cell-hover-color: var(--npa-tab-cell-hover-color);
+    --npa-tab-default-cell-hover-border-color: var(--npa-tab-cell-hover-border-color);
+    --npa-tab-default-cell-cursor: var(--npa-tab-cell-cursor);
 
-    --mda-tab-default-cell-active-padding-bottom: var(--mda-tab-cell-active-padding-bottom);
-    --mda-tab-default-cell-active-color: var(--mda-tab-cell-active-color);
-    --mda-tab-default-cell-active-border: var(--mda-tab-cell-active-border);
-    --mda-tab-default-cell-active-border-color: var(--mda-tab-cell-active-border-color);
-    --mda-tab-default-cell-active-cursor: var(--mda-tab-cell-active-cursor);
+    --npa-tab-default-cell-active-padding-bottom: var(--npa-tab-cell-active-padding-bottom);
+    --npa-tab-default-cell-active-color: var(--npa-tab-cell-active-color);
+    --npa-tab-default-cell-active-border: var(--npa-tab-cell-active-border);
+    --npa-tab-default-cell-active-border-color: var(--npa-tab-cell-active-border-color);
+    --npa-tab-default-cell-active-cursor: var(--npa-tab-cell-active-cursor);
   }
 }

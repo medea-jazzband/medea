@@ -1,24 +1,24 @@
 @import '../../../global/mixins';
 @import './font-sizes';
 
-%mda-components-template {
+%npa-components-template {
   // ###### BUTTON ###################################################################
   BUTTON {
-    &.mda-button {
-      --mda-component-padding-horizontal: 20px;
-      --mda-component-icon-left-spacer: 8px;
+    &.npa-button {
+      --npa-component-padding-horizontal: 20px;
+      --npa-component-icon-left-spacer: 8px;
       @include defineFontSizeElement(14, $fontSizeRoot, $fontLineHeightFactor);
       line-height: 1;
-      &.mda-button--small {
-        --mda-component-height: 30px;
+      &.npa-button--small {
+        --npa-component-height: 30px;
         @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
         line-height: 1;
-        I.mda-icon {
-          --mda-button-icon-spacer: 4px;
+        I.npa-icon {
+          --npa-button-icon-spacer: 4px;
         }
       }
-      &.mda-button--icon-left, &.mda-button--icon-right, &.mda-button--icon-only {
-        I.mda-icon {
+      &.npa-button--icon-left, &.npa-button--icon-right, &.npa-button--icon-only {
+        I.npa-icon {
           top: -1px;
         }
       }
@@ -26,8 +26,8 @@
   }
 
   // ###### LINK #####################################################################
-  A.mda-link {
-    &.mda-link-small {
+  A.npa-link {
+    &.npa-link-small {
       @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
     }
   }

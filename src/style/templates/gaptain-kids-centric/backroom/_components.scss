@@ -1,112 +1,112 @@
 @import '../../../global/mixins';
 @import './font-sizes';
 
-%mda-components-template {
+%npa-components-template {
   // ###### ALERT ####################################################################
-  .mda-alert {
-    .mda-alert__header {
-      .mda-alert__title {
+  .npa-alert {
+    .npa-alert__header {
+      .npa-alert__title {
         @include defineFontSizeElement(16, $fontSizeRoot, $fontLineHeightFactor);
       }
     }
-    &:not(.mda-alert--connection-lost) {
-      border-left: 4px solid var(--mda-color-action-6);
+    &:not(.npa-alert--connection-lost) {
+      border-left: 4px solid var(--npa-color-action-6);
     }
-    &.mda-alert--success {
-      border-left: 4px solid var(--mda-success-color);
-      --mda-alert-title-icon-color: var(--mda-success-color);
+    &.npa-alert--success {
+      border-left: 4px solid var(--npa-success-color);
+      --npa-alert-title-icon-color: var(--npa-success-color);
     }
-    &.mda-alert--warning {
-      border-left: 4px solid var(--mda-warning-color);
-      --mda-alert-title-icon-color: var(--mda-warning-color);
+    &.npa-alert--warning {
+      border-left: 4px solid var(--npa-warning-color);
+      --npa-alert-title-icon-color: var(--npa-warning-color);
     }
-    &.mda-alert--critical {
-      border-left: 4px solid var(--mda-error-color);
-      --mda-alert-title-icon-color: var(--mda-error-color);
+    &.npa-alert--critical {
+      border-left: 4px solid var(--npa-error-color);
+      --npa-alert-title-icon-color: var(--npa-error-color);
     }
-    &.mda-alert--connection-lost{
-      --mda-alert-background-color: var(--mda-color-space-7);
-      --mda-alert-border-color: var(--mda-color-space-7);
-      --mda-alert-body-text-color: var(--mda-color-white);
-      --mda-alert-title-icon-color: var(--mda-color-white);
-      --mda-alert-title-text-color: var(--mda-color-white);
+    &.npa-alert--connection-lost{
+      --npa-alert-background-color: var(--npa-color-space-7);
+      --npa-alert-border-color: var(--npa-color-space-7);
+      --npa-alert-body-text-color: var(--npa-color-white);
+      --npa-alert-title-icon-color: var(--npa-color-white);
+      --npa-alert-title-text-color: var(--npa-color-white);
     }
   }
 
   // ###### BADGE ####################################################################
-  .mda-badge {
-    .mda-badge__box {
+  .npa-badge {
+    .npa-badge__box {
       @include defineFontSizeElement(10, $fontSizeRoot, $fontLineHeightFactor);
     }
 
-    &.mda-badge--alone {
-      --mda-badge-position: relative;
+    &.npa-badge--alone {
+      --npa-badge-position: relative;
     }
 
-    &.mda-badge--large {
-      .mda-badge__box {
+    &.npa-badge--large {
+      .npa-badge__box {
         @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
-        --mda-badge-min-width: 24px;
-        --mda-badge-min-height: 24px;
-        --mda-badge-padding: 6px 5px;
-        --mda-badge-text-top: 0;
+        --npa-badge-min-width: 24px;
+        --npa-badge-min-height: 24px;
+        --npa-badge-padding: 6px 5px;
+        --npa-badge-text-top: 0;
       }
     }
-    &.mda-badge--small {
-      .mda-badge__box {
+    &.npa-badge--small {
+      .npa-badge__box {
         @include defineFontSizeElement(8, $fontSizeRoot, $fontLineHeightFactor);
-        --mda-badge-min-width: 16px;
-        --mda-badge-min-height: 16px;
-        --mda-badge-padding: 3px 2px;
-        --mda-badge-text-top: 1px;
+        --npa-badge-min-width: 16px;
+        --npa-badge-min-height: 16px;
+        --npa-badge-padding: 3px 2px;
+        --npa-badge-text-top: 1px;
       }
     }
-    &.mda-badge--x-small {
-      .mda-badge__box {
+    &.npa-badge--x-small {
+      .npa-badge__box {
         font-size: 0;
-        --mda-badge-min-width: 6px;
-        --mda-badge-min-height: 6px;
-        --mda-badge-padding: 0;
-        --mda-badge-text-top: 1px;
+        --npa-badge-min-width: 6px;
+        --npa-badge-min-height: 6px;
+        --npa-badge-padding: 0;
+        --npa-badge-text-top: 1px;
       }
     }
 
-    &.mda-badge--info {
-      --mda-badge-background-color: var(--mda-color-action-6);
-      --mda-badge-border-color: var(--mda-color-action-6);
+    &.npa-badge--info {
+      --npa-badge-background-color: var(--npa-color-action-6);
+      --npa-badge-border-color: var(--npa-color-action-6);
     }
-    &.mda-badge--success {
-      --mda-badge-background-color: var(--mda-success-color);
-      --mda-badge-border-color: var(--mda-success-color);
+    &.npa-badge--success {
+      --npa-badge-background-color: var(--npa-success-color);
+      --npa-badge-border-color: var(--npa-success-color);
     }
-    &.mda-badge--warning {
-      --mda-badge-background-color: var(--mda-warning-color);
-      --mda-badge-border-color: var(--mda-warning-color);
+    &.npa-badge--warning {
+      --npa-badge-background-color: var(--npa-warning-color);
+      --npa-badge-border-color: var(--npa-warning-color);
     }
-    &.mda-badge--critical {
-      --mda-badge-background-color: var(--mda-error-color);
-      --mda-badge-border-color: var(--mda-error-color);
+    &.npa-badge--critical {
+      --npa-badge-background-color: var(--npa-error-color);
+      --npa-badge-border-color: var(--npa-error-color);
     }
   }
 
   // ###### BREADCRUMB ###############################################################
-  .mda-breadcrumb {
-    .mda-breadcrumb__link {
+  .npa-breadcrumb {
+    .npa-breadcrumb__link {
       @include defineFontSizeElement(14, $fontSizeRoot, $fontLineHeightFactor);
     }
-    .mda-breadcrumb__separator {
+    .npa-breadcrumb__separator {
       @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
     }
-    .mda-breadcrumb__dropdown-trigger {
+    .npa-breadcrumb__dropdown-trigger {
       @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
     }
 
-    &.mda-breadcrumb--small {
-      --mda-component-height: 30px;
-      .mda-breadcrumb__link {
+    &.npa-breadcrumb--small {
+      --npa-component-height: 30px;
+      .npa-breadcrumb__link {
         @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
       }
-      .mda-breadcrumb__dropdown-trigger {
+      .npa-breadcrumb__dropdown-trigger {
         @include defineFontSizeElement(10, $fontSizeRoot, $fontLineHeightFactor);
         top: 0;
       }
@@ -115,59 +115,59 @@
 
   // ###### BUTTON ###################################################################
   BUTTON {
-    &.mda-button {
-      --mda-component-padding-horizontal: 20px;
-      --mda-component-icon-left-spacer: 8px;
+    &.npa-button {
+      --npa-component-padding-horizontal: 20px;
+      --npa-component-icon-left-spacer: 8px;
       @include defineFontSizeElement(14, $fontSizeRoot, $fontLineHeightFactor);
       line-height: 1;
-      &.mda-button--small {
-        --mda-component-height: 30px;
+      &.npa-button--small {
+        --npa-component-height: 30px;
         @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
         line-height: 1;
-        I.mda-icon {
-          --mda-button-icon-spacer: 4px;
+        I.npa-icon {
+          --npa-button-icon-spacer: 4px;
         }
       }
-      &.mda-button--icon-left, &.mda-button--icon-right, &.mda-button--icon-only {
-        I.mda-icon {
+      &.npa-button--icon-left, &.npa-button--icon-right, &.npa-button--icon-only {
+        I.npa-icon {
           top: -1px;
         }
       }
-      &.mda-button--secondary, &.mda-button--bob {
-        --mda-button-color: var(--mda-color-space-7);
-        --mda-button-border-color: var(--mda-color-space-5);
-        --mda-button-background-color: var(--mda-color-white);
-        --mda-button-hover-color: var(--mda-color-space-8);
-        --mda-button-hover-border-color: var(--mda-color-space-8);
-        --mda-button-hover-background-color: var(--mda-color-action-1);
-        --mda-button-active-color: var(--mda-color-space-13);
-        --mda-button-active-border-color: var(--mda-color-space-8);
-        --mda-button-active-background-color: var(--mda-color-action-2);
-        --mda-button-disabled-color: var(--mda-color-space-3);
-        --mda-button-disabled-border-color: var(--mda-color-space-2);
-        --mda-button-disabled-background-color: var(--mda-color-white);
+      &.npa-button--secondary, &.npa-button--bob {
+        --npa-button-color: var(--npa-color-space-7);
+        --npa-button-border-color: var(--npa-color-space-5);
+        --npa-button-background-color: var(--npa-color-white);
+        --npa-button-hover-color: var(--npa-color-space-8);
+        --npa-button-hover-border-color: var(--npa-color-space-8);
+        --npa-button-hover-background-color: var(--npa-color-action-1);
+        --npa-button-active-color: var(--npa-color-space-13);
+        --npa-button-active-border-color: var(--npa-color-space-8);
+        --npa-button-active-background-color: var(--npa-color-action-2);
+        --npa-button-disabled-color: var(--npa-color-space-3);
+        --npa-button-disabled-border-color: var(--npa-color-space-2);
+        --npa-button-disabled-background-color: var(--npa-color-white);
       }
-      &.mda-button--borderless {
-        --mda-button-color: var(--mda-color-space-7);
-        --mda-button-border-color: var(--mda-color-white);
-        --mda-button-background-color: var(--mda-color-white);
-        --mda-button-hover-color: var(--mda-color-space-8);
-        --mda-button-hover-border-color: var(--mda-color-action-1);
-        --mda-button-hover-background-color: var(--mda-color-action-1);
-        --mda-button-active-color: var(--mda-color-space-13);
-        --mda-button-active-border-color: var(--mda-color-action-2);
-        --mda-button-active-background-color: var(--mda-color-action-2);
+      &.npa-button--borderless {
+        --npa-button-color: var(--npa-color-space-7);
+        --npa-button-border-color: var(--npa-color-white);
+        --npa-button-background-color: var(--npa-color-white);
+        --npa-button-hover-color: var(--npa-color-space-8);
+        --npa-button-hover-border-color: var(--npa-color-action-1);
+        --npa-button-hover-background-color: var(--npa-color-action-1);
+        --npa-button-active-color: var(--npa-color-space-13);
+        --npa-button-active-border-color: var(--npa-color-action-2);
+        --npa-button-active-background-color: var(--npa-color-action-2);
       }
-      &.mda-button--critical {
-        --mda-button-color: var(--mda-color-white);
-        --mda-button-border-color: var(--mda-error-color);
-        --mda-button-background-color: var(--mda-error-color);
-        --mda-button-hover-color: var(--mda-color-white);
-        --mda-button-hover-border-color: var(--mda-color-coral-7);
-        --mda-button-hover-background-color: var(--mda-color-coral-7);
-        --mda-button-active-color: var(--mda-color-white);
-        --mda-button-active-border-color: var(--mda-color-coral-8);
-        --mda-button-active-background-color: var(--mda-color-coral-8);
+      &.npa-button--critical {
+        --npa-button-color: var(--npa-color-white);
+        --npa-button-border-color: var(--npa-error-color);
+        --npa-button-background-color: var(--npa-error-color);
+        --npa-button-hover-color: var(--npa-color-white);
+        --npa-button-hover-border-color: var(--npa-color-coral-7);
+        --npa-button-hover-background-color: var(--npa-color-coral-7);
+        --npa-button-active-color: var(--npa-color-white);
+        --npa-button-active-border-color: var(--npa-color-coral-8);
+        --npa-button-active-background-color: var(--npa-color-coral-8);
       }
     }
   }
@@ -178,23 +178,23 @@
   INPUT[type=checkbox] {
     & + LABEL {
       @include defineFontSizeElement(14, $fontSizeRoot, $fontLineHeightFactor);
-      line-height: calc(var(--mda-selection-icon-size) + 1px);
+      line-height: calc(var(--npa-selection-icon-size) + 1px);
     }
-    &:not(.mda-switch) {
+    &:not(.npa-switch) {
       &:disabled, &.disabled {
-        &.mda-checkbox--indeterminate {
+        &.npa-checkbox--indeterminate {
           &:checked + LABEL {
             &:after {
-              --mda-checkbox-indeterminate: url('#{$checkboxIndeterminateDisabled}');
+              --npa-checkbox-indeterminate: url('#{$checkboxIndeterminateDisabled}');
             }
           }
         }
       }
 
-      &.mda-checkbox--indeterminate {
+      &.npa-checkbox--indeterminate {
         &:checked + LABEL {
           &:after {
-            --mda-checkbox-indeterminate: url('#{$checkboxIndeterminate}');
+            --npa-checkbox-indeterminate: url('#{$checkboxIndeterminate}');
           }
         }
       }
@@ -202,8 +202,8 @@
   }
 
   // ###### DATEPICKER ###############################################################
-  .mda-calendar {
-    .mda-calendar__nav {
+  .npa-calendar {
+    .npa-calendar__nav {
       DIV {
         @include defineFontSizeElement(14, $fontSizeRoot, $fontLineHeightFactor);
         I {
@@ -211,45 +211,45 @@
         }
       }
     }
-    .mda-calendar__container {
-      .mda-calendar__body {
-        .mda-calendar__date {
+    .npa-calendar__container {
+      .npa-calendar__body {
+        .npa-calendar__date {
           @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
-          --mda-button-disabled-color: var(--mda-color-space-4);
-          --mda-button-disabled-background-color: transparent;
-          --mda-button-disabled-border-color: transparent;
-          --mda-component-focus-box-shadow: none;
-          --mda-component-border-radius: 40px;
-          &.mda-calendar__date--selected {
-            .mda-button {
-              --mda-button-color: var(--mda-color-space-13);
-              --mda-button-background-color: var(--mda-color-action-2);
-              --mda-button-hover-color: var(--mda-color-space-13);
-              --mda-button-hover-background-color: var(--mda-color-action-2);
+          --npa-button-disabled-color: var(--npa-color-space-4);
+          --npa-button-disabled-background-color: transparent;
+          --npa-button-disabled-border-color: transparent;
+          --npa-component-focus-box-shadow: none;
+          --npa-component-border-radius: 40px;
+          &.npa-calendar__date--selected {
+            .npa-button {
+              --npa-button-color: var(--npa-color-space-13);
+              --npa-button-background-color: var(--npa-color-action-2);
+              --npa-button-hover-color: var(--npa-color-space-13);
+              --npa-button-hover-background-color: var(--npa-color-action-2);
             }
           }
-          &.mda-calendar__date--success {
-            .mda-button {
+          &.npa-calendar__date--success {
+            .npa-button {
               font-weight: bold;
-              --mda-button-color: var(--mda-color-space-17);
-              --mda-button-hover-color: var(--mda-color-space-17);
+              --npa-button-color: var(--npa-color-space-17);
+              --npa-button-hover-color: var(--npa-color-space-17);
             }
           }
-          &.mda-calendar__date--current-day:not(.mda-calendar__date--selected) {
-            .mda-button {
-              --mda-button-color: var(--mda-color-white);
-              --mda-button-background-color: var(--mda-color-action-6);
-              --mda-button-hover-color: var(--mda-color-white);
-              --mda-button-hover-background-color: var(--mda-color-action-6);
+          &.npa-calendar__date--current-day:not(.npa-calendar__date--selected) {
+            .npa-button {
+              --npa-button-color: var(--npa-color-white);
+              --npa-button-background-color: var(--npa-color-action-6);
+              --npa-button-hover-color: var(--npa-color-white);
+              --npa-button-hover-background-color: var(--npa-color-action-6);
             }
           }
-          &.mda-calendar__date--critical:not(.mda-calendar__date--selected):not(.mda-calendar__date--current-day) {
-            .mda-button {
+          &.npa-calendar__date--critical:not(.npa-calendar__date--selected):not(.npa-calendar__date--current-day) {
+            .npa-button {
               font-weight: bold;
-              --mda-button-color: var(--mda-error-color);
-              --mda-button-background-color: var(--mda-color-coral-1);
-              --mda-button-hover-color: var(--mda-error-color);
-              --mda-button-hover-background-color: var(--mda-color-coral-2);
+              --npa-button-color: var(--npa-error-color);
+              --npa-button-background-color: var(--npa-color-coral-1);
+              --npa-button-hover-color: var(--npa-error-color);
+              --npa-button-hover-background-color: var(--npa-color-coral-2);
             }
           }
         }
@@ -259,43 +259,43 @@
 
   // ###### INPUT ####################################################################
   INPUT, SPAN, DIV {
-    &.mda-input {
+    &.npa-input {
       @include defineFontSizeElement(14, $fontSizeRoot, $fontLineHeightFactor);
-      &.mda-input--small {
-        --mda-component-height: 30px;
-        --mda-component-padding-horizontal: 8px;
+      &.npa-input--small {
+        --npa-component-height: 30px;
+        --npa-component-padding-horizontal: 8px;
         @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
       }
-      &.mda-input--placeholder-color {
-        color: var(--mda-component-placeholder-color);
+      &.npa-input--placeholder-color {
+        color: var(--npa-component-placeholder-color);
       }
     }
   }
 
   // ###### LABEL ####################################################################
   LABEL {
-    &.mda-label, &.mda-label.mda-label--small {
+    &.npa-label, &.npa-label.npa-label--small {
       @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
     }
   }
 
   // ###### LINK #####################################################################
-  A.mda-link {
-    &.mda-link-small {
+  A.npa-link {
+    &.npa-link-small {
       @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
     }
   }
 
   // ###### MODAL ####################################################################
-  .mda-modal {
-    .mda-modal__box {
-      .mda-modal__header {
+  .npa-modal {
+    .npa-modal__box {
+      .npa-modal__header {
         @include defineFontSizeElement(18, $fontSizeRoot, $fontLineHeightFactor);
         font-weight: bold;
-        .mda-modal__status-icon, .mda-modal__close-control {
+        .npa-modal__status-icon, .npa-modal__close-control {
           @include defineFontSizeElement(15, $fontSizeRoot, $fontLineHeightFactor);
         }
-        .mda-modal__full-window-icon {
+        .npa-modal__full-window-icon {
           @include defineFontSizeElement(20, $fontSizeRoot, $fontLineHeightFactor);
         }
       }
@@ -303,21 +303,21 @@
   }
 
   // ###### NOTIFICATION #############################################################
-  .mda-notification {
-    &.mda-notification--success {
-      --mda-notification-text-color: var(--mda-color-white);
-      --mda-notification-border-color: var(--mda-success-color);
-      --mda-notification-background-color: var(--mda-success-color);
+  .npa-notification {
+    &.npa-notification--success {
+      --npa-notification-text-color: var(--npa-color-white);
+      --npa-notification-border-color: var(--npa-success-color);
+      --npa-notification-background-color: var(--npa-success-color);
     }
-    &.mda-notification--warning {
-      --mda-notification-text-color: var(--mda-color-white);
-      --mda-notification-border-color: var(--mda-warning-color);
-      --mda-notification-background-color: var(--mda-warning-color);
+    &.npa-notification--warning {
+      --npa-notification-text-color: var(--npa-color-white);
+      --npa-notification-border-color: var(--npa-warning-color);
+      --npa-notification-background-color: var(--npa-warning-color);
     }
-    &.mda-notification--critical {
-      --mda-notification-text-color: var(--mda-color-white);
-      --mda-notification-border-color: var(--mda-error-color);
-      --mda-notification-background-color: var(--mda-error-color);
+    &.npa-notification--critical {
+      --npa-notification-text-color: var(--npa-color-white);
+      --npa-notification-border-color: var(--npa-error-color);
+      --npa-notification-background-color: var(--npa-error-color);
     }
   }
 
@@ -325,33 +325,33 @@
   INPUT[type=radio] {
     & + LABEL {
       @include defineFontSizeElement(14, $fontSizeRoot, $fontLineHeightFactor);
-      line-height: calc(var(--mda-selection-icon-size) + 1px);
+      line-height: calc(var(--npa-selection-icon-size) + 1px);
     }
   }
 
   // ###### REPORT ###################################################################
   SPAN, DIV {
-    &.mda-report {
+    &.npa-report {
       @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
     }
   }
 
   // ###### SELECT ###################################################################
-  LABEL.mda-label {
+  LABEL.npa-label {
     & + SELECT, & + INPUT {
-      &.mda-select {
+      &.npa-select {
         @include defineFontSizeElement(14, $fontSizeRoot, $fontLineHeightFactor);
-        &.mda-select--small {
-          --mda-component-height: 30px;
-          --mda-component-padding-horizontal: 8px;
-          --mda-select-filter-padding-right: 8px;
+        &.npa-select--small {
+          --npa-component-height: 30px;
+          --npa-component-padding-horizontal: 8px;
+          --npa-select-filter-padding-right: 8px;
           @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
         }
-        &.mda-select--filter {
-          --mda-component-height: fit-content;
-          --mda-component-width: fit-content;
-          --mda-component-padding-horizontal: 0;
-          padding-right: calc(var(--mda-select-filter-padding-right) + var(--mda-select-chevron-width));
+        &.npa-select--filter {
+          --npa-component-height: fit-content;
+          --npa-component-width: fit-content;
+          --npa-component-padding-horizontal: 0;
+          padding-right: calc(var(--npa-select-filter-padding-right) + var(--npa-select-chevron-width));
           border: none;
           border-radius: 0;
           background-color: transparent;
@@ -370,135 +370,135 @@
   }
 
   // ###### SPINNER ##################################################################
-  .mda-spinner {
-    &.mda-spinner--inline {
-      --mda-spinner-display: inline-flex;
+  .npa-spinner {
+    &.npa-spinner--inline {
+      --npa-spinner-display: inline-flex;
     }
-    &.mda-spinner--inherit {
-      --mda-spinner-display: inherit;
+    &.npa-spinner--inherit {
+      --npa-spinner-display: inherit;
     }
-    &.mda-spinner--12 {
-      --mda-spinner-size: 12px;
-      --mda-spinner-line-width: 7px;
+    &.npa-spinner--12 {
+      --npa-spinner-size: 12px;
+      --npa-spinner-line-width: 7px;
     }
-    &.mda-spinner--16 {
-      --mda-spinner-size: 16px;
-      --mda-spinner-line-width: 6px;
+    &.npa-spinner--16 {
+      --npa-spinner-size: 16px;
+      --npa-spinner-line-width: 6px;
     }
-    &.mda-spinner--20 {
-      --mda-spinner-size: 20px;
-      --mda-spinner-line-width: 5px;
+    &.npa-spinner--20 {
+      --npa-spinner-size: 20px;
+      --npa-spinner-line-width: 5px;
     }
-    &.mda-spinner--80 {
-      --mda-spinner-size: 80px;
-      --mda-spinner-line-width: 3px;
+    &.npa-spinner--80 {
+      --npa-spinner-size: 80px;
+      --npa-spinner-line-width: 3px;
     }
-    &.mda-spinner--inverse {
-      --mda-spinner-color: var(--mda-color-white);
+    &.npa-spinner--inverse {
+      --npa-spinner-color: var(--npa-color-white);
     }
   }
 
   // ###### TAB ######################################################################
-  .mda-tab {
+  .npa-tab {
     @include defineFontSizeElement(14, $fontSizeRoot, $fontLineHeightFactor);
-    &.mda-tab--small {
+    &.npa-tab--small {
       @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
-      --mda-tab-height: 30px;
+      --npa-tab-height: 30px;
     }
   }
 
   // ###### TAG ######################################################################
   SPAN, DIV {
-    &.mda-tag {
-      --mda-component-padding-horizontal: 8px;
+    &.npa-tag {
+      --npa-component-padding-horizontal: 8px;
       font-size: getRemRelativeSize(14, $fontSizeRoot);
-      line-height: calc(var(--mda-tag-height) - 2px);
-      &.mda-tag--medium {
-        --mda-component-icon-spacer: 4px;
-        --mda-tag-height: 24px;
+      line-height: calc(var(--npa-tag-height) - 2px);
+      &.npa-tag--medium {
+        --npa-component-icon-spacer: 4px;
+        --npa-tag-height: 24px;
         font-size: getRemRelativeSize(12, $fontSizeRoot);
       }
-      &.mda-tag--small {
-        --mda-component-icon-spacer: 4px;
-        --mda-tag-height: 18px;
+      &.npa-tag--small {
+        --npa-component-icon-spacer: 4px;
+        --npa-tag-height: 18px;
         font-size: getRemRelativeSize(12, $fontSizeRoot);
       }
-      &.mda-tag--neutral {
-        color: var(--mda-tag-neutral-text-color);
-        border-color: var(--mda-tag-neutral-border-color);
-        background-color: var(--mda-tag-neutral-background-color);
+      &.npa-tag--neutral {
+        color: var(--npa-tag-neutral-text-color);
+        border-color: var(--npa-tag-neutral-border-color);
+        background-color: var(--npa-tag-neutral-background-color);
       }
-      &.mda-tag--critical {
-        color: var(--mda-tag-critical-text-color);
-        border-color: var(--mda-tag-critical-border-color);
-        background-color: var(--mda-tag-critical-background-color);
+      &.npa-tag--critical {
+        color: var(--npa-tag-critical-text-color);
+        border-color: var(--npa-tag-critical-border-color);
+        background-color: var(--npa-tag-critical-background-color);
       }
-      &.mda-tag--warning {
-        color: var(--mda-tag-warning-text-color);
-        border-color: var(--mda-tag-warning-border-color);
-        background-color: var(--mda-tag-warning-background-color);
+      &.npa-tag--warning {
+        color: var(--npa-tag-warning-text-color);
+        border-color: var(--npa-tag-warning-border-color);
+        background-color: var(--npa-tag-warning-background-color);
       }
-      &.mda-tag--success {
-        color: var(--mda-tag-success-text-color);
-        border-color: var(--mda-tag-success-border-color);
-        background-color: var(--mda-tag-success-background-color);
+      &.npa-tag--success {
+        color: var(--npa-tag-success-text-color);
+        border-color: var(--npa-tag-success-border-color);
+        background-color: var(--npa-tag-success-background-color);
       }
     }
   }
 
   // ###### TAG INPUT ################################################################
-  .mda-tag-input {
-    &.mda-input, &.mda-input.mda-input--small {
-      --mda-component-padding-vertical: 0;
-      --mda-component-padding-horizontal: 0;
+  .npa-tag-input {
+    &.npa-input, &.npa-input.npa-input--small {
+      --npa-component-padding-vertical: 0;
+      --npa-component-padding-horizontal: 0;
     }
     INPUT {
       @include defineFontSizeElement(14, $fontSizeRoot, $fontLineHeightFactor);
     }
-    &.mda-input--small {
+    &.npa-input--small {
       INPUT {
         @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
       }
     }
 
     &.disabled {
-      .mda-tag-input__input {
+      .npa-tag-input__input {
         cursor: not-allowed;
       }
     }
 
-    .mda-tag {
+    .npa-tag {
       &.critical {
-        --mda-tag-text-color: var(--mda-error-color);
+        --npa-tag-text-color: var(--npa-error-color);
         INPUT {
-          color: var(--mda-error-color);
+          color: var(--npa-error-color);
         }
       }
     }
   }
 
   // ###### TEXTAREA #################################################################
-  TEXTAREA.mda-textarea {
-    padding-top: calc((var(--mda-component-height) - (14px * #{$fontLineHeightFactor})) / 2);
+  TEXTAREA.npa-textarea {
+    padding-top: calc((var(--npa-component-height) - (14px * #{$fontLineHeightFactor})) / 2);
     @include defineFontSizeElement(14, $fontSizeRoot, $fontLineHeightFactor);
-    &.mda-textarea--small {
-      --mda-component-height: 30px;
-      --mda-component-padding-horizontal: 8px;
-      padding-top: calc((var(--mda-component-height) - (12px * #{$fontLineHeightFactor})) / 2);
+    &.npa-textarea--small {
+      --npa-component-height: 30px;
+      --npa-component-padding-horizontal: 8px;
+      padding-top: calc((var(--npa-component-height) - (12px * #{$fontLineHeightFactor})) / 2);
       @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
     }
   }
 
   // ###### TOOLTIP ##################################################################
-  .mda-tooltip {
-    .mda-tooltip__box {
+  .npa-tooltip {
+    .npa-tooltip__box {
       @include defineFontSizeElement(14, $fontSizeRoot, $fontLineHeightFactor);
     }
-    &.mda-tooltip--light {
-      --mda-tooltip-color: var(--mda-color-space-7);
-      --mda-tooltip-background-color: white;
-      --mda-tooltip-border-color: var(--mda-color-space-4);
-      .mda-tooltip__arrow:after {
+    &.npa-tooltip--light {
+      --npa-tooltip-color: var(--npa-color-space-7);
+      --npa-tooltip-background-color: white;
+      --npa-tooltip-border-color: var(--npa-color-space-4);
+      .npa-tooltip__arrow:after {
         content: '';
         position: absolute;
         top: -6.2px;
@@ -507,42 +507,42 @@
         height: 0;
         border: 7px solid transparent;
       }
-      .mda-tooltip__arrow--top {
+      .npa-tooltip__arrow--top {
         &:after {
-          border-top-color: var(--mda-tooltip-background-color);
+          border-top-color: var(--npa-tooltip-background-color);
           top: -8.2px;
         }
       }
-      .mda-tooltip__arrow--bottom {
+      .npa-tooltip__arrow--bottom {
         &:after {
-          border-bottom-color: var(--mda-tooltip-background-color);
+          border-bottom-color: var(--npa-tooltip-background-color);
         }
       }
-      .mda-tooltip__arrow--left {
+      .npa-tooltip__arrow--left {
         &:after {
-          border-left-color: var(--mda-tooltip-background-color);
+          border-left-color: var(--npa-tooltip-background-color);
           top: -7px;
           left: -8px;
         }
       }
-      .mda-tooltip__arrow--right {
+      .npa-tooltip__arrow--right {
         &:after {
-          border-right-color: var(--mda-tooltip-background-color);
+          border-right-color: var(--npa-tooltip-background-color);
           top: -7px;
           left: -6px;
         }
       }
     }
-    &.mda-tooltip--small {
-      .mda-tooltip__box {
+    &.npa-tooltip--small {
+      .npa-tooltip__box {
         @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
-        --mda-tooltip-default-height: 24px;
-        .mda-tooltip__text {
+        --npa-tooltip-default-height: 24px;
+        .npa-tooltip__text {
           position: relative;
           top: 1px;
         }
       }
-      .mda-tooltip__arrow:after {
+      .npa-tooltip__arrow:after {
         content: '';
         position: absolute;
         top: -8.2px;
@@ -550,19 +550,19 @@
         width: 0;
         height: 0;
       }
-      .mda-tooltip__arrow--bottom {
+      .npa-tooltip__arrow--bottom {
         &:after {
           top: -6px;
           left: -7px;
         }
       }
-      .mda-tooltip__arrow--left {
+      .npa-tooltip__arrow--left {
         &:after {
           top: -7px;
           left: -8px;
         }
       }
-      .mda-tooltip__arrow--right {
+      .npa-tooltip__arrow--right {
         &:after {
           top: -7px;
           left: -6px;

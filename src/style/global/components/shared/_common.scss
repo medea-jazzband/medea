@@ -1,12 +1,12 @@
 // ###### Blocks
-%mda-default-disabled-component {
-  color: var(--mda-component-disabled-color);
-  border-color: var(--mda-component-disabled-border-color);
-  background-color: var(--mda-component-disabled-background-color);
-  cursor: var(--mda-component-disabled-cursor);
+%npa-default-disabled-component {
+  color: var(--npa-component-disabled-color);
+  border-color: var(--npa-component-disabled-border-color);
+  background-color: var(--npa-component-disabled-background-color);
+  cursor: var(--npa-component-disabled-cursor);
 }
 
-%mda-textarea-disabled-component {
-  @extend %mda-default-disabled-component;
+%npa-textarea-disabled-component {
+  @extend %npa-default-disabled-component;
   resize: none;
 }

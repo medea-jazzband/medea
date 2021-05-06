@@ -1,13 +1,13 @@
 @import './shared/common';
 @import './shared/mixins';
 
-%mda-textarea {
-  TEXTAREA.mda-textarea {
+%npa-textarea {
+  TEXTAREA.npa-textarea {
     @include textInputElement() {
-      @extend %mda-textarea-disabled-component;
+      @extend %npa-textarea-disabled-component;
     };
 
-    resize: var(--mda-textarea-resize);
+    resize: var(--npa-textarea-resize);
     vertical-align: top;
     padding-top: unset;
   }

@@ -1,13 +1,13 @@
-%mda-breadcrumb {
-  .mda-breadcrumb {
-    --mda-breadcrum-default-height: var(--mda-component-height);
-    --mda-breadcrum-default-item-spacing: var(--mda-breadcrum-item-spacing);
+%npa-breadcrumb {
+  .npa-breadcrumb {
+    --npa-breadcrum-default-height: var(--npa-component-height);
+    --npa-breadcrum-default-item-spacing: var(--npa-breadcrum-item-spacing);
 
-    --mda-breadcrumb-default-link-color: var(--mda-breadcrumb-link-color);
-    --mda-breadcrumb-default-link-hover-color: var(--mda-breadcrumb-link-hover-color);
-    --mda-breadcrumb-default-link-active-color: var(--mda-breadcrumb-link-active-color);
+    --npa-breadcrumb-default-link-color: var(--npa-breadcrumb-link-color);
+    --npa-breadcrumb-default-link-hover-color: var(--npa-breadcrumb-link-hover-color);
+    --npa-breadcrumb-default-link-active-color: var(--npa-breadcrumb-link-active-color);
 
-    --mda-breadcrum-default-separator-color: var(--mda-breadcrum-separator-color);
-    --mda-breadcrum-default-dropdown-trigger-color: var(--mda-breadcrum-dropdown-trigger-color);
+    --npa-breadcrum-default-separator-color: var(--npa-breadcrum-separator-color);
+    --npa-breadcrum-default-dropdown-trigger-color: var(--npa-breadcrum-dropdown-trigger-color);
   }
 }

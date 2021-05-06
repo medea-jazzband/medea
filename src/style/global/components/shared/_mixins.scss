@@ -7,8 +7,8 @@
     display: inline-flex;
     align-items: center;
     box-sizing: border-box;
-    margin-right: var(--mda-selection-option-spacer);
-    padding: var(--mda-selection-icon-spacer-vertical) 0 var(--mda-selection-icon-spacer-vertical) calc(var(--mda-selection-icon-size) + var(--mda-selection-icon-spacer));
+    margin-right: var(--npa-selection-option-spacer);
+    padding: var(--npa-selection-icon-spacer-vertical) 0 var(--npa-selection-icon-spacer-vertical) calc(var(--npa-selection-icon-size) + var(--npa-selection-icon-spacer));
     cursor: pointer;
     width: fit-content;
     white-space: nowrap;
@@ -17,28 +17,28 @@
       display: inline-block;
       content: '';
       box-sizing: border-box;
-      z-index: var(--mda-selection-z-index-before);
-      width: var(--mda-selection-icon-size);
-      min-width: var(--mda-selection-icon-size);
-      max-width: var(--mda-selection-icon-size);
-      height: var(--mda-selection-icon-size);
-      min-height: var(--mda-selection-icon-size);
-      max-height: var(--mda-selection-icon-size);
+      z-index: var(--npa-selection-z-index-before);
+      width: var(--npa-selection-icon-size);
+      min-width: var(--npa-selection-icon-size);
+      max-width: var(--npa-selection-icon-size);
+      height: var(--npa-selection-icon-size);
+      min-height: var(--npa-selection-icon-size);
+      max-height: var(--npa-selection-icon-size);
       left: 0;
-      border: var(--mda-component-border);
-      border-color: var(--mda-component-border-color);
+      border: var(--npa-component-border);
+      border-color: var(--npa-component-border-color);
       @if $selectionElement == 'checkbox' {
-        border-radius: var(--mda-checkbox-border-radius);
+        border-radius: var(--npa-checkbox-border-radius);
       }
       @if $selectionElement == 'radio' {
-        border-radius: var(--mda-radio-border-radius);
+        border-radius: var(--npa-radio-border-radius);
       }
-      background-color: var(--mda-component-background-color);
+      background-color: var(--npa-component-background-color);
     }
 
     &:focus, &.focus {
       &:before {
-        box-shadow: var(--mda-component-focus-box-shadow);
+        box-shadow: var(--npa-component-focus-box-shadow);
       }
     }
   }
@@ -46,63 +46,63 @@
   &:hover {
     & + LABEL {
       &:before {
-        border-color: var(--mda-component-hover-border-color);
-        background-color: var(--mda-component-hover-background-color);
+        border-color: var(--npa-component-hover-border-color);
+        background-color: var(--npa-component-hover-background-color);
       }
     }
   }
 
   &:disabled, &.disabled {
     & + LABEL {
-      color: var(--mda-selection-disabled-tex-color);
-      cursor: var(--mda-component-disabled-cursor);
+      color: var(--npa-selection-disabled-tex-color);
+      cursor: var(--npa-component-disabled-cursor);
       &:before {
-        border-color: var(--mda-component-disabled-border-color);
-        background-color: var(--mda-component-disabled-background-color);
+        border-color: var(--npa-component-disabled-border-color);
+        background-color: var(--npa-component-disabled-background-color);
       }
     }
     &:checked + LABEL {
       &:before {
-        --mda-component-border: none;
-        background-color: var(--mda-selection-checked-disabled-background-color);
+        --npa-component-border: none;
+        background-color: var(--npa-selection-checked-disabled-background-color);
       }
       &:after {
-        --mda-checkbox-checked: var(--mda-checkbox-checked-disabled);
-        --mda-radio-checked: var(--mda-radio-checked-disabled);
+        --npa-checkbox-checked: var(--npa-checkbox-checked-disabled);
+        --npa-radio-checked: var(--npa-radio-checked-disabled);
       }
     }
   }
 
   &:checked + LABEL {
     &:before {
-      border-color: var(--mda-component-checked-border-color);
-      background-color: var(--mda-component-checked-background-color);
+      border-color: var(--npa-component-checked-border-color);
+      background-color: var(--npa-component-checked-background-color);
     }
     &:after {
       position: absolute;
       display: inline-block;
       left: 0;
       content: '';
-      z-index: var(--mda-selection-z-index-after);
-      width: var(--mda-selection-icon-size);
-      min-width: var(--mda-selection-icon-size);
-      max-width: var(--mda-selection-icon-size);
-      height: var(--mda-selection-icon-size);
-      min-height: var(--mda-selection-icon-size);
-      max-height: var(--mda-selection-icon-size);
+      z-index: var(--npa-selection-z-index-after);
+      width: var(--npa-selection-icon-size);
+      min-width: var(--npa-selection-icon-size);
+      max-width: var(--npa-selection-icon-size);
+      height: var(--npa-selection-icon-size);
+      min-height: var(--npa-selection-icon-size);
+      max-height: var(--npa-selection-icon-size);
       @if $selectionElement == 'checkbox' {
-        background-image: var(--mda-checkbox-checked);
+        background-image: var(--npa-checkbox-checked);
       }
       @if $selectionElement == 'radio' {
-        background-image: var(--mda-radio-checked);
+        background-image: var(--npa-radio-checked);
       }
-      background-size: var(--mda-selection-icon-size) var(--mda-selection-icon-size);
+      background-size: var(--npa-selection-icon-size) var(--npa-selection-icon-size);
     }
   }
-  &.mda-selection--no-label + LABEL {
+  &.npa-selection--no-label + LABEL {
     font-size: 0;
   }
-  &.mda-selection--vertical + LABEL {
+  &.npa-selection--vertical + LABEL {
     display: flex;
   }
   @content;
@@ -111,59 +111,59 @@
 //## Mixin for generate input text element basic structure.
 //## PARAMETERS: void
 @mixin textInputElement() {
-  width: var(--mda-component-width);
-  min-width: var(--mda-component-width);
-  height: var(--mda-component-height);
-  min-height: var(--mda-component-height);
+  width: var(--npa-component-width);
+  min-width: var(--npa-component-width);
+  height: var(--npa-component-height);
+  min-height: var(--npa-component-height);
   box-sizing: border-box;
-  padding: var(--mda-component-padding-vertical) var(--mda-component-padding-horizontal);
-  border: var(--mda-component-border);
-  color: var(--mda-component-color, inherit);
-  border-color: var(--mda-component-border-color);
-  border-radius: var(--mda-component-border-radius);
-  background: var(--mda-component-background-color);
+  padding: var(--npa-component-padding-vertical) var(--npa-component-padding-horizontal);
+  border: var(--npa-component-border);
+  color: var(--npa-component-color, inherit);
+  border-color: var(--npa-component-border-color);
+  border-radius: var(--npa-component-border-radius);
+  background: var(--npa-component-background-color);
 
   &:hover {
-    color: var(--mda-component-hover-color);
-    border-color: var(--mda-component-hover-border-color);
-    background-color: var(--mda-component-hover-background-color);
+    color: var(--npa-component-hover-color);
+    border-color: var(--npa-component-hover-border-color);
+    background-color: var(--npa-component-hover-background-color);
   }
   &:disabled, &.disabled {
     @content;
     &::placeholder, &.placeholder {
-      color: var(--mda-component-placeholder-disabled-color);
+      color: var(--npa-component-placeholder-disabled-color);
     }
   }
   &:focus, &.focus {
-    color: var(--mda-component-focus-color);
-    border-color: var(--mda-component-focus-border-color);
-    box-shadow: var(--mda-component-focus-box-shadow);
-    background-color: var(--mda-component-focus-background-color);
+    color: var(--npa-component-focus-color);
+    border-color: var(--npa-component-focus-border-color);
+    box-shadow: var(--npa-component-focus-box-shadow);
+    background-color: var(--npa-component-focus-background-color);
     &::placeholder, &.placeholder {
-      color: var(--mda-component-placeholder-color);
+      color: var(--npa-component-placeholder-color);
     }
   }
   &:focus.error, &.focus.error {
-    color: var(--mda-component-focus-error-color);
-    border-color: var(--mda-component-error-border-color);
-    background-color: var(--mda-component-error-background-color);
-    box-shadow: var(--mda-component-focus-error-box-shadow);
+    color: var(--npa-component-focus-error-color);
+    border-color: var(--npa-component-error-border-color);
+    background-color: var(--npa-component-error-background-color);
+    box-shadow: var(--npa-component-focus-error-box-shadow);
     &::placeholder, &.placeholder {
-      color: var(--mda-component-placeholder-color);
+      color: var(--npa-component-placeholder-color);
     }
   }
   &.error {
-    color: var(--mda-component-error-color);
-    border-color: var(--mda-component-error-border-color);
-    background-color: var(--mda-component-error-background-color);
+    color: var(--npa-component-error-color);
+    border-color: var(--npa-component-error-border-color);
+    background-color: var(--npa-component-error-background-color);
     &:disabled, &.disabled {
       @content;
       &::placeholder, &.placeholder {
-        color: var(--mda-component-placeholder-disabled-color);
+        color: var(--npa-component-placeholder-disabled-color);
       }
     }
   }
   &::placeholder, &.placeholder {
-    color: var(--mda-component-placeholder-color);
+    color: var(--npa-component-placeholder-color);
   }
 }

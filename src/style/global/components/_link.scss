@@ -1,21 +1,21 @@
-%mda-link {
-  A.mda-link {
-    color: var(--mda-link-color);
+%npa-link {
+  A.npa-link {
+    color: var(--npa-link-color);
     cursor: pointer;
     text-decoration: none;
     &:hover {
-      color: var(--mda-link-hover-color);
+      color: var(--npa-link-hover-color);
       text-decoration: none;
     }
 
-    &.mda-link-hover-underline {
+    &.npa-link-hover-underline {
       text-decoration: none;
       &:hover {
         text-decoration: underline;
       }
     }
 
-    &.mda-link-hover-underline-inverse {
+    &.npa-link-hover-underline-inverse {
       text-decoration: underline;
       &:hover {
         text-decoration: none;

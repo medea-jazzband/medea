@@ -23,7 +23,7 @@ const colors = {};
 let group = '';
 let colorIdsForInterface = '';
 let colorIdsForObject = '';
-const groupInterface = 'Array<MdaColor>';
+const groupInterface = 'Array<NpaColor>';
 let groupNames = '';
 
 lineReader.on('line', (line) => {
@@ -58,11 +58,11 @@ lineReader.on('line', (line) => {
 
 lineReader.on('close', () => {
   const file = fs.createWriteStream(path.resolve(__dirname, 'ts', 'colors.ts'));
-  file.write('export interface MdaColor { name: string; label: string; color: string; rgb: number[]; cmyk: number[]; yiq: number; }');
-  file.write(`export interface MdaColorScheme { ${groupNames} }`);
-  file.write(`export interface MdaColorNames { ${colorIdsForInterface} }`);
-  file.write(`export const mdaColorNames: MdaColorNames = { ${colorIdsForObject} };`);
-  file.write('export const mdaColors: MdaColorScheme = ' + JSON.stringify(colors) + ';');
+  file.write('export interface NpaColor { name: string; label: string; color: string; rgb: number[]; cmyk: number[]; yiq: number; }');
+  file.write(`export interface NpaColorScheme { ${groupNames} }`);
+  file.write(`export interface NpaColorNames { ${colorIdsForInterface} }`);
+  file.write(`export const npaColorNames: NpaColorNames = { ${colorIdsForObject} };`);
+  file.write('export const npaColors: NpaColorScheme = ' + JSON.stringify(colors) + ';');
   file.end();
 
   console.log('Build done. (Module Colors)');

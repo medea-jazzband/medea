@@ -22,28 +22,28 @@
 @import './toggle-button';
 @import './tooltip';
 
-%mda-components {
-  @extend %mda-alert;
-  @extend %mda-badge;
-  @extend %mda-breadcrumb;
-  @extend %mda-button;
-  @extend %mda-checkbox;
-  @extend %mda-date-picker;
-  @extend %mda-dropdown;
-  @extend %mda-input;
-  @extend %mda-label;
-  @extend %mda-link;
-  @extend %mda-modal;
-  @extend %mda-notification;
-  @extend %mda-radio;
-  @extend %mda-report;
-  @extend %mda-select;
-  @extend %mda-spinner;
-  @extend %mda-switch;
-  @extend %mda-tab;
-  @extend %mda-tag;
-  @extend %mda-tag-input;
-  @extend %mda-textarea;
-  @extend %mda-toggle-button;
-  @extend %mda-tooltip;
+%npa-components {
+  @extend %npa-alert;
+  @extend %npa-badge;
+  @extend %npa-breadcrumb;
+  @extend %npa-button;
+  @extend %npa-checkbox;
+  @extend %npa-date-picker;
+  @extend %npa-dropdown;
+  @extend %npa-input;
+  @extend %npa-label;
+  @extend %npa-link;
+  @extend %npa-modal;
+  @extend %npa-notification;
+  @extend %npa-radio;
+  @extend %npa-report;
+  @extend %npa-select;
+  @extend %npa-spinner;
+  @extend %npa-switch;
+  @extend %npa-tab;
+  @extend %npa-tag;
+  @extend %npa-tag-input;
+  @extend %npa-textarea;
+  @extend %npa-toggle-button;
+  @extend %npa-tooltip;
 }

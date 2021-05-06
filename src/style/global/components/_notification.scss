@@ -1,25 +1,25 @@
-%mda-notification {
-  .mda-notification {
-    --mda-notification-default-position: var(--mda-notification-position);
-    --mda-notification-default-padding: var(--mda-notification-padding);
-    --mda-notification-default-width: var(--mda-notification-width);
-    --mda-notification-default-min-width: var(--mda-notification-min-width);
-    --mda-notification-default-max-width: var(--mda-notification-max-width);
-    --mda-notification-default-top: var(--mda-notification-top);
-    --mda-notification-default-left: var(--mda-notification-left);
-    --mda-notification-default-z-index: var(--mda-notification-z-index);
+%npa-notification {
+  .npa-notification {
+    --npa-notification-default-position: var(--npa-notification-position);
+    --npa-notification-default-padding: var(--npa-notification-padding);
+    --npa-notification-default-width: var(--npa-notification-width);
+    --npa-notification-default-min-width: var(--npa-notification-min-width);
+    --npa-notification-default-max-width: var(--npa-notification-max-width);
+    --npa-notification-default-top: var(--npa-notification-top);
+    --npa-notification-default-left: var(--npa-notification-left);
+    --npa-notification-default-z-index: var(--npa-notification-z-index);
 
-    --mda-notification-default-border: var(--mda-notification-border);
-    --mda-notification-default-border-radius: var(--mda-notification-border-radius);
-    --mda-notification-default-box-shadow: var(--mda-notification-box-shadow);
+    --npa-notification-default-border: var(--npa-notification-border);
+    --npa-notification-default-border-radius: var(--npa-notification-border-radius);
+    --npa-notification-default-box-shadow: var(--npa-notification-box-shadow);
 
-    --mda-notification-default-text-color: var(--mda-notification-text-color);
-    --mda-notification-default-border-color: var(--mda-notification-border-color);
-    --mda-notification-default-background-color: var(--mda-notification-background-color);
+    --npa-notification-default-text-color: var(--npa-notification-text-color);
+    --npa-notification-default-border-color: var(--npa-notification-border-color);
+    --npa-notification-default-background-color: var(--npa-notification-background-color);
 
-    --mda-notification-default-icon-separation: var(--mda-notification-icon-separation);
-    --mda-notification-default-close-control-separation: var(--mda-notification-close-control-separation);
-    .mda-notification--message SPAN {
+    --npa-notification-default-icon-separation: var(--npa-notification-icon-separation);
+    --npa-notification-default-close-control-separation: var(--npa-notification-close-control-separation);
+    .npa-notification--message SPAN {
       * {
         color: inherit;
       }
@@ -31,10 +31,10 @@
         }
       }
     }
-    &.mda-notification--info {
-      .mda-notification--message SPAN A {
+    &.npa-notification--info {
+      .npa-notification--message SPAN A {
         text-decoration: none;
-        color: var(--mda-notification-inside-link-color);
+        color: var(--npa-notification-inside-link-color);
         &:hover {
           text-decoration: underline;
         }

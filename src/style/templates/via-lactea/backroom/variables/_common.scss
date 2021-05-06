@@ -6,437 +6,437 @@
 @import './sass';
 @import '../spacing';
 
-%mda-global-vars {
+%npa-global-vars {
   // ###### Spacing Definition
   @each $value in $spacings {
-    --mda-spacing-#{$value}: #{$value}px;
-    --mda-spacing-relative-#{$value}: #{getRemRelativeSize($value, $fontSizeRoot)};
+    --npa-spacing-#{$value}: #{$value}px;
+    --npa-spacing-relative-#{$value}: #{getRemRelativeSize($value, $fontSizeRoot)};
   }
 
   // ###### Color Scheme Definition
   @each $key, $value in $colorsAvailable {
     $symbol: if($key==-white or $key==-black,'','-');
-    --mda-color#{$symbol}#{$key}: #{$value};
-    --mda-color#{$symbol}#{$key}-rgb: #{red($value), green($value), blue($value)};
+    --npa-color#{$symbol}#{$key}: #{$value};
+    --npa-color#{$symbol}#{$key}-rgb: #{red($value), green($value), blue($value)};
   }
   @each $key, $value in $templateBaseBackgroundColor {
-    --mda-color-#{$key}: #{$value};
-    --mda-color-#{$key}-rgb: #{red($value), green($value), blue($value)};
+    --npa-color-#{$key}: #{$value};
+    --npa-color-#{$key}-rgb: #{red($value), green($value), blue($value)};
   }
   @each $key, $value in $templateBaseBorderColor {
-    --mda-color-#{$key}: #{$value};
-    --mda-color-#{$key}-rgb: #{red($value), green($value), blue($value)};
+    --npa-color-#{$key}: #{$value};
+    --npa-color-#{$key}-rgb: #{red($value), green($value), blue($value)};
   }
   @each $key, $value in $templateBaseTextColor {
-    --mda-color-#{$key}: #{$value};
-    --mda-color-#{$key}-rgb: #{red($value), green($value), blue($value)};
+    --npa-color-#{$key}: #{$value};
+    --npa-color-#{$key}-rgb: #{red($value), green($value), blue($value)};
   }
 
   // ###### Generic Colors (HEX)
-  --mda-focus-color: var(--mda-color-action-6);
-  --mda-error-color: var(--mda-color-coral-6);
-  --mda-warning-color: var(--mda-color-orange-5);
-  --mda-success-color: var(--mda-color-green-6);
+  --npa-focus-color: var(--npa-color-action-6);
+  --npa-error-color: var(--npa-color-coral-6);
+  --npa-warning-color: var(--npa-color-orange-5);
+  --npa-success-color: var(--npa-color-green-6);
 
   // ###### Component Colors (HEX)
-  --mda-component-color: var(--mda-color-space-17);
-  --mda-component-border-color: var(--mda-color-space-5);
-  --mda-component-background-color: var(--mda-color-white);
+  --npa-component-color: var(--npa-color-space-17);
+  --npa-component-border-color: var(--npa-color-space-5);
+  --npa-component-background-color: var(--npa-color-white);
 
-  --mda-component-hover-color: var(--mda-color-space-17);
-  --mda-component-hover-border-color: var(--mda-color-space-7);
-  --mda-component-hover-background-color: var(--mda-color-white);
+  --npa-component-hover-color: var(--npa-color-space-17);
+  --npa-component-hover-border-color: var(--npa-color-space-7);
+  --npa-component-hover-background-color: var(--npa-color-white);
 
-  --mda-component-focus-color: var(--mda-color-space-17);
-  --mda-component-focus-error-color: var(--mda-color-space-17);
-  --mda-component-focus-border-color: var(--mda-color-action-6);
-  --mda-component-focus-background-color: var(--mda-color-white);
-  --mda-component-focus-box-shadow-color: var(--mda-color-action-2);
-  --mda-component-focus-error-box-shadow-color: var(--mda-color-coral-2);
+  --npa-component-focus-color: var(--npa-color-space-17);
+  --npa-component-focus-error-color: var(--npa-color-space-17);
+  --npa-component-focus-border-color: var(--npa-color-action-6);
+  --npa-component-focus-background-color: var(--npa-color-white);
+  --npa-component-focus-box-shadow-color: var(--npa-color-action-2);
+  --npa-component-focus-error-box-shadow-color: var(--npa-color-coral-2);
 
-  --mda-component-error-color: var(--mda-color-space-17);
-  --mda-component-error-border-color: var(--mda-error-color);
-  --mda-component-error-background-color: var(--mda-color-white);
+  --npa-component-error-color: var(--npa-color-space-17);
+  --npa-component-error-border-color: var(--npa-error-color);
+  --npa-component-error-background-color: var(--npa-color-white);
 
-  --mda-component-checked-border-color: var(--mda-color-action-6);
-  --mda-component-checked-background-color: var(--mda-color-action-6);
+  --npa-component-checked-border-color: var(--npa-color-action-6);
+  --npa-component-checked-background-color: var(--npa-color-action-6);
 
-  --mda-component-placeholder-color: var(--mda-color-space-6);
-  --mda-component-placeholder-disabled-color: var(--mda-color-space-6);
+  --npa-component-placeholder-color: var(--npa-color-space-6);
+  --npa-component-placeholder-disabled-color: var(--npa-color-space-6);
 
-  --mda-component-disabled-color: var(--mda-color-space-6);
-  --mda-component-disabled-border-color: var(--mda-color-space-4);
-  --mda-component-disabled-background-color: var(--mda-color-space-1);
+  --npa-component-disabled-color: var(--npa-color-space-6);
+  --npa-component-disabled-border-color: var(--npa-color-space-4);
+  --npa-component-disabled-background-color: var(--npa-color-space-1);
 
-  // ###### Component ICON (icons inside components like .mda-input--search)
-  --mda-component-icon-color: var(--mda-color-space-7);
-  --mda-component-icon-disabled-color: var(--mda-color-space-6);
+  // ###### Component ICON (icons inside components like .npa-input--search)
+  --npa-component-icon-color: var(--npa-color-space-7);
+  --npa-component-icon-disabled-color: var(--npa-color-space-6);
 
   // ###### Generic SELECTION elements (like radio or checkbox)
-  --mda-selection-option-spacer: 24px;
-  --mda-selection-icon-spacer: 8px;
-  --mda-selection-icon-spacer-vertical: 4px;
-  --mda-selection-icon-size: 16px;
-  --mda-selection-z-index-before: auto;
-  --mda-selection-z-index-after: auto;
+  --npa-selection-option-spacer: 24px;
+  --npa-selection-icon-spacer: 8px;
+  --npa-selection-icon-spacer-vertical: 4px;
+  --npa-selection-icon-size: 16px;
+  --npa-selection-z-index-before: auto;
+  --npa-selection-z-index-after: auto;
 
-  --mda-selection-disabled-tex-color: var(--mda-color-space-6);
-  --mda-selection-checked-disabled-border-color: 0 0 0 1px var(--mda-color-action-4);
-  --mda-selection-checked-disabled-background-color: var(--mda-color-action-4);
+  --npa-selection-disabled-tex-color: var(--npa-color-space-6);
+  --npa-selection-checked-disabled-border-color: 0 0 0 1px var(--npa-color-action-4);
+  --npa-selection-checked-disabled-background-color: var(--npa-color-action-4);
 
   // ###### Component Commons
-  --mda-component-width: fit-content;
-  --mda-component-height: 36px;
-  --mda-component-vertical-spacer: 2px;
+  --npa-component-width: fit-content;
+  --npa-component-height: 36px;
+  --npa-component-vertical-spacer: 2px;
 
-  --mda-component-padding-vertical: 0;
-  --mda-component-padding-horizontal: 12px;
+  --npa-component-padding-vertical: 0;
+  --npa-component-padding-horizontal: 12px;
 
-  --mda-component-box-shadow: 0 3px 9px 0 rgba(var(--mda-color-neutral-12-rgb), 0.25);
-  --mda-component-focus-box-shadow: 0 0 0 2px var(--mda-component-focus-box-shadow-color);
-  --mda-component-focus-error-box-shadow: 0 0 0 2px var(--mda-component-focus-error-box-shadow-color);
+  --npa-component-box-shadow: 0 3px 9px 0 rgba(var(--npa-color-neutral-12-rgb), 0.25);
+  --npa-component-focus-box-shadow: 0 0 0 2px var(--npa-component-focus-box-shadow-color);
+  --npa-component-focus-error-box-shadow: 0 0 0 2px var(--npa-component-focus-error-box-shadow-color);
 
-  --mda-component-border: 1px solid;
-  --mda-component-border-radius: 4px;
+  --npa-component-border: 1px solid;
+  --npa-component-border-radius: 4px;
 
-  --mda-component-icon-left-spacer: 4px;
-  --mda-component-icon-right-spacer: 8px;
+  --npa-component-icon-left-spacer: 4px;
+  --npa-component-icon-right-spacer: 8px;
 
-  --mda-component-disabled-cursor: not-allowed;
+  --npa-component-disabled-cursor: not-allowed;
 
   // ###### ICONS
-  --mda-icon-font-family: '#{$defaultIconFontFamilyMda}', '#{$defaultIconFontFamilyEgeo}', Symbol, sans-serif;
-  --mda-icon-search: '#{$searchIcon}';
-  --mda-icon-email: '#{$emailIcon}';
-  --mda-icon-user: '#{$userIcon}';
-  --mda-icon-password: '#{$passwordIcon}';
-  --mda-icon-action-clear: '#{$actionClearIcon}';
-  --mda-icon-arrow-bottom: '#{$arrowDownIcon}';
-  --mda-icon-checkbox-checked: '#{$checkboxCheckedIcon}';
+  --npa-icon-font-family: '#{$defaultIconFontFamilyNpa}', '#{$defaultIconFontFamilyEgeo}', Symbol, sans-serif;
+  --npa-icon-search: '#{$searchIcon}';
+  --npa-icon-email: '#{$emailIcon}';
+  --npa-icon-user: '#{$userIcon}';
+  --npa-icon-password: '#{$passwordIcon}';
+  --npa-icon-action-clear: '#{$actionClearIcon}';
+  --npa-icon-arrow-bottom: '#{$arrowDownIcon}';
+  --npa-icon-checkbox-checked: '#{$checkboxCheckedIcon}';
 
   // ################################################################################################
   // ###### COMPONENTS ##############################################################################
   // ################################################################################################
 
   // ###### ALERT
-  --mda-alert-position: fixed;
-  --mda-alert-padding-vertical: 32px;
-  --mda-alert-padding-horizontal: var(--mda-alert-padding-vertical);
-  --mda-alert-width: 350px;
-  --mda-alert-min-width: var(--mda-alert-width);
-  --mda-alert-max-width: var(--mda-alert-width);
-  --mda-alert-top: 0;
-  --mda-alert-left: 0;
-  --mda-alert-z-index: 1;
+  --npa-alert-position: fixed;
+  --npa-alert-padding-vertical: 32px;
+  --npa-alert-padding-horizontal: var(--npa-alert-padding-vertical);
+  --npa-alert-width: 350px;
+  --npa-alert-min-width: var(--npa-alert-width);
+  --npa-alert-max-width: var(--npa-alert-width);
+  --npa-alert-top: 0;
+  --npa-alert-left: 0;
+  --npa-alert-z-index: 1;
 
-  --mda-alert-border: var(--mda-component-border);
-  --mda-alert-border-radius: var(--mda-component-border-radius);
-  --mda-alert-box-shadow: 0 3px 9px 0 rgba(var(--mda-color-neutral-12-rgb), 0.25);
+  --npa-alert-border: var(--npa-component-border);
+  --npa-alert-border-radius: var(--npa-component-border-radius);
+  --npa-alert-box-shadow: 0 3px 9px 0 rgba(var(--npa-color-neutral-12-rgb), 0.25);
 
-  --mda-alert-close-control-color: var(--mda-color-space-8);
-  --mda-alert-close-control-top: -15px;
-  --mda-alert-close-control-right: -15px;
+  --npa-alert-close-control-color: var(--npa-color-space-8);
+  --npa-alert-close-control-top: -15px;
+  --npa-alert-close-control-right: -15px;
 
-  --mda-alert-header-separation: 12px;
-  --mda-alert-title-icon-separation: 12px;
+  --npa-alert-header-separation: 12px;
+  --npa-alert-title-icon-separation: 12px;
 
-  --mda-alert-title-text-color: var(--mda-color-space-17);
-  --mda-alert-title-icon-color: var(--mda-color-action-6);
-  --mda-alert-title-icon-spacer: 8px;
-  --mda-alert-body-text-color: var(--mda-color-space-8);
-  --mda-alert-border-color: var(--mda-color-space-3);
-  --mda-alert-background-color: white;
+  --npa-alert-title-text-color: var(--npa-color-space-17);
+  --npa-alert-title-icon-color: var(--npa-color-action-6);
+  --npa-alert-title-icon-spacer: 8px;
+  --npa-alert-body-text-color: var(--npa-color-space-8);
+  --npa-alert-border-color: var(--npa-color-space-3);
+  --npa-alert-background-color: white;
 
-  --mda-alert-actions-height: 40px;
-  --mda-alert-actions-background-color: var(--mda-color-space-1);
-  --mda-alert-actions-separation: 2px;
+  --npa-alert-actions-height: 40px;
+  --npa-alert-actions-background-color: var(--npa-color-space-1);
+  --npa-alert-actions-separation: 2px;
 
   // ###### BADGE
-  --mda-badge-position: absolute;
-  --mda-badge-min-width: 20px;
-  --mda-badge-min-height: 20px;
-  --mda-badge-padding: 4px 3px;
+  --npa-badge-position: absolute;
+  --npa-badge-min-width: 20px;
+  --npa-badge-min-height: 20px;
+  --npa-badge-padding: 4px 3px;
 
-  --mda-badge-color: white;
-  --mda-badge-background-color: var(--mda-color-space-6);
-  --mda-badge-border-color: var(--mda-color-space-6);
-  --mda-badge-border-radius: 20px;
+  --npa-badge-color: white;
+  --npa-badge-background-color: var(--npa-color-space-6);
+  --npa-badge-border-color: var(--npa-color-space-6);
+  --npa-badge-border-radius: 20px;
 
-  --mda-badge-text-top: 0.5px;
+  --npa-badge-text-top: 0.5px;
 
   // ###### BREADCRUMB
-  --mda-breadcrum-item-spacing: 8px;
+  --npa-breadcrum-item-spacing: 8px;
 
-  --mda-breadcrumb-link-color: var(--mda-color-space-8);
-  --mda-breadcrumb-link-hover-color: var(--mda-color-action-6);
-  --mda-breadcrumb-link-active-color: var(--mda-color-space-17);
+  --npa-breadcrumb-link-color: var(--npa-color-space-8);
+  --npa-breadcrumb-link-hover-color: var(--npa-color-action-6);
+  --npa-breadcrumb-link-active-color: var(--npa-color-space-17);
 
-  --mda-breadcrum-separator-color: var(--mda-color-space-8);
-  --mda-breadcrum-dropdown-trigger-color: var(--mda-color-space-8);
+  --npa-breadcrum-separator-color: var(--npa-color-space-8);
+  --npa-breadcrum-dropdown-trigger-color: var(--npa-color-space-8);
 
   // ###### BUTTON
-  --mda-button-color: white;
-  --mda-button-border-color: var(--mda-color-action-6);
-  --mda-button-background-color: var(--mda-color-action-6);
-  --mda-button-hover-color: white;
-  --mda-button-hover-border-color: var(--mda-color-action-7);
-  --mda-button-hover-background-color: var(--mda-color-action-7);
-  --mda-button-active-color: white;
-  --mda-button-active-border-color: var(--mda-color-action-8);
-  --mda-button-active-background-color: var(--mda-color-action-8);
-  --mda-button-disabled-color: var(--mda-color-space-4);
-  --mda-button-disabled-border-color: var(--mda-color-space-1);
-  --mda-button-disabled-background-color: var(--mda-color-space-1);
-  --mda-button-disabled-icon-color: var(--mda-color-space-4);
+  --npa-button-color: white;
+  --npa-button-border-color: var(--npa-color-action-6);
+  --npa-button-background-color: var(--npa-color-action-6);
+  --npa-button-hover-color: white;
+  --npa-button-hover-border-color: var(--npa-color-action-7);
+  --npa-button-hover-background-color: var(--npa-color-action-7);
+  --npa-button-active-color: white;
+  --npa-button-active-border-color: var(--npa-color-action-8);
+  --npa-button-active-background-color: var(--npa-color-action-8);
+  --npa-button-disabled-color: var(--npa-color-space-4);
+  --npa-button-disabled-border-color: var(--npa-color-space-1);
+  --npa-button-disabled-background-color: var(--npa-color-space-1);
+  --npa-button-disabled-icon-color: var(--npa-color-space-4);
 
-  --mda-button-icon-spacer: 8px;
-  --mda-button-border-correction: 2px;
+  --npa-button-icon-spacer: 8px;
+  --npa-button-border-correction: 2px;
 
   // ###### CHECKBOX
   $checkboxChecked: 'data:image/svg+xml; utf8, <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.6738 4.57069C11.4568 4.41504 11.2446 4.26814 11.0639 4.14187C11.0029 4.09874 10.9443 4.06685 10.8832 4.04373C10.5768 3.92871 10.2704 4.04373 10.0673 4.3519C9.48284 5.24204 8.89778 6.13469 8.31333 7.0242L6.99938 9.02827C6.59262 8.60758 6.18889 8.19002 5.78274 7.76995C5.60988 7.59117 5.43461 7.50178 5.24785 7.50178H5.24483C5.06109 7.50178 4.88279 7.59117 4.71296 7.76682C4.56247 7.92247 4.41499 8.075 4.26752 8.23065L4.25664 8.2419C3.91395 8.59883 3.91395 8.99077 4.25966 9.3477C4.99219 10.1053 5.72411 10.8623 6.45664 11.6199C6.4929 11.6574 6.53158 11.695 6.57328 11.7325C6.77394 11.9081 6.99092 12 7.2079 12C7.24416 12 7.28042 11.9969 7.31669 11.9912C7.56449 11.9569 7.78449 11.8012 7.95432 11.5449C9.22113 9.61274 10.4716 7.70619 11.8581 5.5896C12.1005 5.22392 12.0279 4.82323 11.6744 4.57006L11.6738 4.57069Z" fill="white"/></svg>';
   $checkboxIndeterminate: 'data:image/svg+xml; utf8, <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="7" width="10" height="2" fill="white"/></svg>';
-  --mda-checkbox-checked: url('#{$checkboxChecked}');
-  --mda-checkbox-indeterminate: url('#{$checkboxIndeterminate}');
-  --mda-checkbox-border-radius: 2px;
-  --mda-checkbox-checked-disabled: var(--mda-checkbox-checked);
-  --mda-checkbox-indeterminate-border-color: var(--mda-color-action-6);
-  --mda-checkbox-indeterminate-background-color: var(--mda-color-white);
-  --mda-checkbox-indeterminate-disabled-border-color: var(--mda-color-action-4);
-  --mda-checkbox-indeterminate-disabled-background-color: var(--mda-color-white);
+  --npa-checkbox-checked: url('#{$checkboxChecked}');
+  --npa-checkbox-indeterminate: url('#{$checkboxIndeterminate}');
+  --npa-checkbox-border-radius: 2px;
+  --npa-checkbox-checked-disabled: var(--npa-checkbox-checked);
+  --npa-checkbox-indeterminate-border-color: var(--npa-color-action-6);
+  --npa-checkbox-indeterminate-background-color: var(--npa-color-white);
+  --npa-checkbox-indeterminate-disabled-border-color: var(--npa-color-action-4);
+  --npa-checkbox-indeterminate-disabled-background-color: var(--npa-color-white);
 
   // ###### DATE PICKER
-  --mda-calendar-header-padding-vertical: 12px;
-  --mda-calendar-header-padding-horizontal: 12px;
-  --mda-calendar-body-padding-vertical: 16px;
-  --mda-calendar-body-padding-horizontal: 24px;
-  --mda-calendar-weekdays-spacing: 12px;
-  --mda-calendar-item-width: 36px;
-  --mda-calendar-item-correction: 0;
+  --npa-calendar-header-padding-vertical: 12px;
+  --npa-calendar-header-padding-horizontal: 12px;
+  --npa-calendar-body-padding-vertical: 16px;
+  --npa-calendar-body-padding-horizontal: 24px;
+  --npa-calendar-weekdays-spacing: 12px;
+  --npa-calendar-item-width: 36px;
+  --npa-calendar-item-correction: 0;
 
-  --mda-calendar-position: absolute;
-  --mda-calendar-width: calc((var(--mda-calendar-item-width) * 7) + (var(--mda-calendar-body-padding-horizontal) * 2));
-  --mda-calendar-z-index: 2;
+  --npa-calendar-position: absolute;
+  --npa-calendar-width: calc((var(--npa-calendar-item-width) * 7) + (var(--npa-calendar-body-padding-horizontal) * 2));
+  --npa-calendar-z-index: 2;
 
-  --mda-calendar-background-color: var(--mda-color-white);
-  --mda-calendar-border-color: var(--mda-color-space-2);
+  --npa-calendar-background-color: var(--npa-color-white);
+  --npa-calendar-border-color: var(--npa-color-space-2);
 
-  --mda-calendar-color: var(--mda-color-space-8);
-  --mda-calendar-hover-color: var(--mda-color-space-8);
+  --npa-calendar-color: var(--npa-color-space-8);
+  --npa-calendar-hover-color: var(--npa-color-space-8);
 
   // ###### DROPDOWN
-  --mda-dropdown-position: absolute;
-  --mda-dropdown-width: fit-content;
-  --mda-dropdown-min-width: 150px;
-  --mda-dropdown-top: 0;
-  --mda-dropdown-left: 0;
-  --mda-dropdown-z-index: 2;
+  --npa-dropdown-position: absolute;
+  --npa-dropdown-width: fit-content;
+  --npa-dropdown-min-width: 150px;
+  --npa-dropdown-top: 0;
+  --npa-dropdown-left: 0;
+  --npa-dropdown-z-index: 2;
 
-  --mda-dropdown-border: none;
-  --mda-dropdown-border-radius: var(--mda-component-border-radius);
-  --mda-dropdown-padding: 4px 0;
-  --mda-dropdown-margin: 0;
-  --mda-dropdown-box-shadow: var(--mda-component-box-shadow);
+  --npa-dropdown-border: none;
+  --npa-dropdown-border-radius: var(--npa-component-border-radius);
+  --npa-dropdown-padding: 4px 0;
+  --npa-dropdown-margin: 0;
+  --npa-dropdown-box-shadow: var(--npa-component-box-shadow);
 
-  --mda-dropdown-text-color: var(--mda-color-space-17);
-  --mda-dropdown-border-color: unset;
-  --mda-dropdown-background-color: var(--mda-color-white);
+  --npa-dropdown-text-color: var(--npa-color-space-17);
+  --npa-dropdown-border-color: unset;
+  --npa-dropdown-background-color: var(--npa-color-white);
 
-  --mda-dropdown-option-group-min-height: 30px;
-  --mda-dropdown-option-group-color: var(--mda-color-space-6);
+  --npa-dropdown-option-group-min-height: 30px;
+  --npa-dropdown-option-group-color: var(--npa-color-space-6);
 
-  --mda-dropdown-option-min-height: 40px;
-  --mda-dropdown-option-padding-vertical: 8px;
-  --mda-dropdown-option-padding-horizontal: 16px;
-  --mda-dropdown-option-icon-size: 16px;
-  --mda-dropdown-option-icon-spacer: 8px;
-  --mda-dropdown-option-label-correction: 1px;
-  --mda-dropdown-option-border-radius: 0;
+  --npa-dropdown-option-min-height: 40px;
+  --npa-dropdown-option-padding-vertical: 8px;
+  --npa-dropdown-option-padding-horizontal: 16px;
+  --npa-dropdown-option-icon-size: 16px;
+  --npa-dropdown-option-icon-spacer: 8px;
+  --npa-dropdown-option-label-correction: 1px;
+  --npa-dropdown-option-border-radius: 0;
 
-  --mda-dropdown-option-hover-color: var(--mda-color-text-option-hover);
-  --mda-dropdown-option-hover-background-color: var(--mda-color-background-option-hover);
+  --npa-dropdown-option-hover-color: var(--npa-color-text-option-hover);
+  --npa-dropdown-option-hover-background-color: var(--npa-color-background-option-hover);
 
-  --mda-dropdown-option-selected-background-color: var(--mda-color-space-2);
+  --npa-dropdown-option-selected-background-color: var(--npa-color-space-2);
 
-  --mda-dropdown-option-icon-right-size: 14px;
-  --mda-dropdown-option-icon-right-spacer: 40px;
+  --npa-dropdown-option-icon-right-size: 14px;
+  --npa-dropdown-option-icon-right-spacer: 40px;
 
-  --mda-dropdown-separator-border: var(--mda-component-border);
-  --mda-dropdown-separator-border-color: var(--mda-color-space-3);
-  --mda-dropdown-separator-margin: 4px 0;
+  --npa-dropdown-separator-border: var(--npa-component-border);
+  --npa-dropdown-separator-border-color: var(--npa-color-space-3);
+  --npa-dropdown-separator-margin: 4px 0;
 
   // ###### LABEL
-  --mda-label-display: table-cell;
-  --mda-label-color: var(--mda-color-space-8);
-  --mda-label-focus-color: var(--mda-color-space-17);
-  --mda-label-error-color: var(--mda-color-space-8);
-  --mda-label-disabled-color: var(--mda-color-space-8);
+  --npa-label-display: table-cell;
+  --npa-label-color: var(--npa-color-space-8);
+  --npa-label-focus-color: var(--npa-color-space-17);
+  --npa-label-error-color: var(--npa-color-space-8);
+  --npa-label-disabled-color: var(--npa-color-space-8);
 
   // ###### LINK
-  --mda-link-color: var(--mda-color-action-6);
-  --mda-link-hover-color: var(--mda-color-action-7);
+  --npa-link-color: var(--npa-color-action-6);
+  --npa-link-hover-color: var(--npa-color-action-7);
 
   // ###### MODAL
-  --mda-modal-overlay-position: fixed;
-  --mda-modal-overlay-width: 100vw;
-  --mda-modal-overlay-height: 100vh;
-  --mda-modal-overlay-background-color: rgba(var(--mda-color-neutral-12-rgb), .7);
+  --npa-modal-overlay-position: fixed;
+  --npa-modal-overlay-width: 100vw;
+  --npa-modal-overlay-height: 100vh;
+  --npa-modal-overlay-background-color: rgba(var(--npa-color-neutral-12-rgb), .7);
 
-  --mda-modal-z-indez: 1;
-  --mda-modal-border: none;
-  --mda-modal-border-radius: 0;
+  --npa-modal-z-indez: 1;
+  --npa-modal-border: none;
+  --npa-modal-border-radius: 0;
 
-  --mda-modal-border-color: unset;
-  --mda-modal-background-color: var(--mda-color-white);
-  --mda-modal-padding: 24px;
-  --mda-modal-spacing: 12px;
-  --mda-modal-spacing-vertical: 20px;
+  --npa-modal-border-color: unset;
+  --npa-modal-background-color: var(--npa-color-white);
+  --npa-modal-padding: 24px;
+  --npa-modal-spacing: 12px;
+  --npa-modal-spacing-vertical: 20px;
 
-  --mda-modal-close-control-color: var(--mda-color-space-17);
+  --npa-modal-close-control-color: var(--npa-color-space-17);
 
-  --mda-modal-header-separator-color: var(--mda-color-space-3);
-  --mda-modal-header-color: var(--mda-color-space-17);
+  --npa-modal-header-separator-color: var(--npa-color-space-3);
+  --npa-modal-header-color: var(--npa-color-space-17);
 
   // ###### NOTIFICATION
-  --mda-notification-position: fixed;
-  --mda-notification-padding: 7px 15px;
-  --mda-notification-width: fit-content;
-  --mda-notification-min-width: unset;
-  --mda-notification-max-width: 50vw;
-  --mda-notification-top: 0;
-  --mda-notification-left: 0;
-  --mda-notification-z-index: 1;
+  --npa-notification-position: fixed;
+  --npa-notification-padding: 7px 15px;
+  --npa-notification-width: fit-content;
+  --npa-notification-min-width: unset;
+  --npa-notification-max-width: 50vw;
+  --npa-notification-top: 0;
+  --npa-notification-left: 0;
+  --npa-notification-z-index: 1;
 
-  --mda-notification-border: var(--mda-component-border);
-  --mda-notification-border-radius: var(--mda-component-border-radius);
-  --mda-notification-box-shadow: 0 3px 9px 0 rgba(var(--mda-color-neutral-12-rgb), 0.25);
+  --npa-notification-border: var(--npa-component-border);
+  --npa-notification-border-radius: var(--npa-component-border-radius);
+  --npa-notification-box-shadow: 0 3px 9px 0 rgba(var(--npa-color-neutral-12-rgb), 0.25);
 
-  --mda-notification-text-color: var(--mda-color-space-8);
-  --mda-notification-border-color: var(--mda-color-white);
-  --mda-notification-background-color: var(--mda-color-white);
+  --npa-notification-text-color: var(--npa-color-space-8);
+  --npa-notification-border-color: var(--npa-color-white);
+  --npa-notification-background-color: var(--npa-color-white);
 
-  --mda-notification-icon-separation: 10px;
-  --mda-notification-close-control-separation: 50px;
+  --npa-notification-icon-separation: 10px;
+  --npa-notification-close-control-separation: 50px;
 
-  --mda-notification-inside-link-color: var(--mda-color-action-6);
+  --npa-notification-inside-link-color: var(--npa-color-action-6);
 
   // ###### RADIO Button
   $radioChecked: 'data:image/svg+xml; utf8, <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="3" fill="white"/></svg>';
-  --mda-radio-checked: url('#{$radioChecked}');
-  --mda-radio-border-radius: 100%;
-  --mda-radio-checked-disabled: var(--mda-radio-checked);
+  --npa-radio-checked: url('#{$radioChecked}');
+  --npa-radio-border-radius: 100%;
+  --npa-radio-checked-disabled: var(--npa-radio-checked);
 
   // ###### REPORT
-  --mda-report-color: var(--mda-color-space-8);
+  --npa-report-color: var(--npa-color-space-8);
 
   // ###### SELECT
   $selectChevron: 'data:image/svg+xml; utf8, <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.209209 0.209209C0.488155 -0.0697365 0.940416 -0.0697365 1.21936 0.209209L5 3.98985L8.78064 0.209209C9.05958 -0.0697365 9.51184 -0.0697365 9.79079 0.209209C10.0697 0.488155 10.0697 0.940416 9.79079 1.21936L5.50508 5.50508C5.22613 5.78402 4.77387 5.78402 4.49492 5.50508L0.209209 1.21936C-0.0697365 0.940416 -0.0697365 0.488155 0.209209 0.209209Z" fill="rgb(108, 123, 139)"/></svg>';
   $selectChevronFocus: 'data:image/svg+xml; utf8, <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.209209 0.209209C0.488155 -0.0697365 0.940416 -0.0697365 1.21936 0.209209L5 3.98985L8.78064 0.209209C9.05958 -0.0697365 9.51184 -0.0697365 9.79079 0.209209C10.0697 0.488155 10.0697 0.940416 9.79079 1.21936L5.50508 5.50508C5.22613 5.78402 4.77387 5.78402 4.49492 5.50508L0.209209 1.21936C-0.0697365 0.940416 -0.0697365 0.488155 0.209209 0.209209Z" fill="rgb(7, 118, 223)"/></svg>';
   $selectChevronError: 'data:image/svg+xml; utf8, <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.209209 0.209209C0.488155 -0.0697365 0.940416 -0.0697365 1.21936 0.209209L5 3.98985L8.78064 0.209209C9.05958 -0.0697365 9.51184 -0.0697365 9.79079 0.209209C10.0697 0.488155 10.0697 0.940416 9.79079 1.21936L5.50508 5.50508C5.22613 5.78402 4.77387 5.78402 4.49492 5.50508L0.209209 1.21936C-0.0697365 0.940416 -0.0697365 0.488155 0.209209 0.209209Z" fill="rgb(239, 64, 52)"/></svg>';
   $selectChevronDisabled: 'data:image/svg+xml; utf8, <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.209209 0.209209C0.488155 -0.0697365 0.940416 -0.0697365 1.21936 0.209209L5 3.98985L8.78064 0.209209C9.05958 -0.0697365 9.51184 -0.0697365 9.79079 0.209209C10.0697 0.488155 10.0697 0.940416 9.79079 1.21936L5.50508 5.50508C5.22613 5.78402 4.77387 5.78402 4.49492 5.50508L0.209209 1.21936C-0.0697365 0.940416 -0.0697365 0.488155 0.209209 0.209209Z" fill="rgb(136, 152, 167)"/></svg>';
-  --mda-select-chevron-width: 10px;
-  --mda-select-filter-padding-right: 12px;
-  --mda-select-chevron: url('#{$selectChevron}');
-  --mda-select-chevron-focus: url('#{$selectChevronFocus}');
-  --mda-select-chevron-error: url('#{$selectChevronError}');
-  --mda-select-chevron-disabled: url('#{$selectChevronDisabled}');
+  --npa-select-chevron-width: 10px;
+  --npa-select-filter-padding-right: 12px;
+  --npa-select-chevron: url('#{$selectChevron}');
+  --npa-select-chevron-focus: url('#{$selectChevronFocus}');
+  --npa-select-chevron-error: url('#{$selectChevronError}');
+  --npa-select-chevron-disabled: url('#{$selectChevronDisabled}');
 
   // ###### SPINNER
-  --mda-spinner-display: block;
-  --mda-spinner-size: 60px;
-  --mda-spinner-line-width: 3px;
-  --mda-spinner-color: var(--mda-color-action-6);
+  --npa-spinner-display: block;
+  --npa-spinner-size: 60px;
+  --npa-spinner-line-width: 3px;
+  --npa-spinner-color: var(--npa-color-action-6);
 
   // ###### SWITCH
-  --mda-switch-background-color: var(--mda-color-space-4);
-  --mda-switch-color: var(--mda-color-white);
-  --mda-switch-shadow-color: var(--mda-color-neutral-12);
-  --mda-switch-shadow-color-rgb: var(--mda-color-neutral-12-rgb);
-  --mda-switch-checked-background-color: var(--mda-color-action-6);
-  --mda-switch-disabled-background-color: var(--mda-color-space-2);
-  --mda-switch-disabled-checked-background-color: var(--mda-color-action-4);
+  --npa-switch-background-color: var(--npa-color-space-4);
+  --npa-switch-color: var(--npa-color-white);
+  --npa-switch-shadow-color: var(--npa-color-neutral-12);
+  --npa-switch-shadow-color-rgb: var(--npa-color-neutral-12-rgb);
+  --npa-switch-checked-background-color: var(--npa-color-action-6);
+  --npa-switch-disabled-background-color: var(--npa-color-space-2);
+  --npa-switch-disabled-checked-background-color: var(--npa-color-action-4);
 
-  --mda-switch-height: 22px;
-  --mda-switch-border-radio: 25px;
+  --npa-switch-height: 22px;
+  --npa-switch-border-radio: 25px;
 
   // ###### TAB
-  $mdaTabAuxCellPaddingBottom: 4px;
-  $mdaTabAuxCellActiveBorderWidth: 2px;
+  $npaTabAuxCellPaddingBottom: 4px;
+  $npaTabAuxCellActiveBorderWidth: 2px;
 
-  --mda-tab-width: 100%;
-  --mda-tab-border: var(--mda-component-border);
-  --mda-tab-border-color: var(--mda-color-space-3);
+  --npa-tab-width: 100%;
+  --npa-tab-border: var(--npa-component-border);
+  --npa-tab-border-color: var(--npa-color-space-3);
 
-  --mda-tab-height: var(--mda-component-height);
+  --npa-tab-height: var(--npa-component-height);
 
-  --mda-tab-cell-padding: 0 24px #{$mdaTabAuxCellPaddingBottom} 24px;
-  --mda-tab-cell-margin-bottom: -1px;
-  --mda-tab-cell-color: var(--mda-color-action-6);
-  --mda-tab-cell-hover-color: var(--mda-color-action-7);
-  --mda-tab-cell-hover-border-color: var(--mda-color-space-4);
-  --mda-tab-cell-cursor: pointer;
+  --npa-tab-cell-padding: 0 24px #{$npaTabAuxCellPaddingBottom} 24px;
+  --npa-tab-cell-margin-bottom: -1px;
+  --npa-tab-cell-color: var(--npa-color-action-6);
+  --npa-tab-cell-hover-color: var(--npa-color-action-7);
+  --npa-tab-cell-hover-border-color: var(--npa-color-space-4);
+  --npa-tab-cell-cursor: pointer;
 
-  --mda-tab-cell-active-padding-bottom: calc(#{$mdaTabAuxCellPaddingBottom} - #{$mdaTabAuxCellActiveBorderWidth});
-  --mda-tab-cell-active-color: var(--mda-color-space-17);
-  --mda-tab-cell-active-border: #{$mdaTabAuxCellActiveBorderWidth} solid;
-  --mda-tab-cell-active-border-color: var(--mda-color-space-17);
-  --mda-tab-cell-active-cursor: default;
+  --npa-tab-cell-active-padding-bottom: calc(#{$npaTabAuxCellPaddingBottom} - #{$npaTabAuxCellActiveBorderWidth});
+  --npa-tab-cell-active-color: var(--npa-color-space-17);
+  --npa-tab-cell-active-border: #{$npaTabAuxCellActiveBorderWidth} solid;
+  --npa-tab-cell-active-border-color: var(--npa-color-space-17);
+  --npa-tab-cell-active-cursor: default;
 
   // ###### TAG
-  --mda-tag-text-color: var(--mda-color-space-17);
-  --mda-tag-border-color: var(--mda-color-space-2);
-  --mda-tag-background-color: var(--mda-color-space-2);
-  --mda-tag-neutral-text-color: var(--mda-color-space-17);
-  --mda-tag-neutral-border-color: var(--mda-color-space-3);
-  --mda-tag-neutral-background-color: var(--mda-color-space-3);
-  --mda-tag-critical-text-color: var(--mda-color-coral-8);
-  --mda-tag-critical-border-color: var(--mda-color-coral-1);
-  --mda-tag-critical-background-color: var(--mda-color-coral-1);
-  --mda-tag-warning-text-color: var(--mda-warning-color);
-  --mda-tag-warning-border-color: var(--mda-color-orange-1);
-  --mda-tag-warning-background-color: var(--mda-color-orange-1);
-  --mda-tag-success-text-color: var(--mda-success-color);
-  --mda-tag-success-border-color: var(--mda-color-green-1);
-  --mda-tag-success-background-color: var(--mda-color-green-1);
+  --npa-tag-text-color: var(--npa-color-space-17);
+  --npa-tag-border-color: var(--npa-color-space-2);
+  --npa-tag-background-color: var(--npa-color-space-2);
+  --npa-tag-neutral-text-color: var(--npa-color-space-17);
+  --npa-tag-neutral-border-color: var(--npa-color-space-3);
+  --npa-tag-neutral-background-color: var(--npa-color-space-3);
+  --npa-tag-critical-text-color: var(--npa-color-coral-8);
+  --npa-tag-critical-border-color: var(--npa-color-coral-1);
+  --npa-tag-critical-background-color: var(--npa-color-coral-1);
+  --npa-tag-warning-text-color: var(--npa-warning-color);
+  --npa-tag-warning-border-color: var(--npa-color-orange-1);
+  --npa-tag-warning-background-color: var(--npa-color-orange-1);
+  --npa-tag-success-text-color: var(--npa-success-color);
+  --npa-tag-success-border-color: var(--npa-color-green-1);
+  --npa-tag-success-background-color: var(--npa-color-green-1);
 
-  --mda-tag-hover-text-color: var(--mda-color-action-6);
-  --mda-tag-hover-border-color: var(--mda-color-action-1);
-  --mda-tag-hover-background-color: var(--mda-color-action-1);
-  --mda-tag-active-text-color: white;
-  --mda-tag-active-border-color: var(--mda-color-action-6);
-  --mda-tag-active-background-color: var(--mda-color-action-6);
-  --mda-tag-disabled-text-color: var(--mda-color-space-6);
-  --mda-tag-disabled-border-color: var(--mda-color-space-2);
-  --mda-tag-disabled-background-color: var(--mda-color-space-2);
+  --npa-tag-hover-text-color: var(--npa-color-action-6);
+  --npa-tag-hover-border-color: var(--npa-color-action-1);
+  --npa-tag-hover-background-color: var(--npa-color-action-1);
+  --npa-tag-active-text-color: white;
+  --npa-tag-active-border-color: var(--npa-color-action-6);
+  --npa-tag-active-background-color: var(--npa-color-action-6);
+  --npa-tag-disabled-text-color: var(--npa-color-space-6);
+  --npa-tag-disabled-border-color: var(--npa-color-space-2);
+  --npa-tag-disabled-background-color: var(--npa-color-space-2);
 
-  --mda-tag-height: 30px;
+  --npa-tag-height: 30px;
 
   // ###### TEXTAREA
-  --mda-textarea-resize: vertical;
+  --npa-textarea-resize: vertical;
 
   // ###### TOGGLE BUTTON
-  $mdaToggleButtonBorderWidth: 1px;
-  --mda-toggle-button-border: #{$mdaToggleButtonBorderWidth} solid;
-  --mda-toggle-button-margin-left: calc(#{$mdaToggleButtonBorderWidth} * (-1));
-  --mda-toggle-button-border-color: var(--mda-color-space-5);
-  --mda-toggle-button-border-radius: var(--mda-component-border-radius);
+  $npaToggleButtonBorderWidth: 1px;
+  --npa-toggle-button-border: #{$npaToggleButtonBorderWidth} solid;
+  --npa-toggle-button-margin-left: calc(#{$npaToggleButtonBorderWidth} * (-1));
+  --npa-toggle-button-border-color: var(--npa-color-space-5);
+  --npa-toggle-button-border-radius: var(--npa-component-border-radius);
 
-  --mda-toggle-button-disabled-border-color: var(--mda-color-space-3);
+  --npa-toggle-button-disabled-border-color: var(--npa-color-space-3);
 
-  --mda-toggle-button-active-color: var(--mda-color-space-13);
-  --mda-toggle-button-active-background-color: var(--mda-color-space-2);
+  --npa-toggle-button-active-color: var(--npa-color-space-13);
+  --npa-toggle-button-active-background-color: var(--npa-color-space-2);
 
-  --mda-toggle-button-active-disabled-color: var(--mda-color-space-4);
-  --mda-toggle-button-active-disabled-border-color: var(--mda-color-space-3);
-  --mda-toggle-button-active-disabled-background-color: var(--mda-color-space-1);
+  --npa-toggle-button-active-disabled-color: var(--npa-color-space-4);
+  --npa-toggle-button-active-disabled-border-color: var(--npa-color-space-3);
+  --npa-toggle-button-active-disabled-background-color: var(--npa-color-space-1);
 
   // ###### TOOLTIP
-  --mda-tooltip-position: fixed;
-  --mda-tooltip-height: 30px;
-  --mda-tooltip-z-index: 2;
-  --mda-tooltip-color: var(--mda-color-white);
-  --mda-tooltip-background-color: var(--mda-color-space-13);
-  --mda-tooltip-border-color: var(--mda-color-space-13);
-  --mda-tooltip-padding: 0 8px;
+  --npa-tooltip-position: fixed;
+  --npa-tooltip-height: 30px;
+  --npa-tooltip-z-index: 2;
+  --npa-tooltip-color: var(--npa-color-white);
+  --npa-tooltip-background-color: var(--npa-color-space-13);
+  --npa-tooltip-border-color: var(--npa-color-space-13);
+  --npa-tooltip-padding: 0 8px;
 
-  --mda-tooltip-arrow-position: fixed;
+  --npa-tooltip-arrow-position: fixed;
 }

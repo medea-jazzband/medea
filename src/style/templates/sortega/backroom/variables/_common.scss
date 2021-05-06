@@ -5,74 +5,74 @@
 @import '../template-base';
 @import '../spacing';
 
-%mda-global-vars {
+%npa-global-vars {
   // ###### Spacing Definition
   @each $value in $spacings {
-    --mda-spacing-#{$value}: #{$value}px;
-    --mda-spacing-relative-#{$value}: #{getRemRelativeSize($value, $fontSizeRoot)};
+    --npa-spacing-#{$value}: #{$value}px;
+    --npa-spacing-relative-#{$value}: #{getRemRelativeSize($value, $fontSizeRoot)};
   }
 
   // ###### Color Scheme Definition
   @each $key, $value in $colorsAvailable {
     $symbol: if($key==-white or $key==-black,'','-');
-    --mda-color#{$symbol}#{$key}: #{$value};
-    --mda-color#{$symbol}#{$key}-rgb: #{red($value), green($value), blue($value)};
+    --npa-color#{$symbol}#{$key}: #{$value};
+    --npa-color#{$symbol}#{$key}-rgb: #{red($value), green($value), blue($value)};
   }
   @each $key, $value in $templateBaseBackgroundColor {
-    --mda-color-#{$key}: #{$value};
-    --mda-color-#{$key}-rgb: #{red($value), green($value), blue($value)};
+    --npa-color-#{$key}: #{$value};
+    --npa-color-#{$key}-rgb: #{red($value), green($value), blue($value)};
   }
   @each $key, $value in $templateBaseBorderColor {
-    --mda-color-#{$key}: #{$value};
-    --mda-color-#{$key}-rgb: #{red($value), green($value), blue($value)};
+    --npa-color-#{$key}: #{$value};
+    --npa-color-#{$key}-rgb: #{red($value), green($value), blue($value)};
   }
   @each $key, $value in $templateBaseTextColor {
-    --mda-color-#{$key}: #{$value};
-    --mda-color-#{$key}-rgb: #{red($value), green($value), blue($value)};
+    --npa-color-#{$key}: #{$value};
+    --npa-color-#{$key}-rgb: #{red($value), green($value), blue($value)};
   }
 
   // ###### Component Commons
-  --mda-component-width: fit-content;
-  --mda-component-height: 36px;
-  --mda-component-vertical-spacer: 2px;
+  --npa-component-width: fit-content;
+  --npa-component-height: 36px;
+  --npa-component-vertical-spacer: 2px;
 
-  --mda-component-padding-vertical: 0;
-  --mda-component-padding-horizontal: 12px;
+  --npa-component-padding-vertical: 0;
+  --npa-component-padding-horizontal: 12px;
 
-  --mda-component-box-shadow: 0 3px 9px 0 rgba(var(--mda-color-neutral-12-rgb), 0.25);
-  --mda-component-focus-box-shadow: 0 0 0 2px var(--mda-color-action-rgb);
+  --npa-component-box-shadow: 0 3px 9px 0 rgba(var(--npa-color-neutral-12-rgb), 0.25);
+  --npa-component-focus-box-shadow: 0 0 0 2px var(--npa-color-action-rgb);
 
-  --mda-component-border: 1px solid;
-  --mda-component-border-radius: 4px;
+  --npa-component-border: 1px solid;
+  --npa-component-border-radius: 4px;
 
-  --mda-component-icon-left-spacer: 4px;
-  --mda-component-icon-right-spacer: 8px;
+  --npa-component-icon-left-spacer: 4px;
+  --npa-component-icon-right-spacer: 8px;
 
-  --mda-component-disabled-cursor: not-allowed;
+  --npa-component-disabled-cursor: not-allowed;
 
   // ################################################################################################
   // ###### COMPONENTS ##############################################################################
   // ################################################################################################
 
   // ###### BUTTON
-  --mda-button-color: var(--mda-color-box-8);
-  --mda-button-border-color: var(--mda-color-box-8);
-  --mda-button-background-color: var(--mda-color-white);
-  --mda-button-hover-color: var(--mda-color-box-8);
-  --mda-button-hover-border-color: var(--mda-color-box-8);
-  --mda-button-hover-background-color: var(--mda-color-box-1);
-  --mda-button-active-color: var(--mda-color-box-8);
-  --mda-button-active-border-color: var(--mda-color-box-8);
-  --mda-button-active-background-color: var(--mda-color-box-2);
-  --mda-button-disabled-color: var(--mda-color-box-3);
-  --mda-button-disabled-border-color: var(--mda-color-box-1);
-  --mda-button-disabled-background-color: var(--mda-color-box-1);
-  --mda-button-disabled-icon-color: var(--mda-color-box-3);
+  --npa-button-color: var(--npa-color-box-8);
+  --npa-button-border-color: var(--npa-color-box-8);
+  --npa-button-background-color: var(--npa-color-white);
+  --npa-button-hover-color: var(--npa-color-box-8);
+  --npa-button-hover-border-color: var(--npa-color-box-8);
+  --npa-button-hover-background-color: var(--npa-color-box-1);
+  --npa-button-active-color: var(--npa-color-box-8);
+  --npa-button-active-border-color: var(--npa-color-box-8);
+  --npa-button-active-background-color: var(--npa-color-box-2);
+  --npa-button-disabled-color: var(--npa-color-box-3);
+  --npa-button-disabled-border-color: var(--npa-color-box-1);
+  --npa-button-disabled-background-color: var(--npa-color-box-1);
+  --npa-button-disabled-icon-color: var(--npa-color-box-3);
 
-  --mda-button-icon-spacer: 8px;
-  --mda-button-border-correction: 2px;
+  --npa-button-icon-spacer: 8px;
+  --npa-button-border-correction: 2px;
 
   // ###### LINK
-  --mda-link-color: var(--mda-color-action);
-  --mda-link-hover-color: var(--mda-color-action);
+  --npa-link-color: var(--npa-color-action);
+  --npa-link-hover-color: var(--npa-color-action);
 }

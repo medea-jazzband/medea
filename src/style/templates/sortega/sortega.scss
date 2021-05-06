@@ -8,20 +8,20 @@
 @import './backroom/font-sizes';
 
 HTML {
-  &#mda-sortega-tpl, &.mda-sortega-tpl {
+  &#npa-sortega-tpl, &.npa-sortega-tpl {
     font-size: $fontSizeRoot + px;
     line-height: $fontLineHeightFactor;
 
     * {
       font-family: 'HK Grotesk', sans-serif;
-      color: var(--mda-color-box-6);
+      color: var(--npa-color-box-6);
       outline: none;
     }
 
-    @extend %mda-hk-grotesk-typography-definition;
-    .mda-serif {
+    @extend %npa-hk-grotesk-typography-definition;
+    .npa-serif {
       font-family: 'Frank Ruhl Libre', serif;
-      @extend %mda-frank-ruhl-libre-typography-definition;
+      @extend %npa-frank-ruhl-libre-typography-definition;
     }
 
     @include createFontDefinition($fontSizesText, $fontSizeRoot, $fontLineHeightFactor) {
@@ -29,15 +29,15 @@ HTML {
       @include createHeadersDefinition($fontSizesHeaders, $fontSizeRoot, $fontLineHeightFactor);
 
       // ###### DEFAULT WEIGHT AND STYLE
-      .mda--bold {
+      .npa--bold {
         font-weight: bold;
       }
-      .mda--italic {
+      .npa--italic {
         font-style: italic;
       }
 
       // ###### DEFAULT SIZE
-      .mda-font--default {
+      .npa-font--default {
         font-size: 1rem;
         line-height: $fontLineHeightFactor;
       }
@@ -47,8 +47,8 @@ HTML {
     @include createColorsDefinition($templateBaseBackgroundColor, 'bg');
     @include createColorsDefinition($templateBaseBorderColor, 'border');
     @include createColorsDefinition($templateBaseTextColor);
-    @extend %mda-global-vars;
-    @extend %mda-components;
-    @extend %mda-components-template;
+    @extend %npa-global-vars;
+    @extend %npa-components;
+    @extend %npa-components-template;
   }
 }

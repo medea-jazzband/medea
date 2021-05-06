@@ -1,27 +1,27 @@
 @import './shared/mixins';
 
-%mda-checkbox {
-  INPUT[type=checkbox]:not(.mda-switch) {
+%npa-checkbox {
+  INPUT[type=checkbox]:not(.npa-switch) {
     @include selectionElement('checkbox') {
       &:disabled, &.disabled {
-        &.mda-checkbox--indeterminate {
+        &.npa-checkbox--indeterminate {
           &:checked + LABEL {
             &:before {
-              border-color: var(--mda-checkbox-indeterminate-disabled-border-color);
-              background-color: var(--mda-checkbox-indeterminate-disabled-background-color);
+              border-color: var(--npa-checkbox-indeterminate-disabled-border-color);
+              background-color: var(--npa-checkbox-indeterminate-disabled-background-color);
             }
           }
         }
       }
 
-      &.mda-checkbox--indeterminate {
+      &.npa-checkbox--indeterminate {
         &:checked + LABEL {
           &:before {
-            border-color: var(--mda-checkbox-indeterminate-border-color);
-            background-color: var(--mda-checkbox-indeterminate-background-color);
+            border-color: var(--npa-checkbox-indeterminate-border-color);
+            background-color: var(--npa-checkbox-indeterminate-background-color);
           }
           &:after {
-            background-image: var(--mda-checkbox-indeterminate);
+            background-image: var(--npa-checkbox-indeterminate);
           }
         }
       }

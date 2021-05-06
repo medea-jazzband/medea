@@ -13,9 +13,9 @@
   );
 }
 
-%mda-frank-ruhl-libre-typography-definition {
+%npa-frank-ruhl-libre-typography-definition {
   @each $key, $value in $fontWeightsAvailable {
-    .mda-font--#{$key} {
+    .npa-font--#{$key} {
       @include createTypographyElement(map-get($value, weight), map-get($value, style));
     }
   }

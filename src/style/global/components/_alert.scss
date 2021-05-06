@@ -1,42 +1,42 @@
-%mda-alert {
-  .mda-alert {
-    --mda-alert-default-position: var(--mda-alert-position);
-    --mda-alert-default-padding-vertical: var(--mda-alert-padding-vertical);
-    --mda-alert-default-padding-horizontal: var(--mda-alert-padding-horizontal);
-    --mda-alert-default-width: var(--mda-alert-width);
-    --mda-alert-default-min-width: var(--mda-alert-min-width);
-    --mda-alert-default-max-width: var(--mda-alert-max-width);
-    --mda-alert-default-top: var(--mda-alert-top);
-    --mda-alert-default-left: var(--mda-alert-left);
-    --mda-alert-default-z-index: var(--mda-alert-z-index);
+%npa-alert {
+  .npa-alert {
+    --npa-alert-default-position: var(--npa-alert-position);
+    --npa-alert-default-padding-vertical: var(--npa-alert-padding-vertical);
+    --npa-alert-default-padding-horizontal: var(--npa-alert-padding-horizontal);
+    --npa-alert-default-width: var(--npa-alert-width);
+    --npa-alert-default-min-width: var(--npa-alert-min-width);
+    --npa-alert-default-max-width: var(--npa-alert-max-width);
+    --npa-alert-default-top: var(--npa-alert-top);
+    --npa-alert-default-left: var(--npa-alert-left);
+    --npa-alert-default-z-index: var(--npa-alert-z-index);
 
-    --mda-alert-default-border: var(--mda-alert-border);
-    --mda-alert-default-border-radius: var(--mda-alert-border-radius);
-    --mda-alert-default-box-shadow: var(--mda-alert-box-shadow);
+    --npa-alert-default-border: var(--npa-alert-border);
+    --npa-alert-default-border-radius: var(--npa-alert-border-radius);
+    --npa-alert-default-box-shadow: var(--npa-alert-box-shadow);
 
-    --mda-alert-default-close-control-color: var(--mda-alert-close-control-color);
-    --mda-alert-default-close-control-top: var(--mda-alert-close-control-top);
-    --mda-alert-default-close-control-right: var(--mda-alert-close-control-right);
+    --npa-alert-default-close-control-color: var(--npa-alert-close-control-color);
+    --npa-alert-default-close-control-top: var(--npa-alert-close-control-top);
+    --npa-alert-default-close-control-right: var(--npa-alert-close-control-right);
 
-    --mda-alert-default-header-separation: var(--mda-alert-header-separation);
-    --mda-alert-default-title-icon-separation: var(--mda-alert-title-icon-separation);
+    --npa-alert-default-header-separation: var(--npa-alert-header-separation);
+    --npa-alert-default-title-icon-separation: var(--npa-alert-title-icon-separation);
 
-    --mda-alert-default-title-text-color: var(--mda-alert-title-text-color);
-    --mda-alert-default-title-icon-color: var(--mda-alert-title-icon-color);
-    --mda-alert-default-title-icon-spacer: var(--mda-alert-title-icon-spacer);
-    --mda-alert-default-body-text-color: var(--mda-alert-body-text-color);
-    --mda-alert-default-border-color: var(--mda-alert-border-color);
-    --mda-alert-default-background-color: var(--mda-alert-background-color);
+    --npa-alert-default-title-text-color: var(--npa-alert-title-text-color);
+    --npa-alert-default-title-icon-color: var(--npa-alert-title-icon-color);
+    --npa-alert-default-title-icon-spacer: var(--npa-alert-title-icon-spacer);
+    --npa-alert-default-body-text-color: var(--npa-alert-body-text-color);
+    --npa-alert-default-border-color: var(--npa-alert-border-color);
+    --npa-alert-default-background-color: var(--npa-alert-background-color);
 
-    --mda-alert-default-actions-height: var(--mda-alert-actions-height);
-    --mda-alert-default-actions-background-color: var(--mda-alert-actions-background-color);
-    --mda-alert-default-actions-separation: var(--mda-alert-actions-separation);
+    --npa-alert-default-actions-height: var(--npa-alert-actions-height);
+    --npa-alert-default-actions-background-color: var(--npa-alert-actions-background-color);
+    --npa-alert-default-actions-separation: var(--npa-alert-actions-separation);
 
     &__header {
-      I.mda-alert__icon {
+      I.npa-alert__icon {
         top: 0.1em;
       }
-      .mda-alert__title {
+      .npa-alert__title {
         font-weight: bold;
         flex: 1;
         overflow: hidden;
