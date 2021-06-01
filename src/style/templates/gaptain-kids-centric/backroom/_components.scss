@@ -1,4 +1,5 @@
 @import '../../../global/mixins';
+@import '../../../global/exportable/app.mixins';
 @import './font-sizes';
 
 %npa-components-template {
@@ -118,6 +119,7 @@
     &.npa-button {
       --npa-component-padding-horizontal: 20px;
       --npa-component-icon-left-spacer: 8px;
+      padding-top: 2px;
       @include defineFontSizeElement(14, $fontSizeRoot, $fontLineHeightFactor);
       line-height: 1;
       &.npa-button--small {
@@ -135,7 +137,7 @@
       }
       &.npa-button--secondary, &.npa-button--bob {
         --npa-button-color: var(--npa-color-space-7);
-        --npa-button-border-color: var(--npa-color-space-5);
+        --npa-button-border-color: var(--npa-color-space-7);
         --npa-button-background-color: var(--npa-color-white);
         --npa-button-hover-color: var(--npa-color-space-8);
         --npa-button-hover-border-color: var(--npa-color-space-8);
@@ -174,7 +176,7 @@
 
   // ###### CHECKBOX #################################################################
   $checkboxIndeterminate: 'data:image/svg+xml; utf8, <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="7" width="10" height="2" fill="rgb(7, 118, 223)"/></svg>';
-  $checkboxIndeterminateDisabled: 'data:image/svg+xml; utf8, <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="7" width="10" height="2" fill="rgb(156, 200, 242)"/></svg>';
+  $checkboxIndeterminateDisabled: 'data:image/svg+xml; utf8, <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="7" width="10" height="2" fill="rgb(96, 167, 236)"/></svg>';
   INPUT[type=checkbox] {
     & + LABEL {
       @include defineFontSizeElement(14, $fontSizeRoot, $fontLineHeightFactor);
@@ -184,6 +186,10 @@
       &:disabled, &.disabled {
         &.npa-checkbox--indeterminate {
           &:checked + LABEL {
+            &:before {
+              --npa-component-border: 1px solid;
+              border-color: var(--npa-selection-checked-disabled-border-color);
+            }
             &:after {
               --npa-checkbox-indeterminate: url('#{$checkboxIndeterminateDisabled}');
             }
@@ -192,6 +198,7 @@
       }
 
       &.npa-checkbox--indeterminate {
+        border-color: var(--npa-component-border-color);
         &:checked + LABEL {
           &:after {
             --npa-checkbox-indeterminate: url('#{$checkboxIndeterminate}');
@@ -257,6 +264,15 @@
     }
   }
 
+  // ###### DROPDOWN #################################################################
+  .npa-dropdown {
+    &.select {
+      .npa-dropdown__options-container {
+        @include styleScrollbar(var(--npa-color-space-2));
+      }
+    }
+  }
+
   // ###### INPUT ####################################################################
   INPUT, SPAN, DIV {
     &.npa-input {
@@ -318,6 +334,29 @@
       --npa-notification-text-color: var(--npa-color-white);
       --npa-notification-border-color: var(--npa-error-color);
       --npa-notification-background-color: var(--npa-error-color);
+    }
+  }
+
+  // ###### PAGINATION ###############################################################
+  .npa-pagination {
+    .npa-pagination__page-navigator-label, .npa-pagination__items-per-page-label, .npa-pagination__items-per-page-control {
+      @include defineFontSizeElement(14, $fontSizeRoot, $fontLineHeightFactor);
+    }
+    .npa-pagination__page-navigator {
+      A, SPAN.npa-pagination__left-navigation-control, SPAN.npa-pagination__right-navigation-control {
+        @include defineFontSizeElement(20, $fontSizeRoot, $fontLineHeightFactor);
+        line-height: 1;
+      }
+    }
+    &.npa-pagination--small {
+      .npa-pagination__page-navigator-label, .npa-pagination__items-per-page-label, .npa-pagination__items-per-page-control {
+        @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
+      }
+      .npa-pagination__page-navigator {
+        A, SPAN.npa-pagination__left-navigation-control, SPAN.npa-pagination__right-navigation-control {
+          @include defineFontSizeElement(16, $fontSizeRoot, $fontLineHeightFactor);
+        }
+      }
     }
   }
 
@@ -407,6 +446,32 @@
     }
   }
 
+  // ###### TABLE ####################################################################
+  .npa-table {
+    .npa-table__header {
+      .npa-table__header-cell {
+        SPAN {
+          @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
+        }
+      }
+    }
+    .npa-table__body {
+      .npa-table__viewport {
+        .npa-table__row {
+          .npa-table__cell {
+            .npa-table__cell-value {
+              @include defineFontSizeElement(14, $fontSizeRoot, $fontLineHeightFactor);
+            }
+          }
+        }
+      }
+    }
+
+    &, .npa-table__viewport {
+      @include styleScrollbar(var(--npa-color-space-2));
+    }
+  }
+
   // ###### TAG ######################################################################
   SPAN, DIV {
     &.npa-tag {
@@ -448,6 +513,7 @@
 
   // ###### TAG INPUT ################################################################
   .npa-tag-input {
+    @include styleScrollbar(var(--npa-color-space-2));
     &.npa-input, &.npa-input.npa-input--small {
       --npa-component-padding-vertical: 0;
       --npa-component-padding-horizontal: 0;

@@ -1,6 +1,6 @@
 {
   "name": "@medea/gaptain-kids-centric",
-  "version": "5.1.4",
+  "version": "5.2.0",
   "description": "Medea Templates :: Gaptain Kids Centric Template",
   "main": "index.js",
   "types": "index.d.ts",
