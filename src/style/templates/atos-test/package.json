@@ -1,0 +1,17 @@
+{
+  "name": "@medea/atos-test",
+  "version": "1.0.0",
+  "description": "Medea Templates :: Atos Test Template",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/medea-template-system/medea.git"
+  },
+  "author": "Nul Pàs <manu@lunaeme.com> (https://github.com/nulpas)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/medea-template-system/medea/issues"
+  },
+  "homepage": "https://github.com/medea-template-system/medea/tree/master/src/style/templates/atos-test#readme"
+}

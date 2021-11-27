@@ -1,0 +1,639 @@
+@import '../../../global/mixins';
+@import '../../../global/exportable/app.mixins';
+@import './font-sizes';
+
+%npa-components-template {
+  // ###### ALERT ####################################################################
+  .npa-alert {
+    .npa-alert__header {
+      .npa-alert__title {
+        @include defineFontSizeElement(16, $fontSizeRoot, $fontLineHeightFactor);
+      }
+    }
+    &:not(.npa-alert--connection-lost) {
+      border-left: 4px solid var(--npa-color-action-6);
+    }
+    &.npa-alert--success {
+      border-left: 4px solid var(--npa-success-color);
+      --npa-alert-title-icon-color: var(--npa-success-color);
+    }
+    &.npa-alert--warning {
+      border-left: 4px solid var(--npa-warning-color);
+      --npa-alert-title-icon-color: var(--npa-warning-color);
+    }
+    &.npa-alert--critical {
+      border-left: 4px solid var(--npa-error-color);
+      --npa-alert-title-icon-color: var(--npa-error-color);
+    }
+    &.npa-alert--connection-lost{
+      --npa-alert-background-color: var(--npa-color-space-7);
+      --npa-alert-border-color: var(--npa-color-space-7);
+      --npa-alert-body-text-color: var(--npa-color-white);
+      --npa-alert-title-icon-color: var(--npa-color-white);
+      --npa-alert-title-text-color: var(--npa-color-white);
+    }
+  }
+
+  // ###### BADGE ####################################################################
+  .npa-badge {
+    .npa-badge__box {
+      @include defineFontSizeElement(10, $fontSizeRoot, $fontLineHeightFactor);
+    }
+
+    &.npa-badge--alone {
+      --npa-badge-position: relative;
+    }
+
+    &.npa-badge--large {
+      .npa-badge__box {
+        @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
+        --npa-badge-min-width: 24px;
+        --npa-badge-min-height: 24px;
+        --npa-badge-padding: 6px 5px;
+        --npa-badge-text-top: 0;
+      }
+    }
+    &.npa-badge--small {
+      .npa-badge__box {
+        @include defineFontSizeElement(8, $fontSizeRoot, $fontLineHeightFactor);
+        --npa-badge-min-width: 16px;
+        --npa-badge-min-height: 16px;
+        --npa-badge-padding: 3px 2px;
+        --npa-badge-text-top: 1px;
+      }
+    }
+    &.npa-badge--x-small {
+      .npa-badge__box {
+        font-size: 0;
+        --npa-badge-min-width: 6px;
+        --npa-badge-min-height: 6px;
+        --npa-badge-padding: 0;
+        --npa-badge-text-top: 1px;
+      }
+    }
+
+    &.npa-badge--info {
+      --npa-badge-background-color: var(--npa-color-action-6);
+      --npa-badge-border-color: var(--npa-color-action-6);
+    }
+    &.npa-badge--success {
+      --npa-badge-background-color: var(--npa-success-color);
+      --npa-badge-border-color: var(--npa-success-color);
+    }
+    &.npa-badge--warning {
+      --npa-badge-background-color: var(--npa-warning-color);
+      --npa-badge-border-color: var(--npa-warning-color);
+    }
+    &.npa-badge--critical {
+      --npa-badge-background-color: var(--npa-error-color);
+      --npa-badge-border-color: var(--npa-error-color);
+    }
+  }
+
+  // ###### BREADCRUMB ###############################################################
+  .npa-breadcrumb {
+    .npa-breadcrumb__link {
+      @include defineFontSizeElement(14, $fontSizeRoot, $fontLineHeightFactor);
+    }
+    .npa-breadcrumb__separator {
+      @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
+    }
+    .npa-breadcrumb__dropdown-trigger {
+      @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
+    }
+
+    &.npa-breadcrumb--small {
+      --npa-component-height: 30px;
+      .npa-breadcrumb__link {
+        @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
+      }
+      .npa-breadcrumb__dropdown-trigger {
+        @include defineFontSizeElement(10, $fontSizeRoot, $fontLineHeightFactor);
+        top: 0;
+      }
+    }
+  }
+
+  // ###### BUTTON ###################################################################
+  BUTTON {
+    &.npa-button {
+      --npa-component-padding-horizontal: 20px;
+      --npa-component-icon-left-spacer: 8px;
+      padding-top: 2px;
+      @include defineFontSizeElement(14, $fontSizeRoot, $fontLineHeightFactor);
+      line-height: 1;
+      &.npa-button--small {
+        --npa-component-height: 30px;
+        @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
+        line-height: 1;
+        I.npa-icon {
+          --npa-button-icon-spacer: 4px;
+        }
+      }
+      &.npa-button--icon-left, &.npa-button--icon-right, &.npa-button--icon-only {
+        I.npa-icon {
+          top: -1px;
+        }
+      }
+      &.npa-button--secondary, &.npa-button--bob {
+        --npa-button-color: var(--npa-color-space-7);
+        --npa-button-border-color: var(--npa-color-space-7);
+        --npa-button-background-color: var(--npa-color-white);
+        --npa-button-hover-color: var(--npa-color-space-8);
+        --npa-button-hover-border-color: var(--npa-color-space-8);
+        --npa-button-hover-background-color: var(--npa-color-action-1);
+        --npa-button-active-color: var(--npa-color-space-13);
+        --npa-button-active-border-color: var(--npa-color-space-8);
+        --npa-button-active-background-color: var(--npa-color-action-2);
+        --npa-button-disabled-color: var(--npa-color-space-3);
+        --npa-button-disabled-border-color: var(--npa-color-space-2);
+        --npa-button-disabled-background-color: var(--npa-color-white);
+      }
+      &.npa-button--borderless {
+        --npa-button-color: var(--npa-color-space-7);
+        --npa-button-border-color: var(--npa-color-white);
+        --npa-button-background-color: var(--npa-color-white);
+        --npa-button-hover-color: var(--npa-color-space-8);
+        --npa-button-hover-border-color: var(--npa-color-action-1);
+        --npa-button-hover-background-color: var(--npa-color-action-1);
+        --npa-button-active-color: var(--npa-color-space-13);
+        --npa-button-active-border-color: var(--npa-color-action-2);
+        --npa-button-active-background-color: var(--npa-color-action-2);
+      }
+      &.npa-button--critical {
+        --npa-button-color: var(--npa-color-white);
+        --npa-button-border-color: var(--npa-error-color);
+        --npa-button-background-color: var(--npa-error-color);
+        --npa-button-hover-color: var(--npa-color-white);
+        --npa-button-hover-border-color: var(--npa-color-coral-7);
+        --npa-button-hover-background-color: var(--npa-color-coral-7);
+        --npa-button-active-color: var(--npa-color-white);
+        --npa-button-active-border-color: var(--npa-color-coral-8);
+        --npa-button-active-background-color: var(--npa-color-coral-8);
+      }
+    }
+  }
+
+  // ###### CHECKBOX #################################################################
+  $checkboxIndeterminate: 'data:image/svg+xml; utf8, <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="7" width="10" height="2" fill="rgb(7, 118, 223)"/></svg>';
+  $checkboxIndeterminateDisabled: 'data:image/svg+xml; utf8, <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="7" width="10" height="2" fill="rgb(96, 167, 236)"/></svg>';
+  INPUT[type=checkbox] {
+    & + LABEL {
+      @include defineFontSizeElement(14, $fontSizeRoot, $fontLineHeightFactor);
+      line-height: calc(var(--npa-selection-icon-size) + 1px);
+    }
+    &:not(.npa-switch) {
+      &:disabled, &.disabled {
+        &.npa-checkbox--indeterminate {
+          &:checked + LABEL {
+            &:before {
+              --npa-component-border: 1px solid;
+              border-color: var(--npa-selection-checked-disabled-border-color);
+            }
+            &:after {
+              --npa-checkbox-indeterminate: url('#{$checkboxIndeterminateDisabled}');
+            }
+          }
+        }
+      }
+
+      &.npa-checkbox--indeterminate {
+        border-color: var(--npa-component-border-color);
+        &:checked + LABEL {
+          &:after {
+            --npa-checkbox-indeterminate: url('#{$checkboxIndeterminate}');
+          }
+        }
+      }
+    }
+  }
+
+  // ###### DATEPICKER ###############################################################
+  .npa-calendar {
+    .npa-calendar__nav {
+      DIV {
+        @include defineFontSizeElement(14, $fontSizeRoot, $fontLineHeightFactor);
+        I {
+          @include defineFontSizeElement(10, $fontSizeRoot, $fontLineHeightFactor);
+        }
+      }
+    }
+    .npa-calendar__container {
+      .npa-calendar__body {
+        .npa-calendar__date {
+          @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
+          --npa-button-disabled-color: var(--npa-color-space-4);
+          --npa-button-disabled-background-color: transparent;
+          --npa-button-disabled-border-color: transparent;
+          --npa-component-focus-box-shadow: none;
+          --npa-component-border-radius: 40px;
+          &.npa-calendar__date--selected {
+            .npa-button {
+              --npa-button-color: var(--npa-color-space-13);
+              --npa-button-background-color: var(--npa-color-action-2);
+              --npa-button-hover-color: var(--npa-color-space-13);
+              --npa-button-hover-background-color: var(--npa-color-action-2);
+            }
+          }
+          &.npa-calendar__date--success {
+            .npa-button {
+              font-weight: bold;
+              --npa-button-color: var(--npa-color-space-17);
+              --npa-button-hover-color: var(--npa-color-space-17);
+            }
+          }
+          &.npa-calendar__date--current-day:not(.npa-calendar__date--selected) {
+            .npa-button {
+              --npa-button-color: var(--npa-color-white);
+              --npa-button-background-color: var(--npa-color-action-6);
+              --npa-button-hover-color: var(--npa-color-white);
+              --npa-button-hover-background-color: var(--npa-color-action-6);
+            }
+          }
+          &.npa-calendar__date--critical:not(.npa-calendar__date--selected):not(.npa-calendar__date--current-day) {
+            .npa-button {
+              font-weight: bold;
+              --npa-button-color: var(--npa-error-color);
+              --npa-button-background-color: var(--npa-color-coral-1);
+              --npa-button-hover-color: var(--npa-error-color);
+              --npa-button-hover-background-color: var(--npa-color-coral-2);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // ###### DROPDOWN #################################################################
+  .npa-dropdown {
+    &.select {
+      .npa-dropdown__options-container {
+        @include styleScrollbar(var(--npa-color-space-2));
+      }
+    }
+  }
+
+  // ###### INPUT ####################################################################
+  INPUT, SPAN, DIV {
+    &.npa-input {
+      @include defineFontSizeElement(14, $fontSizeRoot, $fontLineHeightFactor);
+      &.npa-input--small {
+        --npa-component-height: 30px;
+        --npa-component-padding-horizontal: 8px;
+        @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
+      }
+      &.npa-input--placeholder-color {
+        color: var(--npa-component-placeholder-color);
+      }
+    }
+  }
+
+  // ###### LABEL ####################################################################
+  LABEL {
+    &.npa-label, &.npa-label.npa-label--small {
+      @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
+    }
+  }
+
+  // ###### LINK #####################################################################
+  A.npa-link {
+    &.npa-link-small {
+      @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
+    }
+  }
+
+  // ###### MODAL ####################################################################
+  .npa-modal {
+    .npa-modal__box {
+      .npa-modal__header {
+        @include defineFontSizeElement(18, $fontSizeRoot, $fontLineHeightFactor);
+        font-weight: bold;
+        .npa-modal__status-icon, .npa-modal__close-control {
+          @include defineFontSizeElement(15, $fontSizeRoot, $fontLineHeightFactor);
+        }
+        .npa-modal__full-window-icon {
+          @include defineFontSizeElement(20, $fontSizeRoot, $fontLineHeightFactor);
+        }
+      }
+    }
+  }
+
+  // ###### NOTIFICATION #############################################################
+  .npa-notification {
+    &.npa-notification--success {
+      --npa-notification-text-color: var(--npa-color-white);
+      --npa-notification-border-color: var(--npa-success-color);
+      --npa-notification-background-color: var(--npa-success-color);
+    }
+    &.npa-notification--warning {
+      --npa-notification-text-color: var(--npa-color-white);
+      --npa-notification-border-color: var(--npa-warning-color);
+      --npa-notification-background-color: var(--npa-warning-color);
+    }
+    &.npa-notification--critical {
+      --npa-notification-text-color: var(--npa-color-white);
+      --npa-notification-border-color: var(--npa-error-color);
+      --npa-notification-background-color: var(--npa-error-color);
+    }
+  }
+
+  // ###### PAGINATION ###############################################################
+  .npa-pagination {
+    .npa-pagination__page-navigator-label, .npa-pagination__items-per-page-label, .npa-pagination__items-per-page-control {
+      @include defineFontSizeElement(14, $fontSizeRoot, $fontLineHeightFactor);
+    }
+    .npa-pagination__page-navigator {
+      A, SPAN.npa-pagination__left-navigation-control, SPAN.npa-pagination__right-navigation-control {
+        @include defineFontSizeElement(20, $fontSizeRoot, $fontLineHeightFactor);
+        line-height: 1;
+      }
+    }
+    &.npa-pagination--small {
+      .npa-pagination__page-navigator-label, .npa-pagination__items-per-page-label, .npa-pagination__items-per-page-control {
+        @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
+      }
+      .npa-pagination__page-navigator {
+        A, SPAN.npa-pagination__left-navigation-control, SPAN.npa-pagination__right-navigation-control {
+          @include defineFontSizeElement(16, $fontSizeRoot, $fontLineHeightFactor);
+        }
+      }
+    }
+  }
+
+  // ###### RADIO Button #############################################################
+  INPUT[type=radio] {
+    & + LABEL {
+      @include defineFontSizeElement(14, $fontSizeRoot, $fontLineHeightFactor);
+      line-height: calc(var(--npa-selection-icon-size) + 1px);
+    }
+  }
+
+  // ###### REPORT ###################################################################
+  SPAN, DIV {
+    &.npa-report {
+      @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
+    }
+  }
+
+  // ###### SELECT ###################################################################
+  LABEL.npa-label {
+    & + SELECT, & + INPUT {
+      &.npa-select {
+        @include defineFontSizeElement(14, $fontSizeRoot, $fontLineHeightFactor);
+        &.npa-select--small {
+          --npa-component-height: 30px;
+          --npa-component-padding-horizontal: 8px;
+          --npa-select-filter-padding-right: 8px;
+          @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
+        }
+        &.npa-select--filter {
+          --npa-component-height: fit-content;
+          --npa-component-width: fit-content;
+          --npa-component-padding-horizontal: 0;
+          padding-right: calc(var(--npa-select-filter-padding-right) + var(--npa-select-chevron-width));
+          border: none;
+          border-radius: 0;
+          background-color: transparent;
+          box-shadow: none;
+          &:focus, &:focus.error, &.focus, &.focus.error {
+            background-color: transparent;
+            box-shadow: none;
+          }
+          &:disabled, &.disabled {
+            background-color: transparent;
+            box-shadow: none;
+          }
+        }
+      }
+    }
+  }
+
+  // ###### SPINNER ##################################################################
+  .npa-spinner {
+    &.npa-spinner--inline {
+      --npa-spinner-display: inline-flex;
+    }
+    &.npa-spinner--inherit {
+      --npa-spinner-display: inherit;
+    }
+    &.npa-spinner--12 {
+      --npa-spinner-size: 12px;
+      --npa-spinner-line-width: 7px;
+    }
+    &.npa-spinner--16 {
+      --npa-spinner-size: 16px;
+      --npa-spinner-line-width: 6px;
+    }
+    &.npa-spinner--20 {
+      --npa-spinner-size: 20px;
+      --npa-spinner-line-width: 5px;
+    }
+    &.npa-spinner--80 {
+      --npa-spinner-size: 80px;
+      --npa-spinner-line-width: 3px;
+    }
+    &.npa-spinner--inverse {
+      --npa-spinner-color: var(--npa-color-white);
+    }
+  }
+
+  // ###### TAB ######################################################################
+  .npa-tab {
+    @include defineFontSizeElement(14, $fontSizeRoot, $fontLineHeightFactor);
+    &.npa-tab--small {
+      @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
+      --npa-tab-height: 30px;
+    }
+  }
+
+  // ###### TABLE ####################################################################
+  .npa-table {
+    .npa-table__header {
+      .npa-table__header-cell {
+        SPAN {
+          @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
+        }
+      }
+    }
+    .npa-table__body {
+      .npa-table__viewport {
+        .npa-table__row {
+          .npa-table__cell {
+            .npa-table__cell-value {
+              @include defineFontSizeElement(14, $fontSizeRoot, $fontLineHeightFactor);
+            }
+          }
+        }
+      }
+    }
+
+    &, .npa-table__viewport {
+      @include styleScrollbar(var(--npa-color-space-2));
+    }
+  }
+
+  // ###### TAG ######################################################################
+  SPAN, DIV {
+    &.npa-tag {
+      --npa-component-padding-horizontal: 8px;
+      font-size: getRemRelativeSize(14, $fontSizeRoot);
+      line-height: calc(var(--npa-tag-height) - 2px);
+      &.npa-tag--medium {
+        --npa-component-icon-spacer: 4px;
+        --npa-tag-height: 24px;
+        font-size: getRemRelativeSize(12, $fontSizeRoot);
+      }
+      &.npa-tag--small {
+        --npa-component-icon-spacer: 4px;
+        --npa-tag-height: 18px;
+        font-size: getRemRelativeSize(12, $fontSizeRoot);
+      }
+      &.npa-tag--neutral {
+        color: var(--npa-tag-neutral-text-color);
+        border-color: var(--npa-tag-neutral-border-color);
+        background-color: var(--npa-tag-neutral-background-color);
+      }
+      &.npa-tag--critical {
+        color: var(--npa-tag-critical-text-color);
+        border-color: var(--npa-tag-critical-border-color);
+        background-color: var(--npa-tag-critical-background-color);
+      }
+      &.npa-tag--warning {
+        color: var(--npa-tag-warning-text-color);
+        border-color: var(--npa-tag-warning-border-color);
+        background-color: var(--npa-tag-warning-background-color);
+      }
+      &.npa-tag--success {
+        color: var(--npa-tag-success-text-color);
+        border-color: var(--npa-tag-success-border-color);
+        background-color: var(--npa-tag-success-background-color);
+      }
+    }
+  }
+
+  // ###### TAG INPUT ################################################################
+  .npa-tag-input {
+    @include styleScrollbar(var(--npa-color-space-2));
+    &.npa-input, &.npa-input.npa-input--small {
+      --npa-component-padding-vertical: 0;
+      --npa-component-padding-horizontal: 0;
+    }
+    INPUT {
+      @include defineFontSizeElement(14, $fontSizeRoot, $fontLineHeightFactor);
+    }
+    &.npa-input--small {
+      INPUT {
+        @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
+      }
+    }
+
+    &.disabled {
+      .npa-tag-input__input {
+        cursor: not-allowed;
+      }
+    }
+
+    .npa-tag {
+      &.critical {
+        --npa-tag-text-color: var(--npa-error-color);
+        INPUT {
+          color: var(--npa-error-color);
+        }
+      }
+    }
+  }
+
+  // ###### TEXTAREA #################################################################
+  TEXTAREA.npa-textarea {
+    padding-top: calc((var(--npa-component-height) - (14px * #{$fontLineHeightFactor})) / 2);
+    @include defineFontSizeElement(14, $fontSizeRoot, $fontLineHeightFactor);
+    &.npa-textarea--small {
+      --npa-component-height: 30px;
+      --npa-component-padding-horizontal: 8px;
+      padding-top: calc((var(--npa-component-height) - (12px * #{$fontLineHeightFactor})) / 2);
+      @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
+    }
+  }
+
+  // ###### TOOLTIP ##################################################################
+  .npa-tooltip {
+    .npa-tooltip__box {
+      @include defineFontSizeElement(14, $fontSizeRoot, $fontLineHeightFactor);
+    }
+    &.npa-tooltip--light {
+      --npa-tooltip-color: var(--npa-color-space-7);
+      --npa-tooltip-background-color: white;
+      --npa-tooltip-border-color: var(--npa-color-space-4);
+      .npa-tooltip__arrow:after {
+        content: '';
+        position: absolute;
+        top: -6.2px;
+        left: -7px;
+        width: 0;
+        height: 0;
+        border: 7px solid transparent;
+      }
+      .npa-tooltip__arrow--top {
+        &:after {
+          border-top-color: var(--npa-tooltip-background-color);
+          top: -8.2px;
+        }
+      }
+      .npa-tooltip__arrow--bottom {
+        &:after {
+          border-bottom-color: var(--npa-tooltip-background-color);
+        }
+      }
+      .npa-tooltip__arrow--left {
+        &:after {
+          border-left-color: var(--npa-tooltip-background-color);
+          top: -7px;
+          left: -8px;
+        }
+      }
+      .npa-tooltip__arrow--right {
+        &:after {
+          border-right-color: var(--npa-tooltip-background-color);
+          top: -7px;
+          left: -6px;
+        }
+      }
+    }
+    &.npa-tooltip--small {
+      .npa-tooltip__box {
+        @include defineFontSizeElement(12, $fontSizeRoot, $fontLineHeightFactor);
+        --npa-tooltip-default-height: 24px;
+        .npa-tooltip__text {
+          position: relative;
+          top: 1px;
+        }
+      }
+      .npa-tooltip__arrow:after {
+        content: '';
+        position: absolute;
+        top: -8.2px;
+        left: -7px;
+        width: 0;
+        height: 0;
+      }
+      .npa-tooltip__arrow--bottom {
+        &:after {
+          top: -6px;
+          left: -7px;
+        }
+      }
+      .npa-tooltip__arrow--left {
+        &:after {
+          top: -7px;
+          left: -8px;
+        }
+      }
+      .npa-tooltip__arrow--right {
+        &:after {
+          top: -7px;
+          left: -6px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+@import '../../global/mixins';
+@import '../../global/fonts/Inter';
+@import '../../global/fonts/Stratio-Icon';
+@import '../../global/components/components';
+
+@import './backroom/variables/common';
+@import './backroom/components';
+@import './backroom/font-sizes';
+
+HTML {
+  &.npa-atos-test-tpl {
+    font-size: $fontSizeRoot + px;
+    line-height: $fontLineHeightFactor;
+
+    * {
+      font-family: Inter, sans-serif;
+      color: var(--npa-color-text-default);
+      outline: none;
+    }
+
+    @extend %npa-inter-typography-definition;
+
+    @include createFontDefinition($fontSizesText, $fontSizeRoot, $fontLineHeightFactor) {
+      // ###### HEADERS
+      @include createHeadersDefinition($fontSizesHeaders, $fontSizeRoot, $fontLineHeightFactor);
+
+      // ###### DEFAULT WEIGHT AND STYLE
+      .npa--bold {
+        font-weight: bold;
+      }
+      .npa--italic {
+        font-style: italic;
+      }
+
+      // ###### DEFAULT SIZE
+      .npa-font--default {
+        font-size: 1rem;
+        line-height: $fontLineHeightFactor;
+      }
+    }
+
+    @include createColorsDefinition($colorsAvailable);
+    @include createColorsDefinition($templateBaseBackgroundColor, 'bg');
+    @include createColorsDefinition($templateBaseBorderColor, 'border');
+    @include createColorsDefinition($templateBaseTextColor);
+    @extend %npa-icon-definition;
+    @extend %npa-global-vars;
+    @extend %npa-components;
+    @extend %npa-components-template;
+  }
+}
